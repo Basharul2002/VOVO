@@ -31,41 +31,17 @@ namespace VOVO
     internal class Mail
     {
 
-        public void Info()
-        {
-            string imagePath = "D:\\University\\C# Coe\\Project - Copy (3) - CopyEsdiit\\Pic\\Icon.png";
-            System.Drawing.Image logo = System.Drawing.Image.FromFile(imagePath);
-
-            string companyName = "VOVO", busNumber = "123", busTypeTime = "Dobule Decker (12:00:00)", date = "22 JANUARY 2023", passengerName = "Basharul Alam", from = "Dhaka", to = "Feni", boardingPoint = "Dhaka", seatNumber = "A1, A2";
-            string ticketNumber = "23", travelDate = "22 JANUARY 2023", travelTime = "12:00:00", departureCity = "Dhaka", arrivalCity = "Chitagong",
-             busType = "Double Decker", fare = "3600", email = "basharulalammicrosoft@gmail.com",
-            passengerPasword = "123", destinationCity = "Dhaka", departureTime = "12:00:00";
-            string passengerEmail = "basharulalammicrosoft@gmail.com";
-
-            System.Drawing.Image Barcode = QrCodeGenerate(ticketNumber, passengerName, boardingPoint, travelDate, travelTime, departureCity,
-           arrivalCity, busNumber, busType, seatNumber, fare);
-          /*
-            System.Drawing.Image qrcode = QrCodeGenerate(ticketNumber, passengerName, boardingPoint, travelDate, travelTime, departureCity,
-          arrivalCity, busNumber, busType, seatNumber, fare);
-          */
-            //return qrcode;
-            PDFGenerate pdf = new PDFGenerate();
-          
-          byte[] pdfbyte = pdf.GenerateBusTicketPDF(companyName, busNumber, busTypeTime, date, passengerName, from, to, boardingPoint, seatNumber, Barcode, "123");
-            //SendBusTicketByEmail(pdfbyte, passengerEmail, passengerName, date, from, to, departureTime, busNumber, seatNumber);
-         Equipment equipment = new Equipment();
-            equipment.pdfDownload(pdfbyte, "Demo");
-        }
-
-
         private bool DeliverBusTicketByEmail(byte[] pdf, string passengerEmail, string PassengerName, string TravelDate, string DepartureCity, string DestinationCity, string DepartureTime, string BusNumber, string SeatNumbers)
         {
+            
             // Replace with the actual values
             string recipientEmail = passengerEmail; // Replace with the recipient's email address
 
+            MessageBox.Show("Replace your sender email address and passwod and remove return keyword from Mail class and function name is DeliverBusTicketByEmail");
+            return ;
             // Email settings
-            string senderEmail = "basharulalamm@gmail.com"; // Replace with your sender email address
-            string senderPassword = "xvoawtmtomxzuqio"; // Replace with your sender email password
+            string senderEmail = ""; // Replace with your sender email address
+            string senderPassword = ""; // Replace with your sender email password
 
             string subject = "Ticket - VOVO";
 
@@ -145,10 +121,13 @@ namespace VOVO
         {
             string recipientEmail = passengerEmail; // Replace with the recipient's email address
 
+            MessageBox.Show("Replace your sender email address and passwod and remove return keyword from Mail class and function name is DeliverResetPasswordOTPByMail");
+            return ;
             // Email settings
-            string senderEmail = "basharulalamm@gmail.com"; // Replace with your sender email address
-            string senderPassword = "xvoawtmtomxzuqio"; // Replace with your sender email password
+            string senderEmail = ""; // Replace with your sender email address
+            string senderPassword = ""; // Replace with your sender email password
 
+            
             string subject = "Password Reset OTP Code - VOVO";
             string body = @"<!DOCTYPE html>
                             <html lang='en'>
@@ -250,9 +229,11 @@ namespace VOVO
         private bool VerifyEmail(string name, string recipientEmail, string otp)
         {
 
+           MessageBox.Show("Replace your sender email address and passwod and remove return keyword from Mail class and function name is VerifyEmail");
+            return ;
             // Email settings
-            string senderEmail = "basharulalamm@gmail.com"; // Replace with your sender email address
-            string senderPassword = "xvoawtmtomxzuqio"; // Replace with your sender email password
+            string senderEmail = ""; // Replace with your sender email address
+            string senderPassword = ""; // Replace with your sender email password
 
             string subject = "Verify Email OTP Code - VOVO";
             string body = @"<!DOCTYPE html>
@@ -370,9 +351,12 @@ namespace VOVO
 
         private bool SendEmailInOldEmail(string name, string email, string otp)
         {
+            MessageBox.Show("Replace your sender email address and passwod and remove return keyword from Mail class and function name is SendEmailInOldEmail");
+            return ;
             // Email settings
-            string senderEmail = "basharulalamm@gmail.com"; // Replace with your sender email address
-            string senderPassword = "xvoawtmtomxzuqio"; // Replace with your sender email password
+            string senderEmail = ""; // Replace with your sender email address
+            string senderPassword = ""; // Replace with your sender email password
+            
 
             string subject = "Update Email Address - VOVO";
             string body = @"<!DOCTYPE html>
@@ -476,9 +460,11 @@ namespace VOVO
         {
             string recipientEmail = email; // Replace with the recipient's email address
 
+            MessageBox.Show("Replace your sender email address and passwod and remove return keyword from Mail class and function name is SendEmailInNewEmail");
+            return ;
             // Email settings
-            string senderEmail = "basharulalamm@gmail.com"; // Replace with your sender email address
-            string senderPassword = "xvoawtmtomxzuqio"; // Replace with your sender email password
+            string senderEmail = ""; // Replace with your sender email address
+            string senderPassword = ""; // Replace with your sender email password
 
             string subject = "Update Email Address - VOVO";
             string body = @"<!DOCTYPE html>
