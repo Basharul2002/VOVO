@@ -237,7 +237,6 @@ namespace CustomControls.CustomControls
             base.OnLoad(e);
             UpdateControlHeight();
         }
-
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -309,16 +308,6 @@ namespace CustomControls.CustomControls
                 textBox1.ForeColor = placeholderColor;
                 if (isPasswordChar)
                     textBox1.UseSystemPasswordChar = false;
-
-               
-
-            }
-
-            else
-            {
-                isPlaceholder = false;
-                textBox1.ForeColor = this.ForeColor;
-                
             }
         }
         private void RemovePlaceholder()

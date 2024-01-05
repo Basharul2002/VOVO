@@ -36,16 +36,16 @@ namespace VOVO
 
         private bool BusAlreadyRegister()
         {
-            string busNumber = bus_number_tb.Texts;
-            string chechisNumber = bus_cechis_number_tb.Texts;
-            string engineNumber = bus_engine_number_tb.Texts;
+            string busNumber = bus_number_tb.Text;
+            string chechisNumber = bus_cechis_number_tb.Text;
+            string engineNumber = bus_engine_number_tb.Text;
 
             DataBase dataBase = new DataBase();
             bool exists = dataBase.IsBusInfoExists(busNumber, chechisNumber, engineNumber);
 
             if(exists)
             {
-                CustomMessageBox.Show("This Bus already register");
+                MessageBox.Show("This Bus already register");
                 return true;
             }
 
@@ -54,31 +54,30 @@ namespace VOVO
 
         private void submit_button_Click(object sender, EventArgs e)
         {
-            string number = bus_number_tb.Texts;
-            string name = bus_name_tb.Texts;
-            //string registrationNumber = bus_registration_number_tb.Texts;
-            string cechisNumber = bus_cechis_number_tb.Texts;
-            string engineNumber = bus_engine_number_tb.Texts;
-            string engineType = engine_type_combo_box.Texts;
-            string busType = bus_type_tb.Texts;
-            string companyName = bus_company_name_tb.Texts;
+            string number = bus_number_tb.Text;
+            string name = bus_name_tb.Text;
+            string cechisNumber = bus_cechis_number_tb.Text;
+            string ownerName = ((CompanyInfo)bus_owner_name_combo_box.SelectedItem).ID;
+            string engineNumber = bus_engine_number_tb.Text;
+            string engineType = engine_type_combo_box.Text;
+            string busType = bus_type_tb.Text;
+            string companyName = bus_company_name_tb.Text;
 
 
 
-            if (string.IsNullOrEmpty(number) || string.IsNullOrEmpty(name)  || string.IsNullOrEmpty(cechisNumber) || string.IsNullOrEmpty(engineNumber) || string.IsNullOrEmpty(engineType) || string.IsNullOrEmpty(busType) || string.IsNullOrEmpty(companyName) || string.IsNullOrEmpty(ownerName) )
+            if (string.IsNullOrEmpty(number) || string.IsNullOrEmpty(name)  || string.IsNullOrEmpty(cechisNumber) || string.IsNullOrEmpty(engineNumber) || string.IsNullOrEmpty(engineType) || string.IsNullOrEmpty(busType) || string.IsNullOrEmpty(companyName) || string.IsNullOrEmpty(ownerName))
             {
-                CustomMessageBox.Show("Please fill in all required fields");
+                MessageBox.Show("Please fill in all required fields");
+                return;
             }
 
-            else if (!string.IsNullOrEmpty(number) && !string.IsNullOrEmpty(name)  || !string.IsNullOrEmpty(cechisNumber) || !string.IsNullOrEmpty(engineNumber) || !string.IsNullOrEmpty(engineType) || !string.IsNullOrEmpty(busType) || !string.IsNullOrEmpty(companyName) || !string.IsNullOrEmpty(ownerName))
+            if (!BusAlreadyRegister())
             {
-                if(!BusAlreadyRegister())
-                {
-                    DataBase dataBase = new DataBase();
-                    dataBase.BusRegistration(adminID, number, name, cechisNumber, engineNumber, engineType, busType, companyName, ownerName, totalSeat);
-                }
-
+                DataBase dataBase = new DataBase();
+                dataBase.BusRegistration(adminID, number, name, cechisNumber, engineNumber, engineType, busType, companyName, ownerName, totalSeat);
             }
+
+
         }
         private void PopulateCompanyComboBox()
         {
@@ -113,8 +112,13 @@ namespace VOVO
             }
             catch (Exception ex)
             {
-                CustomMessageBox.Show("Class is ChooseCompany function name is PopulateCompanyComboBox and exception is: " + ex.Message, "Error");
+                MessageBox.Show("Class is ChooseCompany function name is PopulateCompanyComboBox and exception is: " + ex.Message, "Error");
             }
+        }
+
+        private void BusRegistration_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void bus_owner_name_combo_box_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -125,7 +129,7 @@ namespace VOVO
                 CompanyInfo selectedCompany = (CompanyInfo)comboBox.SelectedItem;
                 ownerName = selectedCompany.ID;
                 // Use the selected company ID as needed
-                //CustomMessageBox.Show("Selected Company ID: " + companyID);
+                //MessageBox.Show("Selected Company ID: " + companyID);
             }
         }
 
@@ -137,27 +141,27 @@ namespace VOVO
             {
                 case "Economic Non AC":
                 case "Economic AC":
-                    total_seat_tb.Texts = "48";
+                    total_seat_tb.Text = "48";
                     totalSeat = 48;
                     break;
 
                 case "Business Class":
-                    total_seat_tb.Texts = "36";
+                    total_seat_tb.Text = "36";
                     totalSeat = 36;
                     break;
 
                 case "Double Decker":
-                    total_seat_tb.Texts = "47";
+                    total_seat_tb.Text = "47";
                     totalSeat = 47;
                     break;
 
                 case "Sleeper Coach":
-                    total_seat_tb.Texts = "30";
+                    total_seat_tb.Text = "30";
                     totalSeat = 30;
                     break;
 
                 default:
-                    CustomMessageBox.Show("Choose valid", "VOVO");
+                    MessageBox.Show("Choose valid", "VOVO");
                     break;
             }
         }

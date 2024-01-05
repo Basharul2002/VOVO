@@ -32,16 +32,52 @@ using System.Drawing.Imaging;
 using Emgu.CV.ML;
 using static iText.Kernel.Pdf.Colorspace.PdfDeviceCs;
 
-/*
-using Tensorflow;
-using Tensorflow.Hub;
-using Tensorflow.Image;
-using NumSharp;
-*/
 namespace VOVO
 {
     internal class Equipment
     {
+        public static bool IsStrongPassword(string password, out string message)
+        {
+            // Check minimum length
+            if (password.Length < 6)
+            {
+                message = "Length must be more than 6";
+                return false;
+            }
+
+            // Check for at least one uppercase letter
+            if (!password.Any(char.IsUpper))
+            {
+                message = "Use at least one upper case character";
+                return false;
+            }
+
+            // Check for at least one lowercase letter
+            if (!password.Any(char.IsLower))
+            {
+                message = "Use at least one lower case character";
+                return false;
+            }
+
+            // Check for at least one digit
+            if (!password.Any(char.IsDigit))
+            {
+                message = "Use at least one digit";
+                return false;
+            }
+
+            
+            // Check for at least one special character
+            if (!password.Any(ch => !char.IsLetterOrDigit(ch)))
+            {
+                message = "Use at least one special character";
+                return false;
+            }
+
+            // All checks passed, password is strong
+            message = null;
+            return true;
+        }
         private int SerialNo(string type)
         {
             string lastID = string.Empty;
@@ -52,7 +88,7 @@ namespace VOVO
 
             if (lastID == null)
             {
-                returnValue = -1;
+                returnValue = 0;
             }
 
             else
@@ -64,15 +100,19 @@ namespace VOVO
 
                 else if (!string.IsNullOrEmpty(lastID))
                 {
-                    int year = ConvertStringToInt(lastID.Substring(4, 2)), month = ConvertStringToInt(lastID.Substring(lastID.Length - 1, 1));
+                    // Database values
+                    int year = ConvertStringToInt(lastID.Substring(4, 2));
+                    int month = ConvertStringToInt(lastID.Substring(lastID.Length - 1, 1));
+
+                    // Today value
                     DateTime dateTime = DateTime.Now;
                     int yearNow = (dateTime.Year % 100);
                     int monthNow = ((dateTime.Month) / 5) + 1;
 
-
+                    // Compare today year and month with database last id year and month
                     if (year != yearNow || month != monthNow)
                     {
-                        // CustomMessageBox.Show("Year");
+                        // MessageBox.Show("Year");
                         returnValue = 0;
                     }
 
@@ -81,20 +121,20 @@ namespace VOVO
                         if (type != "Customer")
                         {
                             string numberPart = lastID.Substring(6, 4);
-                            // CustomMessageBox.Show(numberPart);
+                            // MessageBox.Show(numberPart);
                             returnValue = StringToInt(numberPart);
                         }
                         else if (type == "Customer")
                         {
                             string numberPart = lastID.Substring(6, 10);
-                            // CustomMessageBox.Show(numberPart);
+                            // MessageBox.Show(numberPart);
                             returnValue = StringToInt(numberPart);
                         }
 
                     }
                 }
             }
-            // CustomMessageBox.Show(returnValue.ToString());
+            // MessageBox.Show(returnValue.ToString());
             return returnValue;
         }
 
@@ -108,6 +148,7 @@ namespace VOVO
 
             int serialNo = SerialNo(type) + 1;
             string id = string.Empty;
+
             if (type == "Admin")
             {
                 return "ADM-" + (year % 100) + serialNo.ToString("D4") + "-" + month;
@@ -185,7 +226,7 @@ namespace VOVO
                 DateTime today = DateTime.Today;
                 if (date > today)
                 {
-                    CustomMessageBox.Show("Invalid Date");
+                    MessageBox.Show("Invalid Date");
                     qualified = false;
                 }
 
@@ -196,14 +237,14 @@ namespace VOVO
                         DateTime adminQualifiedAgeLowest = DateTime.Now.AddYears(-25);
                         DateTime adminQualifiedAgeHighest = DateTime.Now.AddYears(-35);
 
-                        if (date <= adminQualifiedAgeLowest && date >= adminQualifiedAgeHighest)
+                        if (adminQualifiedAgeLowest <= date && date >= adminQualifiedAgeHighest)
                         {
                             qualified = true;
                         }
 
                         else
                         {
-                            CustomMessageBox.Show("You are not allowed to apply", "Disqualified", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("You are not allowed to apply\nMinimum Age: 25 Years\nMinimum Age: 35 years", "Disqualified", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             qualified = false;
                         }
                         
@@ -215,13 +256,13 @@ namespace VOVO
 
 
 
-                        if (date <= driverQualifiedAgeLowest && date >= driverQualifiedAgeHighest)
+                        if (driverQualifiedAgeLowest <= date && date  >= driverQualifiedAgeHighest)
                         {
-                            CustomMessageBox.Show("You are not allowed to apply", "Disqualified", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             qualified = true;
                         }
                         else
                         {
+                            MessageBox.Show("You are not allowed to apply\nMinimum Age: 22 Years\nMinimum Age: 40 years", "Disqualified", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             qualified = false;
                         }
                     }
@@ -233,11 +274,11 @@ namespace VOVO
 
                         if (date <= conductorQualifiedAgeLowest && date >= conductorQualifiedAgeHighest)
                         {
-                            CustomMessageBox.Show("You are not allowed to apply", "Disqualified", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             qualified = true;
                         }
                         else
                         {
+                            MessageBox.Show("You are not allowed to apply\nMinimum Age: 22 Years\nMinimum Age: 40 years", "Disqualified", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             qualified = false;
                         }
                     }
@@ -250,11 +291,11 @@ namespace VOVO
 
                         if (date <= conductorQualifiedAgeLowest && date >= conductorQualifiedAgeHighest)
                         {
-                            CustomMessageBox.Show("You are not allowed to apply", "Disqualified", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             qualified = true;
                         }
                         else
                         {
+                            MessageBox.Show("You are not allowed to apply\nMinimum Age: 25 Years\nMinimum Age: 30 years", "Disqualified", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             qualified = false;
                         }
                     }
@@ -312,10 +353,10 @@ namespace VOVO
             string maskedUsername;
             // Mask the username
             int usernameLength = username.Length;
-            if (email.Length > 3)
+            if (usernameLength > 3)
                 maskedUsername = username.Substring(0, 2) + new string('x', usernameLength - 2);
 
-            else if (email.Length == 3)
+            else if (usernameLength == 3)
                 maskedUsername = username.Substring(0, 1) + new string('x', usernameLength - 1);
 
             else
@@ -330,7 +371,7 @@ namespace VOVO
             string maskedDomainFirstPart = domain.Substring(0, 1) + new string('x', domainFirstPartLength - 1);
 
             int domainSecondPartLength = domainSecondPart.Length;
-            string maskeddomainSecondPart = new string('x', domainFirstPartLength);
+            string maskeddomainSecondPart = new string('x', domainSecondPartLength);
 
 
             return maskedUsername + "@" + maskedDomainFirstPart + "." + maskeddomainSecondPart;
@@ -359,7 +400,7 @@ namespace VOVO
             }
             catch (Exception ex)
             {
-                CustomMessageBox.Show("Invalid input format" + ex.Message);
+                MessageBox.Show("Invalid input format" + ex.Message);
             }
 
             return result;
@@ -386,13 +427,13 @@ namespace VOVO
         {
             if (password.Length > 8)
             {
-                CustomMessageBox.Show("Password length should be at least 8 characters.");
+                MessageBox.Show("Password length should be at least 8 characters.");
                 return false;
             }
 
             if (!Regex.IsMatch(password, @"[a-z]") || !Regex.IsMatch(password, @"[A-Z]") || !Regex.IsMatch(password, @"\d") || !Regex.IsMatch(password, @"[!@#$%^&*()_\-+=<>?]"))
             {
-                CustomMessageBox.Show("Password should include lowercase letters, uppercase letters, digits, and special characters.");
+                MessageBox.Show("Password should include lowercase letters, uppercase letters, digits, and special characters.");
                 return false;
             }
 
@@ -400,7 +441,7 @@ namespace VOVO
             {
                 if (password[i] == password[i + 1] && password[i] == password[i + 2])
                 {
-                    CustomMessageBox.Show("Password Repeated Characters");
+                    MessageBox.Show("Password Repeated Characters");
                     return false;
                 }
             }
@@ -408,14 +449,14 @@ namespace VOVO
             string[] commonWords = { "password", "123456", "qwerty", "abc123" }; // Common words to avoid
             if (commonWords.Any(commonWord => password.Contains(commonWord)))
             {
-                CustomMessageBox.Show("Password should not contain common words.");
+                MessageBox.Show("Password should not contain common words.");
                 return false;
             }
 
             List<string> personalInfo = GeneratePersonalInfoCombinations(userName);
             if (personalInfo.Any(info => password.ToLower().Contains(info)))
             {
-                CustomMessageBox.Show("Password should not contain personal information.");
+                MessageBox.Show("Password should not contain personal information.");
                 return false;
             }
 
@@ -447,7 +488,7 @@ namespace VOVO
             else
             {
                 // The input date is not in the correct format, handle the error as needed (e.g., show a message, throw an exception)
-                CustomMessageBox.Show("Invalid date format. The date should be in the format 'dd/MM/yyyy'.", "Error");
+                MessageBox.Show("Invalid date format. The date should be in the format 'dd/MM/yyyy'.", "Error");
                 return null; // or return the original inputDate, or throw an exception, or return a default value, etc.
             }
         }
@@ -460,9 +501,10 @@ namespace VOVO
                 // You can use the 'result' variable here as needed.
                 return result;
             }
-            catch (System.FormatException)
+
+            catch (Exception ex)
             {
-                CustomMessageBox.Show("Invalied Number Format");
+                MessageBox.Show("Invalied Number Format");
                 return -1;
             }
         }
@@ -472,6 +514,7 @@ namespace VOVO
             return DateTime.Now.ToString("dd/MM/yyyy");
         }
 
+        // 23/10/2002
         private string ConvertDataBaseFormatDate(string date)
         {
             DateTime parsedDate = DateTime.ParseExact(date, "dd/MM/yyyy", null);
@@ -553,7 +596,7 @@ namespace VOVO
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     File.WriteAllBytes(saveFileDialog.FileName, pdf);
-                    CustomMessageBox.Show("PDF saved successfully.");
+                    MessageBox.Show("PDF saved successfully.");
                 }
             }
         }
@@ -607,7 +650,7 @@ namespace VOVO
             }
             else
             {
-                CustomMessageBox.Show("No PDF data found in the database.");
+                MessageBox.Show("No PDF data found in the database.");
             }
         }
 
@@ -618,7 +661,7 @@ namespace VOVO
             {
                 if(openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    DialogResult result = CustomMessageBox.Show("Are you sure you want to upload this pdf file?", "VOVO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult result = MessageBox.Show("Are you sure you want to upload this pdf file?", "VOVO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {
                        string fileName = openFileDialog.FileName;
@@ -657,7 +700,7 @@ namespace VOVO
             catch (Exception ex)
             {
                 // Handle any exceptions related to GDI+ here
-                CustomMessageBox.Show("Error in ImageToByteArray: " + ex.Message);
+                MessageBox.Show("Error in ImageToByteArray: " + ex.Message);
                 return null;
             }
         }

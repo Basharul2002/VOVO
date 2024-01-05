@@ -31,10 +31,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.superviosr_combo_box = new VOVO.CustomComboBox();
-            this.driver_combo_box = new VOVO.CustomComboBox();
-            this.conductor_combo_box = new VOVO.CustomComboBox();
-            this.register_button = new VOVO.CustomButton();
+            this.superviosr_combo_box = new System.Windows.Forms.ComboBox();
+            this.driver_combo_box = new System.Windows.Forms.ComboBox();
+            this.conductor_combo_box = new System.Windows.Forms.ComboBox();
+            this.register_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label4
@@ -69,78 +69,44 @@
             // 
             // superviosr_combo_box
             // 
-            this.superviosr_combo_box.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.superviosr_combo_box.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.superviosr_combo_box.BorderSize = 1;
-            this.superviosr_combo_box.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.superviosr_combo_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.superviosr_combo_box.ForeColor = System.Drawing.Color.DimGray;
-            this.superviosr_combo_box.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.superviosr_combo_box.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.superviosr_combo_box.ListTextColor = System.Drawing.Color.DimGray;
-            this.superviosr_combo_box.Location = new System.Drawing.Point(176, 136);
-            this.superviosr_combo_box.MinimumSize = new System.Drawing.Size(200, 30);
+            this.superviosr_combo_box.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.superviosr_combo_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.superviosr_combo_box.FormattingEnabled = true;
+            this.superviosr_combo_box.Location = new System.Drawing.Point(176, 130);
             this.superviosr_combo_box.Name = "superviosr_combo_box";
-            this.superviosr_combo_box.Padding = new System.Windows.Forms.Padding(1);
-            this.superviosr_combo_box.Size = new System.Drawing.Size(267, 30);
-            this.superviosr_combo_box.TabIndex = 11;
-            this.superviosr_combo_box.Texts = "";
+            this.superviosr_combo_box.Size = new System.Drawing.Size(267, 32);
+            this.superviosr_combo_box.TabIndex = 13;
             // 
             // driver_combo_box
             // 
-            this.driver_combo_box.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.driver_combo_box.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.driver_combo_box.BorderSize = 1;
-            this.driver_combo_box.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.driver_combo_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.driver_combo_box.ForeColor = System.Drawing.Color.DimGray;
-            this.driver_combo_box.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.driver_combo_box.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.driver_combo_box.ListTextColor = System.Drawing.Color.DimGray;
-            this.driver_combo_box.Location = new System.Drawing.Point(176, 197);
-            this.driver_combo_box.MinimumSize = new System.Drawing.Size(200, 30);
+            this.driver_combo_box.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.driver_combo_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.driver_combo_box.FormattingEnabled = true;
+            this.driver_combo_box.Location = new System.Drawing.Point(176, 194);
             this.driver_combo_box.Name = "driver_combo_box";
-            this.driver_combo_box.Padding = new System.Windows.Forms.Padding(1);
-            this.driver_combo_box.Size = new System.Drawing.Size(267, 30);
-            this.driver_combo_box.TabIndex = 11;
-            this.driver_combo_box.Texts = "";
+            this.driver_combo_box.Size = new System.Drawing.Size(267, 32);
+            this.driver_combo_box.TabIndex = 14;
             // 
             // conductor_combo_box
             // 
-            this.conductor_combo_box.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.conductor_combo_box.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.conductor_combo_box.BorderSize = 1;
-            this.conductor_combo_box.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.conductor_combo_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.conductor_combo_box.ForeColor = System.Drawing.Color.DimGray;
-            this.conductor_combo_box.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.conductor_combo_box.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.conductor_combo_box.ListTextColor = System.Drawing.Color.DimGray;
-            this.conductor_combo_box.Location = new System.Drawing.Point(176, 250);
-            this.conductor_combo_box.MinimumSize = new System.Drawing.Size(200, 30);
+            this.conductor_combo_box.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.conductor_combo_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.conductor_combo_box.FormattingEnabled = true;
+            this.conductor_combo_box.Location = new System.Drawing.Point(176, 255);
             this.conductor_combo_box.Name = "conductor_combo_box";
-            this.conductor_combo_box.Padding = new System.Windows.Forms.Padding(1);
-            this.conductor_combo_box.Size = new System.Drawing.Size(267, 30);
-            this.conductor_combo_box.TabIndex = 11;
-            this.conductor_combo_box.Texts = "";
+            this.conductor_combo_box.Size = new System.Drawing.Size(267, 32);
+            this.conductor_combo_box.TabIndex = 15;
             // 
             // register_button
             // 
             this.register_button.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.register_button.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.register_button.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.register_button.BorderRadius = 10;
-            this.register_button.BorderSize = 0;
-            this.register_button.FlatAppearance.BorderSize = 0;
-            this.register_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.register_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.register_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.register_button.ForeColor = System.Drawing.Color.White;
-            this.register_button.Location = new System.Drawing.Point(279, 372);
+            this.register_button.Location = new System.Drawing.Point(299, 359);
             this.register_button.Name = "register_button";
-            this.register_button.Size = new System.Drawing.Size(150, 40);
-            this.register_button.TabIndex = 12;
+            this.register_button.Size = new System.Drawing.Size(144, 43);
+            this.register_button.TabIndex = 16;
             this.register_button.Text = "Register";
-            this.register_button.TextColor = System.Drawing.Color.White;
             this.register_button.UseVisualStyleBackColor = false;
             this.register_button.Click += new System.EventHandler(this.register_button_Click);
             // 
@@ -168,9 +134,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private CustomComboBox superviosr_combo_box;
-        private CustomComboBox driver_combo_box;
-        private CustomComboBox conductor_combo_box;
-        private CustomButton register_button;
+        private System.Windows.Forms.ComboBox superviosr_combo_box;
+        private System.Windows.Forms.ComboBox driver_combo_box;
+        private System.Windows.Forms.ComboBox conductor_combo_box;
+        private System.Windows.Forms.Button register_button;
     }
 }

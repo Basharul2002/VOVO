@@ -14,7 +14,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace VOVO
 {
-    public partial class AdminForm : MetroFramework.Forms.MetroForm
+    public partial class AdminForm : Form
     {
         private string AdminID;
         static AdminForm obj;
@@ -26,6 +26,7 @@ namespace VOVO
                 {
                     obj = new AdminForm();
                 }
+
                 return obj;
             }
         }
@@ -42,6 +43,7 @@ namespace VOVO
             InitializeComponent();
             CustomizeDesign();
             IconSet();
+            FormControlsUtility.ConfigureFormResize(this);
         }
 
         // Rounded Corners  
@@ -57,12 +59,12 @@ namespace VOVO
 
         private void top_border_panel_MouseDown(object sender, MouseEventArgs e)
         {
+           FormControlsUtility.AttachDraggableTitleBar(top_border_panel);
 
         }
 
-        //Private methods
-        
 
+        //Private methods
         private void CollapseMenu()
         {
             try
@@ -72,6 +74,7 @@ namespace VOVO
                     side_menu_panel.Width = 100;
                     label.Visible = false;
                     three_bar_button.Dock = DockStyle.Top;
+
                     foreach (Button menuButton in side_menu_panel.Controls.OfType<Button>())
                     {
                         menuButton.Text = "";
@@ -114,6 +117,7 @@ namespace VOVO
                     this.side_menu_panel.Width = 174;
                     label.Visible = true;
                     three_bar_button.Dock = DockStyle.None;
+
                     foreach (Button menuButton in side_menu_panel.Controls.OfType<Button>())
                     {
                         menuButton.Text =  menuButton.Tag.ToString();
@@ -155,7 +159,7 @@ namespace VOVO
 
             catch(Exception ex)
             {
-                CustomMessageBox.Show("Class name is Admin from function name is collapeManus and exception: " + ex.Message);
+                MessageBox.Show("Class name is Admin from function name is collapeManus and exception: " + ex.Message);
             }
             
         }
@@ -174,6 +178,7 @@ namespace VOVO
             this.FormBorderStyle = FormBorderStyle.None;
             obj = this;
             showDashboard();
+            FormControlsUtility.ConfigureFormResize(this);
         }
 
         private void IconSet()
@@ -277,12 +282,10 @@ namespace VOVO
 
         private void Profile()
         {
-            /*
             panelContainer.Controls.Clear();
             EmployeeProfile employeeProfile = new EmployeeProfile(AdminID, "Admin");
             employeeProfile.Dock = DockStyle.Fill;
             panelContainer.Controls.Add(employeeProfile);
-            */
         }
 
         private void showCompanyRegistrationForm()
@@ -296,27 +299,33 @@ namespace VOVO
 
         private void close_button_Click(object sender, EventArgs e)
         {
+            FormControlsUtility.ConfigureCloseButton(close_btn);
         }
 
         private void close_button_MouseEnter(object sender, EventArgs e)
         {
+            FormControlsUtility.ConfigureCloseButton(close_btn);
         }
 
         private void close_button_MouseLeave(object sender, EventArgs e)
         {
+           FormControlsUtility.ConfigureCloseButton(close_btn);
         }
 
         private void minimized_button_Click(object sender, EventArgs e)
         {
+            FormControlsUtility.ConfigureMinimizeButton(minimize_btn);
 
         }
 
         private void maximized_button_Click(object sender, EventArgs e)
         {
+            FormControlsUtility.ConfigureMaximizedButton(maximize_btn, maximized_btn);
         }
 
         private void maximize_button_Click(object sender, EventArgs e)
         {
+           FormControlsUtility.ConfigureMaximizeButton(maximize_btn, maximized_btn);
 
         }
 
@@ -361,43 +370,63 @@ namespace VOVO
 
         private void bus_info_button_Click(object sender, EventArgs e)
         {
-           
+            panelContainer.Controls.Clear();
+            BusInformation busInformation = new BusInformation();
+            busInformation.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(busInformation);
         }
 
         private void admin_info_button_Click(object sender, EventArgs e)
         {
-
+          
         }
 
         private void logout_button_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            EmployeeLogin employeeLogin = new EmployeeLogin();
+            employeeLogin.Show();
         }
 
         private void customer_info_button_Click(object sender, EventArgs e)
         {
-
+            panelContainer.Controls.Clear();
+            CustomerInformation customerInformation = new CustomerInformation(AdminID);
+            customerInformation.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(customerInformation);
         }
 
 
         private void employee_information_button_Click(object sender, EventArgs e)
         {
-           
+            panelContainer.Controls.Clear();
+            EmployeeInformation employeeInformation = new EmployeeInformation(AdminID, "Employee");
+            employeeInformation.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(employeeInformation);
         }
 
         private void superivisor_info_button_Click(object sender, EventArgs e)
         {
-
+            panelContainer.Controls.Clear();
+            EmployeeInformation employeeInformation = new EmployeeInformation(AdminID, "Supervisor");
+            employeeInformation.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(employeeInformation);
         }
 
         private void driver_info_button_Click(object sender, EventArgs e)
         {
-
+            panelContainer.Controls.Clear();
+            EmployeeInformation employeeInformation = new EmployeeInformation(AdminID, "Driver");
+            employeeInformation.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(employeeInformation);
         }
 
         private void conductor_info_button_Click(object sender, EventArgs e)
         {
-
+            panelContainer.Controls.Clear();
+            EmployeeInformation employeeInformation = new EmployeeInformation(AdminID, "Conductor");
+            employeeInformation.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(employeeInformation);
         }
 
         private void three_bar_button_Click(object sender, EventArgs e)
@@ -407,7 +436,16 @@ namespace VOVO
 
         private void office_add_button_Click(object sender, EventArgs e)
         {
-            
+            panelContainer.Controls.Clear();
+            Office office = new Office(AdminID, admin: true);
+            office.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(office);
+        }
+
+        private void customer_registration_button_Click(object sender, EventArgs e)
+        {
+            CustomerRegistrationForm customerRegistrationForm = new CustomerRegistrationForm(isAdmin: true);
+            customerRegistrationForm.ShowDialog();
         }
     }
 }

@@ -33,7 +33,7 @@ namespace VOVO
             title.Text = type + " Personal Information";
             AdminID = adminID;
             Type = type;
-        } 
+        }
 
         private void picure_choose_button_Click(object sender, EventArgs e)
         {
@@ -61,13 +61,13 @@ namespace VOVO
             }
             catch (Exception ex)
             {
-                CustomMessageBox.Show(ex.Message, "Picture Error");
+                MessageBox.Show(ex.Message, "Picture Error");
             }
         }
 
         private string GenderSelection()
         {
-              string gender = string.Empty;
+            string gender = string.Empty;
 
             if (male_radio_button.Checked == true)
             {
@@ -105,49 +105,48 @@ namespace VOVO
         private void next_button_Click(object sender, EventArgs e)
         {
             //MessageBox.Show(Type);
-            string name = name_tb.Texts;
-            string email = email_tb.Texts;
+            string name = name_tb.Text;
+            string email = email_tb.Text;
             string countryCode = country_code_combo_box.Text;
-            string phoneNumber = phone_number_tb.Texts;
-            string address = address_tb.Texts;
+            string phoneNumber = phone_number_tb.Text;
+            string address = address_tb.Text;
             string gender = GenderSelection();
-            string dob = dob_tb.Texts;
-            string nationality = nationality_tb.Texts;
-            string nidNumber = nid_number_tb.Texts;
-            string experience = experience_tb.Texts;
-            string contactNumber = string.Concat(countryCode, phoneNumber);
+            string dob = dob_tb.Text;
+            string nationality = nationality_tb.Text;
+            string nidNumber = nid_number_tb.Text;
+            string experience = experience_tb.Text;
             Image picture = picture_box.Image;
-            
+
 
             ValidityCheck validityCheck = new ValidityCheck();
 
             if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(countryCode) || string.IsNullOrEmpty(phoneNumber) || string.IsNullOrEmpty(address) || string.IsNullOrEmpty(dob) || string.IsNullOrEmpty(nationality) || string.IsNullOrEmpty(nidNumber) || string.IsNullOrEmpty(experience))
             {
-                CustomMessageBox.Show("Please fill in all required fields");
+                MessageBox.Show("Please fill in all required fields");
                 return; // Exit the event handler early if any required field is empty
             }
 
             if (picture == null)
             {
-                CustomMessageBox.Show("Please choose a picture");
+                MessageBox.Show("Please choose a picture");
                 return; // Exit the event handler early if no picture is selected
             }
 
             if (!validityCheck.IsPhoneNumberValid(phoneNumber))
             {
-                CustomMessageBox.Show("Phone number invalid");
+                MessageBox.Show("Phone number invalid");
                 return; // Exit the event handler early if phone number is invalid
             }
 
             if (!validityCheck.IsEmailValid(email))
             {
-                CustomMessageBox.Show("Email address invalid");
+                MessageBox.Show("Email address invalid");
                 return; // Exit the event handler early if email address is invalid
             }
 
             if (!validityCheck.IsDOBValid(dob))
             {
-                CustomMessageBox.Show("Date of Birth invalid");
+                MessageBox.Show("Date of Birth invalid");
                 return; // Exit the event handler early if Date of Birth is invalid
             }
 
@@ -157,48 +156,54 @@ namespace VOVO
                 qualified = equipment.qualified(dob.ToString(), Type); // Convert dob to string
             }
 
+            DataBase dataBase = new DataBase();
+            if (dataBase.IsNidNumberExists(nid_number_tb.Text))
+            {
+                MessageBox.Show("Wrong NID");
+                return;
+            }
             //
             // All validations passed, proceed to the next step
             // Admin Registration
             //
-            if (!AdminForm.Instance.panelContainer.Controls.ContainsKey("RegistrationFormEducationalQualification") && (Type == "Admin" || Type == "Employee") && qualified == true)
+            if (!AdminForm.Instance.panelContainer.Controls.ContainsKey("RegistrationFormEducationalQualification") && (Type == "Admin" || Type == "Employee") && qualified )
             {
-                // CustomMessageBox.Show(Type + " Registration Form");
+                // MessageBox.Show(Type + " Registration Form");
                 AdminForm.Instance.panelContainer.Controls.Clear();
-                RegistrationFormEducationalQualification registrationFormEducationalQualification = new RegistrationFormEducationalQualification(AdminID, Type, picture, ID, name, email, contactNumber, address, gender, dob, nationality, nidNumber, experience);
+                RegistrationFormEducationalQualification registrationFormEducationalQualification = new RegistrationFormEducationalQualification(AdminID, Type, picture, ID, name, email, countryCode,  phoneNumber, address, gender, dob, nationality, nidNumber, experience);
                 registrationFormEducationalQualification.Dock = DockStyle.Fill;
                 AdminForm.Instance.panelContainer.Controls.Add(registrationFormEducationalQualification);
             }
 
             // Driver
-            else if (!AdminForm.Instance.panelContainer.Controls.ContainsKey("RegistrationFormEducationalQualification") && Type == "Driver" && qualified == true)
+            else if (!AdminForm.Instance.panelContainer.Controls.ContainsKey("RegistrationFormEducationalQualification") && Type == "Driver" && qualified)
             {
-                // CustomMessageBox.Show(Type + " Registration Form");
+                // MessageBox.Show(Type + " Registration Form");
                 AdminForm.Instance.panelContainer.Controls.Clear();
-                RegistrationFormEducationalQualification registrationFormEducationalQualification = new RegistrationFormEducationalQualification(AdminID, Type, picture, ID, name, email, contactNumber, address, gender, dob, nationality, nidNumber, experience);
+                RegistrationFormEducationalQualification registrationFormEducationalQualification = new RegistrationFormEducationalQualification(AdminID, Type, picture, ID, name, email, countryCode, phoneNumber, address, gender, dob, nationality, nidNumber, experience);
                 registrationFormEducationalQualification.Dock = DockStyle.Fill;
                 AdminForm.Instance.panelContainer.Controls.Add(registrationFormEducationalQualification);
             }
 
             // Conductor
-            else if (!AdminForm.Instance.panelContainer.Controls.ContainsKey("RegistrationInformation") && Type == "Conductor" && qualified == true)
+            else if (!AdminForm.Instance.panelContainer.Controls.ContainsKey("RegistrationInformation") && Type == "Conductor" && qualified)
             {
-                // CustomMessageBox.Show(Type, "Registration Form");
+                // MessageBox.Show(Type, "Registration Form");
                 AdminForm.Instance.panelContainer.Controls.Clear();
                 // Create an instance of the RegistrationInformation form
-                RegistrationInformation registrationInformation = new RegistrationInformation(AdminID, Type, picture, ID, name, email, contactNumber, address, gender, dob, nationality, nidNumber, experience);
+                RegistrationInformation registrationInformation = new RegistrationInformation(AdminID, Type, picture, ID, name, email, countryCode, phoneNumber, address, gender, dob, nationality, nidNumber, experience);
 
                 // Set the Dock property to Fill and add it to the panelContainer of AdminForm
                 registrationInformation.Dock = DockStyle.Fill;
                 AdminForm.Instance.panelContainer.Controls.Add(registrationInformation);
             }
-            
+
             // Supervisor
-            else if (!AdminForm.Instance.panelContainer.Controls.ContainsKey("RegistrationFormEducationalQualification") && Type == "Supervisor" && qualified == true)
+            else if (!AdminForm.Instance.panelContainer.Controls.ContainsKey("RegistrationFormEducationalQualification") && Type == "Supervisor" && qualified)
             {
-                // CustomMessageBox.Show(Type + " Registration Form");
+                // MessageBox.Show(Type + " Registration Form");
                 AdminForm.Instance.panelContainer.Controls.Clear();
-                RegistrationFormEducationalQualification registrationFormEducationalQualification = new RegistrationFormEducationalQualification(AdminID, Type, picture, ID, name, email, contactNumber, address, gender, dob, nationality, nidNumber, experience);
+                RegistrationFormEducationalQualification registrationFormEducationalQualification = new RegistrationFormEducationalQualification(AdminID, Type, picture, ID, name, email, countryCode, phoneNumber, address, gender, dob, nationality, nidNumber, experience);
                 registrationFormEducationalQualification.Dock = DockStyle.Fill;
                 AdminForm.Instance.panelContainer.Controls.Add(registrationFormEducationalQualification);
             }
@@ -206,7 +211,7 @@ namespace VOVO
 
             else
             {
-               // CustomMessageBox.Show(Type + " can't match");
+                // MessageBox.Show(Type + " can't match");
             }
         }
 
@@ -214,14 +219,14 @@ namespace VOVO
         {
             Equipment equipment = new Equipment();
             ID = equipment.idGenarator(Type);
-            // CustomMessageBox.Show(ID);
+            // MessageBox.Show(ID);
 
             // Allow editing of the customer ID textbox
             id_tb.ReadOnly = false;
 
             // Set the foreground color of the customer ID textbox to Coral
             id_tb.ForeColor = Color.Coral;
-            id_tb.Texts = ID;
+            id_tb.Text = ID;
         }
 
         private void clear_button_Click(object sender, EventArgs e)
@@ -232,14 +237,14 @@ namespace VOVO
 
         private void FunctionClearContext()
         {
-            name_tb.Texts = "";
-            phone_number_tb.Texts = "";
-            email_tb.Texts = "";
-            address_tb.Texts = "";
-            dob_tb.Texts = "";
-            nationality_tb.Texts = "";
-            nid_number_tb.Texts = "";
-            experience_tb.Texts = "";
+            name_tb.Text = "";
+            phone_number_tb.Text = "";
+            email_tb.Text = "";
+            address_tb.Text = "";
+            dob_tb.Text = "";
+            nationality_tb.Text = "";
+            nid_number_tb.Text = "";
+            experience_tb.Text = "";
             male_radio_button.Checked = false;
             female_radio_button.Checked = false;
             others_radio_button.Checked = false;
@@ -266,5 +271,19 @@ namespace VOVO
             next_button.ForeColor = Color.Black;
         }
 
+        private void card_holder_name_tb_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void phone_number_tb_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

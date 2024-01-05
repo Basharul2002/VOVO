@@ -426,12 +426,42 @@
     <Compile Include="AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminSearch.Designer.cs">
+      <DependentUpon>AdminSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllClasses.cs" />
+    <Compile Include="BusinessClassBusDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusinessClassBusDialog.Designer.cs">
+      <DependentUpon>BusinessClassBusDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusInformation.Designer.cs">
+      <DependentUpon>BusInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusRegistration.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="BusRegistration.Designer.cs">
       <DependentUpon>BusRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusReporting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusReporting.Designer.cs">
+      <DependentUpon>BusReporting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusSearchAndUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusSearchAndUpdate.Designer.cs">
+      <DependentUpon>BusSearchAndUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Captcha.cs" />
     <Compile Include="ChooseCompany.cs">
@@ -452,20 +482,119 @@
     <Compile Include="ConfirmRegistrationForm.Designer.cs">
       <DependentUpon>ConfirmRegistrationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateTicket.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CreateTicket.Designer.cs">
+      <DependentUpon>CreateTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomAlertBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomAlertBox.Designer.cs">
+      <DependentUpon>CustomAlertBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CustomButton.Designer.cs">
       <DependentUpon>CustomButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomCalendar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomCalendar.Designer.cs">
+      <DependentUpon>CustomCalendar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCircularButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CustomComboBox.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerBookingDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerBookingDetails.Designer.cs">
+      <DependentUpon>CustomerBookingDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerDashboard.Designer.cs">
+      <DependentUpon>CustomerDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerForgotPasswordCodeSending.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerForgotPasswordCodeSending.Designer.cs">
+      <DependentUpon>CustomerForgotPasswordCodeSending.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerForgotPasswordVerifyCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerForgotPasswordVerifyCode.Designer.cs">
+      <DependentUpon>CustomerForgotPasswordVerifyCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerForgottenPasword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerForgottenPasword.Designer.cs">
+      <DependentUpon>CustomerForgottenPasword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerInformation.Designer.cs">
+      <DependentUpon>CustomerInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerLoginFormcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerLoginFormcs.Designer.cs">
+      <DependentUpon>CustomerLoginFormcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerProfile.Designer.cs">
+      <DependentUpon>CustomerProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerProfileForCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerProfileForCustomer.Designer.cs">
+      <DependentUpon>CustomerProfileForCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerRegistrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerRegistrationForm.Designer.cs">
+      <DependentUpon>CustomerRegistrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerResetPassword.Designer.cs">
+      <DependentUpon>CustomerResetPassword.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerSearch.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CustomerSearch.Designer.cs">
       <DependentUpon>CustomerSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerTicketBuy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerTicketBuy.Designer.cs">
+      <DependentUpon>CustomerTicketBuy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerTicketSearchingResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerTicketSearchingResult.Designer.cs">
+      <DependentUpon>CustomerTicketSearchingResult.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomList.cs">
       <SubType>UserControl</SubType>
@@ -496,24 +625,123 @@
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBase.cs" />
+    <Compile Include="DoubleDeckerBusDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoubleDeckerBusDialog.Designer.cs">
+      <DependentUpon>DoubleDeckerBusDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="DriverRegistration.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="DriverRegistration.Designer.cs">
       <DependentUpon>DriverRegistration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Enum.cs" />
+    <Compile Include="EconomicBus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EconomicBus.Designer.cs">
+      <DependentUpon>EconomicBus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EconomicBusDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EconomicBusDialog.Designer.cs">
+      <DependentUpon>EconomicBusDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EmployeeDashboard.Designer.cs">
+      <DependentUpon>EmployeeDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeForm.Designer.cs">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EmployeeInformation.Designer.cs">
+      <DependentUpon>EmployeeInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeLogin.Designer.cs">
+      <DependentUpon>EmployeeLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeMetro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeMetro.Designer.cs">
+      <DependentUpon>EmployeeMetro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EmployeeProfile.Designer.cs">
+      <DependentUpon>EmployeeProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeUpdateData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeUpdateData.Designer.cs">
+      <DependentUpon>EmployeeUpdateData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ENUM.cs" />
     <Compile Include="Equipment.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControlsUtility.cs" />
     <Compile Include="GradientPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="HomeFormcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeFormcs.Designer.cs">
+      <DependentUpon>HomeFormcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mail.cs" />
     <Compile Include="MainControl.cs" />
+    <Compile Include="ManagerViewDriver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerViewDriver.Designer.cs">
+      <DependentUpon>ManagerViewDriver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Office.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Office.Designer.cs">
+      <DependentUpon>Office.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineBankingPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OnlineBankingPayment.Designer.cs">
+      <DependentUpon>OnlineBankingPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF Generate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Quiz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quiz.Designer.cs">
+      <DependentUpon>Quiz.cs</DependentUpon>
     </Compile>
     <Compile Include="RegistrationFormEducationalQualification.cs">
       <SubType>UserControl</SubType>
@@ -533,11 +761,29 @@
     <Compile Include="RegistrationInformation.Designer.cs">
       <DependentUpon>RegistrationInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Route.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Route.Designer.cs">
+      <DependentUpon>Route.cs</DependentUpon>
+    </Compile>
     <Compile Include="RouteInformation.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="RouteInformation.Designer.cs">
       <DependentUpon>RouteInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RouteSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RouteSelection.Designer.cs">
+      <DependentUpon>RouteSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RouteUpdate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RouteUpdate.Designer.cs">
+      <DependentUpon>RouteUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="SearchingResult.cs">
       <SubType>UserControl</SubType>
@@ -545,21 +791,68 @@
     <Compile Include="SearchingResult.Designer.cs">
       <DependentUpon>SearchingResult.cs</DependentUpon>
     </Compile>
+    <Compile Include="SleeperCoachBusDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SleeperCoachBusDialog.Designer.cs">
+      <DependentUpon>SleeperCoachBusDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMS.cs" />
+    <Compile Include="SQLCommand.cs" />
     <Compile Include="TicketAssignmentInformation.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="TicketAssignmentInformation.Designer.cs">
       <DependentUpon>TicketAssignmentInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="TicketCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TicketCustomer.Designer.cs">
+      <DependentUpon>TicketCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="ValidityCheck.cs" />
+    <Compile Include="VerifyCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerifyCustomer.Designer.cs">
+      <DependentUpon>VerifyCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisaMasterCardPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisaMasterCardPayment.Designer.cs">
+      <DependentUpon>VisaMasterCardPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WaitingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitingForm.Designer.cs">
+      <DependentUpon>WaitingForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminDashBoard.resx">
       <DependentUpon>AdminDashBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminSearch.resx">
+      <DependentUpon>AdminSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessClassBusDialog.resx">
+      <DependentUpon>BusinessClassBusDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusInformation.resx">
+      <DependentUpon>BusInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BusRegistration.resx">
       <DependentUpon>BusRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusReporting.resx">
+      <DependentUpon>BusReporting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusSearchAndUpdate.resx">
+      <DependentUpon>BusSearchAndUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChooseCompany.resx">
       <DependentUpon>ChooseCompany.cs</DependentUpon>
@@ -570,8 +863,53 @@
     <EmbeddedResource Include="ConfirmRegistrationForm.resx">
       <DependentUpon>ConfirmRegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateTicket.resx">
+      <DependentUpon>CreateTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomAlertBox.resx">
+      <DependentUpon>CustomAlertBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerBookingDetails.resx">
+      <DependentUpon>CustomerBookingDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerDashboard.resx">
+      <DependentUpon>CustomerDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerForgotPasswordCodeSending.resx">
+      <DependentUpon>CustomerForgotPasswordCodeSending.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerForgotPasswordVerifyCode.resx">
+      <DependentUpon>CustomerForgotPasswordVerifyCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerForgottenPasword.resx">
+      <DependentUpon>CustomerForgottenPasword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerInformation.resx">
+      <DependentUpon>CustomerInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerLoginFormcs.resx">
+      <DependentUpon>CustomerLoginFormcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerProfile.resx">
+      <DependentUpon>CustomerProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerProfileForCustomer.resx">
+      <DependentUpon>CustomerProfileForCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerRegistrationForm.resx">
+      <DependentUpon>CustomerRegistrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerResetPassword.resx">
+      <DependentUpon>CustomerResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerSearch.resx">
       <DependentUpon>CustomerSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerTicketBuy.resx">
+      <DependentUpon>CustomerTicketBuy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerTicketSearchingResult.resx">
+      <DependentUpon>CustomerTicketSearchingResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomList.resx">
       <DependentUpon>CustomList.cs</DependentUpon>
@@ -582,13 +920,61 @@
     <EmbeddedResource Include="CustomTextBox.resx">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DoubleDeckerBusDialog.resx">
+      <DependentUpon>DoubleDeckerBusDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DriverRegistration.resx">
       <DependentUpon>DriverRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EconomicBus.resx">
+      <DependentUpon>EconomicBus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EconomicBusDialog.resx">
+      <DependentUpon>EconomicBusDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeDashboard.resx">
+      <DependentUpon>EmployeeDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeForm.resx">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeInformation.resx">
+      <DependentUpon>EmployeeInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeLogin.resx">
+      <DependentUpon>EmployeeLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeMetro.resx">
+      <DependentUpon>EmployeeMetro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeProfile.resx">
+      <DependentUpon>EmployeeProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeUpdateData.resx">
+      <DependentUpon>EmployeeUpdateData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeFormcs.resx">
+      <DependentUpon>HomeFormcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerViewDriver.resx">
+      <DependentUpon>ManagerViewDriver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Office.resx">
+      <DependentUpon>Office.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OnlineBankingPayment.resx">
+      <DependentUpon>OnlineBankingPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quiz.resx">
+      <DependentUpon>Quiz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistrationFormEducationalQualification.resx">
       <DependentUpon>RegistrationFormEducationalQualification.cs</DependentUpon>
@@ -599,16 +985,41 @@
     <EmbeddedResource Include="RegistrationInformation.resx">
       <DependentUpon>RegistrationInformation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Route.resx">
+      <DependentUpon>Route.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RouteInformation.resx">
       <DependentUpon>RouteInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RouteSelection.resx">
+      <DependentUpon>RouteSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RouteUpdate.resx">
+      <DependentUpon>RouteUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchingResult.resx">
       <DependentUpon>SearchingResult.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SleeperCoachBusDialog.resx">
+      <DependentUpon>SleeperCoachBusDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TicketAssignmentInformation.resx">
       <DependentUpon>TicketAssignmentInformation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TicketCustomer.resx">
+      <DependentUpon>TicketCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerifyCustomer.resx">
+      <DependentUpon>VerifyCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisaMasterCardPayment.resx">
+      <DependentUpon>VisaMasterCardPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitingForm.resx">
+      <DependentUpon>WaitingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include=".editorconfig" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -619,6 +1030,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Resources\Siyam Rupali Regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Home Page Logo%28With Main Logo%29.jpg" />
@@ -768,6 +1182,15 @@
     <None Include="Resources\squares1.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="libeay32.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="libgcc_s_dw2-1.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="mingwm10.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\info.png" />
     <None Include="Resources\chat.png" />
     <None Include="Resources\error.png" />
@@ -802,6 +1225,15 @@
     <None Include="Resources\Hide Password.gif" />
     <None Include="Resources\Show Password.gif" />
     <None Include="Resources\Still.gif" />
+    <Content Include="ssleay32.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="wkhtmltox0.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.6.7.0\build\Fody.targets" Condition="Exists('..\packages\Fody.6.7.0\build\Fody.targets')" />

@@ -20,7 +20,7 @@ namespace VOVO
 {
     public partial class ConfirmRegistrationForm : UserControl
     {
-        private string Id {  get; set; }
+        private string Id { get; set; }
         private string Name { get; set; }
         private string CompanyName { get; set; }
         private string Type { get; set; }
@@ -36,7 +36,7 @@ namespace VOVO
         //
         //Admin
         //
-       // ConfirmRegistrationForm confirmRegistrationForm = new ConfirmRegistrationForm(Type, Id, Name, companyID, GenerateCustomPassword(10, true, true, true, true));
+        // ConfirmRegistrationForm confirmRegistrationForm = new ConfirmRegistrationForm(Type, Id, Name, companyID, GenerateCustomPassword(10, true, true, true, true));
 
         public ConfirmRegistrationForm(string type, string id, string name, string companyName, string password)
         {
@@ -49,13 +49,13 @@ namespace VOVO
             Type = type;
             Password = password;
         }
-       
+
 
         PrintDocument printDocument = new PrintDocument();
 
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
-           
+
             // Draw the content to be printed using the Graphics object
             Graphics graphics = e.Graphics;
             // Print Name
@@ -67,7 +67,7 @@ namespace VOVO
             graphics.DrawString(text2, new System.Drawing.Font("Arial", 12), Brushes.Black, new PointF(5, 15));
 
             // Print Password
-            string text3 = string.Concat("Password: ", password_tb.Texts);
+            string text3 = string.Concat("Password: ", password_tb.Text);
             graphics.DrawString(text3, new System.Drawing.Font("Arial", 12), Brushes.Black, new PointF(5, 25));
 
         }
@@ -90,42 +90,18 @@ namespace VOVO
 
         private void download_button_Click(object sender, EventArgs e)
         {
-            /*
-            // Show the save file dialog to allow the user to choose a location to save the file
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Pdf Files (*.pdf)|*.pdf|All Files (*.*)|*.*";  // Specify the file filters
-            saveFileDialog.FileName = Name+".pdf";  // Default file name
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string filePath = saveFileDialog.FileName;
-
-                // Perform the file download
-                try
-                {
-                    // In this example, we are downloading a sample text file
-                    string fileName = "Name: "+Name+"/n";
-                    string fileID = "ID: " + Id+"/n";
-                    string filePassword = "Password: " + password_tb.Texts;
-                    File.WriteAllText(filePath, fileName);
-                    MessageBox.Show("File downloaded successfully.", "Download", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("An error occurred while downloading the file: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            */
             string userId = Id;
             string name = Name;
             string companyName = CompanyName;
             string jobTitle = Type;
-            string password = Password; 
-            //PDFGenerate pdfGenerate = new PDFGenerate();
-            
-           // byte[] pdf =  pdfGenerate.EmployeePDF(userId, name, companyName, jobTitle, password);
+            string password = Password;
+            PDFGenerate pdfGenerate = new PDFGenerate();
+
+            byte[] pdf = pdfGenerate.EmployeePDF(userId, name, companyName, jobTitle, password);
             Equipment equipment = new Equipment();
-            //equipment.pdfDownload(pdf, userId + "("+name+")");
+            equipment.pdfDownload(pdf, userId + "(" + name + ")");
         }
-    
+
 
 
 
@@ -136,19 +112,19 @@ namespace VOVO
             string companyName = CompanyName;
             string jobTitle = Type;
             string password = Password;
-           // PDFGenerate pdfGenerate = new PDFGenerate();
+            PDFGenerate pdfGenerate = new PDFGenerate();
 
-            //byte[] pdf = pdfGenerate.EmployeePDF(userId, name, companyName, jobTitle, password);
+            byte[] pdf = pdfGenerate.EmployeePDF(userId, name, companyName, jobTitle, password);
             Equipment equipment = new Equipment();
-            //equipment.PrintPdf(pdf);
+            equipment.PrintPdf(pdf);
         }
 
 
         private void ConfirmRegistrationForm_Load(object sender, EventArgs e)
         {
-            name_tb.Texts = Name;
-            id_tb.Texts = Id;
-            password_tb.Texts = Password;
+            name_tb.Text = Name;
+            id_tb.Text = Id;
+            password_tb.Text = Password;
         }
 
         private void done_button_Click(object sender, EventArgs e)

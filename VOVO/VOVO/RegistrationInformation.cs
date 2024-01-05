@@ -17,45 +17,27 @@ namespace VOVO
     public partial class RegistrationInformation : UserControl
     {
         // RegistrationPersonalInfo Form
-        private string AdminID { set; get; }
-        private string Type { set; get; }
-        private Image Picture { set; get; }
-        private string Id { set; get; }
-        private string Name { set; get; }
-        private string Email { set; get; }
-        private string ContactNumber { set; get; }
-        private string Address { set; get; }
-        private string Gender { set; get; }
-        private string Dob { set; get; }
-        private string Nationality { set; get; }
-        private string NidNumber { set; get; }
-        private string Experience { set; get; }
-        /// <summary>
-        /// RegistrationEdcation Form
-        /// </summary>
-        private string Exam1Name { set; get; }
-        private string Exam1BoardName { set; get; }
-        private string Exam1Result { set; get; }
-        private string Exam1RegistrationNumber { set; get; }
-        private string Exam1RollNumber { set; get; }
-        private string Exam2Name { set; get; }
-        private string Exam2BoardName { set; get; }
-        private string Exam2Result { set; get; }
-        private string Exam2RegistrationNumber { set; get; }
-        private string Exam2RollNumber { set; get; }
-        private string Exam3InstitutionName { set; get; }
-        private string Exam3RollNumber { set; get; }
-        private string Exam3DegreeName { set; get; }
-        private string Exam3SubjectName { set; get; }
-        private string Exam3Result { set; get; }
-        private string LicenceNumber { set; get; }
-        private string LicenceType { set; get; }
-        private string LicenceExpDate { set; get; }
-        private string VechileType { set; get; }
-        private string RegistrationNumber { set; get; }
-        private string CompilanceRecord { set; get; }
-
-
+        private string AdminID, Type, Id, Name, Email, countryCode, phoneNumber, Address, Gender, Dob, Nationality, NidNumber, Experience;
+        private Image Picture;
+        //
+        // Exam1
+        //
+        private string Exam1Name, Exam1BoardName, Exam1Result, Exam1RegistrationNumber, Exam1RollNumber;
+        //
+        // Exam2
+        //
+        private string Exam2Name, Exam2BoardName, Exam2Result, Exam2RegistrationNumber, Exam2RollNumber;
+        //
+        // Exam3
+        //
+        private string Exam3InstitutionName, Exam3RollNumber, Exam3DegreeName, Exam3SubjectName, Exam3Result;
+        //
+        // Driver
+        //
+        private string LicenceNumber, LicenceType, LicenceExpDate, VechileType, RegistrationNumber, CompilanceRecord;
+        //
+        // For new data
+        //
         private string userName, userEmail, userCountryCode, userPhoneNumber, userConatctNumber, userAddress, userGender, userDob, userNationality, userNidNumber, userExperience;
 
         private Image userPicture;
@@ -67,6 +49,90 @@ namespace VOVO
         private string userExam3InstitutionName, userExam3DegreeName, userExam3RollNumber, userExam3SubjectName, userExam3Result;
 
         private string driverLicenceNumber, driverLicenceType, driverLicenceExpDate, driverVechicleType, driverRegistrationNumber, driverCompilanceRecord;
+
+
+
+        private void country_code_combo_box_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void others_radio_button_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void female_radio_button_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void male_radio_button_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void subject_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void vechicle_type_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void name_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nid_number_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void experience_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void email_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void phone_number_tb_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dob_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nationality_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void address_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+     
+
+
         private int genderInt;
 
         public RegistrationInformation()
@@ -75,13 +141,13 @@ namespace VOVO
         }
 
         public RegistrationInformation(string adminID, string type, Image picture, string id, string name, string email,
-            string contactNumber, string address, string gender, string dob, string nationality, string nidNumber,
+            string countryCode, string phoneNumber, string address, string gender, string dob, string nationality, string nidNumber,
             string experience, string exam1Name = "", string exam1Board = "", string exam1RegistrationNumber = "",
             string exam1RollNumber = "", string exam1Result = "", string exam2Name = "", string exam2Board = "",
             string exam2RegistrationNumber = "", string exam2RollNumber = "", string exam2Result = "",
             string exam3InstitutionName = "", string exam3RollNumber = "", string exam3DegreeName = "",
             string exam3SubjectName = "", string exam3Result = "", string licenceNumber = "", string licenceType = "",
-            string licenceExpDate = "", string vechileType = "", string registrationNumber = "", 
+            string licenceExpDate = "", string vechileType = "", string registrationNumber = "",
             string compilanceRecord = "") : this()
         {
             AdminID = adminID;
@@ -90,7 +156,8 @@ namespace VOVO
             Id = id;
             Name = name;
             Email = email;
-            ContactNumber = contactNumber;
+            this.countryCode = countryCode;
+            this.phoneNumber = phoneNumber;
             Address = address;
             Gender = gender;
             Dob = dob;
@@ -133,14 +200,15 @@ namespace VOVO
 
         private void ShowInformation()
         {
-            name_tb.Texts = Name;
-            email_tb.Texts = Email;
-            phone_number_tb.Texts = ContactNumber;
-            address_tb.Texts = Address;
-            dob_tb.Texts = Dob;
-            nationality_tb.Texts = Nationality;
-            nid_number_tb.Texts = NidNumber;
-            experience_tb.Texts = Experience;
+            name_tb.Text = Name;
+            email_tb.Text = Email;
+            country_code_combo_box.Text = countryCode;
+            phone_number_tb.Text = phoneNumber;
+            address_tb.Text = Address;
+            dob_tb.Text = Dob;
+            nationality_tb.Text = Nationality;
+            nid_number_tb.Text = NidNumber;
+            experience_tb.Text = Experience;
 
             // Set gender radio button
             SetGenderRadioButton(Gender);
@@ -157,16 +225,16 @@ namespace VOVO
 
                 case "Driver":
                     ShowCommonQualificationInfo();
-                    licence_number_tb.Texts = LicenceNumber;
-                    licence_type_tb.Texts = LicenceType;
-                    licence_expire_date_tb.Texts = LicenceExpDate;
-                    vechicle_type_tb.Texts = VechileType;
-                    registration_number_tb.Texts = RegistrationNumber;
-                    compilance_record_tb.Texts = CompilanceRecord;
+                    licence_number_tb.Text = LicenceNumber;
+                    licence_type_tb.Text = LicenceType;
+                    licence_expire_date_tb.Text = LicenceExpDate;
+                    vechicle_type_tb.Text = VechileType;
+                    registration_number_tb.Text = RegistrationNumber;
+                    compilance_record_tb.Text = CompilanceRecord;
                     break;
 
                 default:
-                    CustomMessageBox.Show(Type + " does not match. Class name is RegistrationInformation and function name is showInformation.");
+                    MessageBox.Show(Type + " does not match. Class name is RegistrationInformation and function name is showInformation.");
                     break;
             }
         }
@@ -181,35 +249,35 @@ namespace VOVO
         private void ShowCommonQualificationInfo()
         {
             // SSC/Dakhil/Equivalent
-            exam1_name_tb.Texts = Exam1Name;
-            exam1_board_name_tb.Texts = Exam1BoardName;
-            exam1_roll_number_tb.Texts = Exam1RollNumber;
-            exam1_result_tb.Texts = Exam1Result;
-            exam1_registration_number_tb.Texts = Exam1RegistrationNumber;
+            exam1_name_tb.Text = Exam1Name;
+            exam1_board_name_tb.Text = Exam1BoardName;
+            exam1_roll_number_tb.Text = Exam1RollNumber;
+            exam1_result_tb.Text = Exam1Result;
+            exam1_registration_number_tb.Text = Exam1RegistrationNumber;
 
             if (Type == "Admin" || Type == "Employee" || Type == "Supervisor")
             {
                 // HSC/Alim/Equivalent
-                exam2_name_tb.Texts = Exam2Name;
-                exam2_board_name_tb.Texts = Exam2BoardName;
-                exam2_roll_number_tb.Texts = Exam2RollNumber;
-                exam2_result_tb.Texts = Exam2Result;
-                exam2_registration_number_tb.Texts = Exam2RegistrationNumber;
+                exam2_name_tb.Text = Exam2Name;
+                exam2_board_name_tb.Text = Exam2BoardName;
+                exam2_roll_number_tb.Text = Exam2RollNumber;
+                exam2_result_tb.Text = Exam2Result;
+                exam2_registration_number_tb.Text = Exam2RegistrationNumber;
             }
 
             if (Type == "Admin" || Type == "Employee")
             {
                 // Honors/Diploma/Equivalent
-                exam3_institution_name_tb.Texts = Exam3InstitutionName;
-                exam3_roll_number_tb.Texts = Exam3RollNumber;
-                exam3_degree_name_tb.Texts = Exam3DegreeName;
-                exam3_result_tb.Texts = Exam3Result;
+                exam3_institution_name_tb.Text = Exam3InstitutionName;
+                exam3_roll_number_tb.Text = Exam3RollNumber;
+                exam3_degree_name_tb.Text = Exam3DegreeName;
+                exam3_result_tb.Text = Exam3Result;
             }
         }
 
         private void CustomizeDesign()
         {
-            if(Type == "Admin" || Type == "Employee")
+            if (Type == "Admin" || Type == "Employee")
             {
                 personal_information_panel.Visible = false;
                 educaional_information_panel.Visible = false;
@@ -239,14 +307,14 @@ namespace VOVO
             {
                 personal_information_panel.Visible = false;
                 educaional_information_panel.Visible = false;
-                
+
                 exam3_panel.Visible = false;
                 driving_informtion_button.Visible = false;
                 driving_information_panel.Visible = false;
             }
             else
             {
-                CustomMessageBox.Show(Type+ " doesn't match,  Class name is Registration Information funtion name is CustomizeDesign");
+                MessageBox.Show(Type + " doesn't match,  Class name is Registration Information funtion name is CustomizeDesign");
             }
 
         }
@@ -309,6 +377,7 @@ namespace VOVO
             if (male_radio_button.Checked == false && female_radio_button.Checked == false && others_radio_button.Checked == false)
             {
                 gender = null;
+                genderInt = -1;
             }
 
             return gender;
@@ -316,16 +385,16 @@ namespace VOVO
 
         private string ValidateUserData(ValidityCheck validityCheck)
         {
-            userName = name_tb.Texts;
-            userEmail = email_tb.Texts;
+            userName = name_tb.Text;
+            userEmail = email_tb.Text;
             userCountryCode = country_code_combo_box.Text.Substring(0, 4);
-            userPhoneNumber = phone_number_tb.Texts;
-            userAddress = address_tb.Texts;
+            userPhoneNumber = phone_number_tb.Text;
+            userAddress = address_tb.Text;
             userGender = GenderSelection();
-            userDob = dob_tb.Texts;
-            userNationality = nationality_tb.Texts;
-            userNidNumber = nid_number_tb.Texts;
-            userExperience = experience_tb.Texts;
+            userDob = dob_tb.Text;
+            userNationality = nationality_tb.Text;
+            userNidNumber = nid_number_tb.Text;
+            userExperience = experience_tb.Text;
             userPicture = picture_box.Image;
 
             string errorMessage = string.Empty;
@@ -337,43 +406,38 @@ namespace VOVO
                 if (Type == "Admin" || Type == "Employee")
                 {
                     if (Exam3DegreeName == "Diploma" && (!string.IsNullOrEmpty(Exam1EmptyOrNull()) || !string.IsNullOrEmpty(Exam3EmptyOrNull())))
-                    {
                         return errorMessage;
-                    }
+
+
                     else if (!string.IsNullOrEmpty(Exam1EmptyOrNull()) || !string.IsNullOrEmpty(Exam2EmptyOrNull()) || !string.IsNullOrEmpty(Exam3EmptyOrNull()))
-                    {
                         return errorMessage;
-                    }
-                }
-                else if (Type == "Supervisor" && (!string.IsNullOrEmpty(Exam1EmptyOrNull()) || !string.IsNullOrEmpty(Exam2EmptyOrNull())))
-                {
-                    return errorMessage;
-                }
-                else if (Type == "Driver" && (!string.IsNullOrEmpty(Exam1EmptyOrNull()) || !string.IsNullOrEmpty(DrivingInfoEmptyOrNull())))
-                {
-                    return errorMessage;
+
                 }
 
+                else if (Type == "Supervisor" && (!string.IsNullOrEmpty(Exam1EmptyOrNull()) || !string.IsNullOrEmpty(Exam2EmptyOrNull())))
+                    return errorMessage;
+
+                else if (Type == "Driver" && (!string.IsNullOrEmpty(Exam1EmptyOrNull()) || !string.IsNullOrEmpty(DrivingInfoEmptyOrNull())))
+                    return errorMessage;
+
+
                 if (userPicture == null)
-                {
                     return "Please choose a picture";
-                }
+
             }
             else
             {
                 if (!validityCheck.IsPhoneNumberValid(userPhoneNumber))
-                {
                     return "Phone Number is invalid";
-                }
+
 
                 if (!validityCheck.IsEmailValid(userEmail))
-                {
                     return "Email is invalid";
-                }
+
+
                 else if (!validityCheck.IsDOBValid(userDob))
-                {
                     return "Date of birth is invalid";
-                }
+
             }
 
             return errorMessage;
@@ -381,66 +445,59 @@ namespace VOVO
 
         private string Exam1EmptyOrNull()
         {
-            userExam1Name = exam1_name_tb.Texts;
-            userExam1Board = exam1_board_name_tb.Texts;
-            userExam1Result = exam1_result_tb.Texts;
-            userExam1RegistrationNumber = exam1_registration_number_tb.Texts;
-            userExam1RollNumber = exam1_roll_number_tb.Texts;
+            userExam1Name = exam1_name_tb.Text;
+            userExam1Board = exam1_board_name_tb.Text;
+            userExam1Result = exam1_result_tb.Text;
+            userExam1RegistrationNumber = exam1_registration_number_tb.Text;
+            userExam1RollNumber = exam1_roll_number_tb.Text;
 
             if (string.IsNullOrEmpty(userExam1Name) || string.IsNullOrEmpty(userExam1Board) || string.IsNullOrEmpty(userExam1Result) || string.IsNullOrEmpty(userExam1RegistrationNumber) || string.IsNullOrEmpty(userExam1RollNumber))
-            {
                 return "Please fill in all the fields";
-            }
 
             return string.Empty;
         }
 
         private string Exam2EmptyOrNull()
         {
-            userExam2Name = exam2_name_tb.Texts;
-            userExam2Board = exam2_board_name_tb.Texts;
-            userExam2RegistrationNumber = exam2_registration_number_tb.Texts;
-            userExam2RollNumber = exam2_roll_number_tb.Texts;
-            userExam2Result = exam2_result_tb.Texts;
+            userExam2Name = exam2_name_tb.Text;
+            userExam2Board = exam2_board_name_tb.Text;
+            userExam2RegistrationNumber = exam2_registration_number_tb.Text;
+            userExam2RollNumber = exam2_roll_number_tb.Text;
+            userExam2Result = exam2_result_tb.Text;
 
             if (string.IsNullOrEmpty(userExam2Name) || string.IsNullOrEmpty(userExam2Board) || string.IsNullOrEmpty(userExam2Result) || string.IsNullOrEmpty(userExam2RegistrationNumber) || string.IsNullOrEmpty(userExam2RollNumber))
-            {
                 return "Please fill in all the fields";
-            }
+
 
             return string.Empty;
         }
 
         private string Exam3EmptyOrNull()
         {
-            userExam3InstitutionName = exam3_institution_name_tb.Texts;
-            userExam3RollNumber = exam3_roll_number_tb.Texts;
-            userExam3DegreeName = exam3_degree_name_tb.Texts;
-            userExam3SubjectName = exam3_subject_tb.Texts;
-            userExam3Result = exam3_result_tb.Texts;
+            userExam3InstitutionName = exam3_institution_name_tb.Text;
+            userExam3RollNumber = exam3_roll_number_tb.Text;
+            userExam3DegreeName = exam3_degree_name_tb.Text;
+            userExam3SubjectName = exam3_subject_tb.Text;
+            userExam3Result = exam3_result_tb.Text;
 
             if (string.IsNullOrEmpty(userExam3InstitutionName) || string.IsNullOrEmpty(userExam3RollNumber) || string.IsNullOrEmpty(userExam3DegreeName) || string.IsNullOrEmpty(userExam3SubjectName) || string.IsNullOrEmpty(userExam3Result))
-            {
                 return "Please fill in all the fields";
-            }
 
             return string.Empty;
         }
 
         private string DrivingInfoEmptyOrNull()
         {
-            driverLicenceNumber = licence_number_tb.Texts;
-            driverLicenceType = licence_type_tb.Texts;
-            driverLicenceExpDate = licence_expire_date_tb.Texts;
-            driverVechicleType = vechicle_type_tb.Texts;
-            driverRegistrationNumber = registration_number_tb.Texts;
-            driverCompilanceRecord = compilance_record_tb.Texts;
+            driverLicenceNumber = licence_number_tb.Text;
+            driverLicenceType = licence_type_tb.Text;
+            driverLicenceExpDate = licence_expire_date_tb.Text;
+            driverVechicleType = vechicle_type_tb.Text;
+            driverRegistrationNumber = registration_number_tb.Text;
+            driverCompilanceRecord = compilance_record_tb.Text;
 
-            if (string.IsNullOrEmpty(driverLicenceNumber) || string.IsNullOrEmpty(driverLicenceType) || string.IsNullOrEmpty(driverLicenceExpDate) 
+            if (string.IsNullOrEmpty(driverLicenceNumber) || string.IsNullOrEmpty(driverLicenceType) || string.IsNullOrEmpty(driverLicenceExpDate)
                 || string.IsNullOrEmpty(driverVechicleType) || string.IsNullOrEmpty(driverRegistrationNumber) || string.IsNullOrEmpty(driverCompilanceRecord))
-            {
                 return "Please fill in all the fields";
-            }
 
             return string.Empty;
         }
@@ -455,16 +512,16 @@ namespace VOVO
 
                 if (!string.IsNullOrEmpty(errorMessage))
                 {
-                    CustomMessageBox.Show(errorMessage);
+                    MessageBox.Show(errorMessage);
                     return;
                 }
 
                 if (Type == "Admin" || Type == "Employee")
                 {
-                    // CustomMessageBox.Show(userExam1Name + " " + userExam1Board + " " + userExam1RegistrationNumber + " " + userExam1RollNumber + " " + userExam1Result);
+                    // MessageBox.Show(userExam1Name + " " + userExam1Board + " " + userExam1RegistrationNumber + " " + userExam1RollNumber + " " + userExam1Result);
                     if (!AdminForm.Instance.panelContainer.Controls.ContainsKey("ChooseCompany"))
                     {
-                        CustomMessageBox.Show("Successful");
+                        // MessageBox.Show("Successful");
                         AdminForm.Instance.panelContainer.Controls.Clear();
 
                         if (userExam3DegreeName == "Diploma")
@@ -473,12 +530,12 @@ namespace VOVO
                             Exam1EmptyOrNull();
                             Exam3EmptyOrNull();
 
-                            ChooseCompany chooseCompany = new ChooseCompany(AdminID, Type, userPicture, Id, userName, userEmail, userCountryCode, userPhoneNumber, 
-                                userAddress, userGender, userDob, userNationality, userNidNumber, userExperience, userExam1Name, userExam1Board, 
-                                userExam1RegistrationNumber, userExam1RollNumber, userExam1Result, exam3InstitutionName:  userExam3InstitutionName,
+                            ChooseCompany chooseCompany = new ChooseCompany(AdminID, Type, userPicture, Id, userName, userEmail, userCountryCode, userPhoneNumber,
+                                userAddress, userGender, userDob, userNationality, userNidNumber, userExperience, userExam1Name, userExam1Board,
+                                userExam1RegistrationNumber, userExam1RollNumber, userExam1Result, exam3InstitutionName: userExam3InstitutionName,
                                 exam3RollNumber: userExam3RollNumber, exam3DegreeName: userExam3DegreeName, exam3SubjectName: userExam3SubjectName,
                                 exam3Result: userExam3Result);
-                            
+
                             chooseCompany.Dock = DockStyle.Fill;
                             AdminForm.Instance.panelContainer.Controls.Add(chooseCompany);
                         }
@@ -489,17 +546,17 @@ namespace VOVO
                             Exam2EmptyOrNull();
                             Exam3EmptyOrNull();
 
-                            ChooseCompany chooseCompany = new ChooseCompany(AdminID, Type, userPicture, Id, userName, userEmail, userCountryCode, userPhoneNumber, 
-                                userAddress, userGender, userDob, userNationality, userNidNumber, userExperience, userExam1Name, userExam1Board, 
-                                userExam1RegistrationNumber, userExam1RollNumber, userExam1Result, userExam2Name, userExam2Board, 
-                                userExam2RegistrationNumber, userExam2RollNumber, userExam2Result, userExam3InstitutionName, userExam3RollNumber, 
+                            ChooseCompany chooseCompany = new ChooseCompany(AdminID, Type, userPicture, Id, userName, userEmail, userCountryCode, userPhoneNumber,
+                                userAddress, userGender, userDob, userNationality, userNidNumber, userExperience, userExam1Name, userExam1Board,
+                                userExam1RegistrationNumber, userExam1RollNumber, userExam1Result, userExam2Name, userExam2Board,
+                                userExam2RegistrationNumber, userExam2RollNumber, userExam2Result, userExam3InstitutionName, userExam3RollNumber,
                                 userExam3DegreeName, userExam3SubjectName, userExam3Result);
                             // 28
                             chooseCompany.Dock = DockStyle.Fill;
                             AdminForm.Instance.panelContainer.Controls.Add(chooseCompany);
                         }
                     }
-                    
+
                 }
                 else if (Type == "Supervisor")
                 {
@@ -508,10 +565,10 @@ namespace VOVO
 
                     if (!AdminForm.Instance.panelContainer.Controls.ContainsKey("ChooseCompany"))
                     {
-                        CustomMessageBox.Show("Successful");
+                      //  MessageBox.Show("Successful");
                         AdminForm.Instance.panelContainer.Controls.Clear();
-                        ChooseCompany chooseCompany = new ChooseCompany(AdminID, Type, userPicture, Id, userName, userEmail, userCountryCode, userPhoneNumber, 
-                            userAddress, userGender, userDob, userNationality, userNidNumber, userExperience, userExam1Name, userExam1Board, 
+                        ChooseCompany chooseCompany = new ChooseCompany(AdminID, Type, userPicture, Id, userName, userEmail, userCountryCode, userPhoneNumber,
+                            userAddress, userGender, userDob, userNationality, userNidNumber, userExperience, userExam1Name, userExam1Board,
                             userExam1RegistrationNumber, userExam1RollNumber, userExam1Result, userExam2Name, userExam2Board,
                             userExam2RegistrationNumber, userExam2RollNumber, userExam2Result);
                         // 24 parameters
@@ -520,16 +577,16 @@ namespace VOVO
                     }
                 }
 
-                else if(Type == "Driver")
+                else if (Type == "Driver")
                 {
                     Exam1EmptyOrNull();
                     DrivingInfoEmptyOrNull();
 
-                    CustomMessageBox.Show("Successful");
+                 //   MessageBox.Show("Successful");
                     AdminForm.Instance.panelContainer.Controls.Clear();
-                    ChooseCompany chooseCompany = new ChooseCompany(AdminID, Type, userPicture, Id, userName, userEmail, userCountryCode, userPhoneNumber, 
-                        userAddress, userGender, userDob, userNationality, userNidNumber, userExperience, userExam1Name, userExam1Board, 
-                        userExam1RegistrationNumber, userExam1RollNumber, userExam1Result, licenceNumber: driverLicenceNumber, 
+                    ChooseCompany chooseCompany = new ChooseCompany(AdminID, Type, userPicture, Id, userName, userEmail, userCountryCode, userPhoneNumber,
+                        userAddress, userGender, userDob, userNationality, userNidNumber, userExperience, userExam1Name, userExam1Board,
+                        userExam1RegistrationNumber, userExam1RollNumber, userExam1Result, licenceNumber: driverLicenceNumber,
                         licenceType: driverLicenceType, licenceExpDate: driverLicenceExpDate, vechicleType: driverVechicleType,
                         registrationNumber: driverRegistrationNumber, compilanceRecord: driverCompilanceRecord);
                     // 24 Parameters
@@ -537,11 +594,11 @@ namespace VOVO
                     AdminForm.Instance.panelContainer.Controls.Add(chooseCompany);
                 }
 
-                else if(Type == "Conductor")
+                else if (Type == "Conductor")
                 {
-                    CustomMessageBox.Show("Successful");
+                   // MessageBox.Show("Successful");
                     AdminForm.Instance.panelContainer.Controls.Clear();
-                    ChooseCompany chooseCompany = new ChooseCompany(AdminID, Type, userPicture, Id, userName, userEmail, userCountryCode, userPhoneNumber, 
+                    ChooseCompany chooseCompany = new ChooseCompany(AdminID, Type, userPicture, Id, userName, userEmail, userCountryCode, userPhoneNumber,
                         userAddress, userGender, userDob, userNationality, userNidNumber, userExperience);
                     //13 parameters
                     chooseCompany.Dock = DockStyle.Fill;
@@ -550,7 +607,7 @@ namespace VOVO
             }
             catch (Exception ex)
             {
-                CustomMessageBox.Show("An error occurred: " + ex.Message);
+                MessageBox.Show("An error occurred: " + ex.Message);
             }
         }
 
@@ -592,7 +649,7 @@ namespace VOVO
             }
             catch (Exception ex)
             {
-                CustomMessageBox.Show(ex.Message, "Picture Error");
+                MessageBox.Show(ex.Message, "Picture Error");
             }
         }
 

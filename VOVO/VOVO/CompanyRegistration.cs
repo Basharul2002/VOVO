@@ -38,7 +38,7 @@ namespace VOVO
         {
             Equipment equipment = new Equipment();
             Id = equipment.idGenarator("Company");
-            id_tb.Texts = Id;
+            id_tb.Text = Id;
         }
 
 
@@ -46,39 +46,39 @@ namespace VOVO
         {
             try
             {
-                string companyName = name_tb.Texts;
+                string companyName = owner_ship_tb.Text;
                 string legalStructure = browse_button.Text;
                 string businessStructure = business_structure_combo_box.Text;
-                string address = address_tb.Texts;
+                string address = owner_ship_tb.Text;
                 string countryCode = country_code_combo_box.Text.Substring(0, 4);
-                string phoneNumber = phone_number_tb.Texts;
-                string email = email_tb.Texts;
-                string ownerShip = ownership_tb.Texts;
-                string licensesNumber = licences_number_tb.Texts;
-                string permitNumber = permit_number_tb.Texts;
+                string phoneNumber = phone_number_tb.Text;
+                string email = email_tb.Text;
+                string ownerShip = owner_ship_tb.Text;
+                string licensesNumber = licences_number_tb.Text;
+                string permitNumber = permit_number_tb.Text;
 
                 if (AnyRequiredFieldEmpty(companyName, businessStructure, address, phoneNumber, email, ownerShip, licensesNumber, permitNumber))
                 {
-                    CustomMessageBox.Show("Please fill in all required fields");
+                    MessageBox.Show("Please fill in all required fields");
                     return;
                 }
 
                 if(legalStructure == "Browse")
                 {
-                    CustomMessageBox.Show("Please select legal structure");
+                    MessageBox.Show("Please select legal structure");
                 }
 
                 ValidityCheck validityCheck = new ValidityCheck();
                 if (!validityCheck.IsPhoneNumberValid(phoneNumber))
                 {
-                    CustomMessageBox.Show("Invalid Phone Number");
+                    MessageBox.Show("Invalid Phone Number");
                     return;
                 }
 
 
                 if (!validityCheck.IsEmailValid(email))
                 {
-                    CustomMessageBox.Show("Invalid Email Address");
+                    MessageBox.Show("Invalid Email Address");
                     return;
                 }
 
@@ -91,7 +91,7 @@ namespace VOVO
 
                 if(flag)
                 {
-                    CustomMessageBox.Show("Company Added Successfully", "Successful");
+                    MessageBox.Show("Company Added Successfully", "Successful");
 
                     if (!AdminForm.Instance.panelContainer.Controls.ContainsKey("AdminDashBoard"))
                     {
@@ -106,7 +106,7 @@ namespace VOVO
             }
             catch (Exception ex)
             {
-                CustomMessageBox.Show("Class is Company registration function is submit_button_Click and exception is " + ex.Message + "'", "Exception Database");
+                MessageBox.Show("Class is Company registration function is submit_button_Click and exception is " + ex.Message + "'", "Exception Database");
             }
         }
 
@@ -164,7 +164,7 @@ namespace VOVO
                         if (reader.HasRows)
                         {
                             exists = true;
-                            CustomMessageBox.Show("This " + columnName.ToLower() + " already registered", "Error");
+                            MessageBox.Show("This " + columnName.ToLower() + " already registered", "Error");
                         }
 
                         reader.Close();
@@ -177,7 +177,7 @@ namespace VOVO
 
             catch (Exception ex) 
             {
-                CustomMessageBox.Show("Class is Company registration function is CheckIfValueExists and exception is " + ex.Message + "'", "Exception Database");
+                MessageBox.Show("Class is Company registration function is CheckIfValueExists and exception is " + ex.Message + "'", "Exception Database");
                 return false;
             }
 
@@ -194,10 +194,10 @@ namespace VOVO
                 {
                     connection.Open();
 
-                    string query = "INSERT INTO [Company Information] (ID, Name, [Legal Structure], [Business Structure], Address, [Country Code], [Phone Number], Email, OwnerShip, [Licenses Number], [Permit Number], Date, Time, [Added By])" +
+                    string query = "INSERT INTO [Company Information] (ID, Name, [Legal Structure], [Business Structure], Address, [Country Code], [Phone Number], Email, OwnerShip, [Licenses Number], [Permit Number], Date, Time, [Added By(Admin)])" +
                                     "VALUES(@ID, @Name, @LegalStructure, @BusinessStructure, @Address, @CountryCode, @PhoneNumber, @Email, @OwnerShip, @LicensesNumber, @PermitNumber, @Date, @Time, @AddedBy)";
 
-                    CustomMessageBox.Show("@ID " +  id + "\n@LegalStructure: " + legalStructure + "\nDate: " + equipment.DataBaseFormatDate(equipment.TodayDate()) + "\nTime: " + equipment.Time());
+                    // MessageBox.Show("@ID " +  id + "\n@LegalStructure: " + legalStructure + "\nDate: " + equipment.DataBaseFormatDate(equipment.TodayDate()) + "\nTime: " + equipment.Time());
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@ID", id);
@@ -225,7 +225,7 @@ namespace VOVO
 
             catch(Exception ex)
             {
-                CustomMessageBox.Show("Class name is CompanyRegistration, function name is InsertCompanyIntoDatabase and excption is " + ex.Message);
+                MessageBox.Show("Class name is CompanyRegistration, function name is InsertCompanyIntoDatabase and excption is " + ex.Message);
 
                 return false;
             }
@@ -250,7 +250,7 @@ namespace VOVO
 
             else if (browse_button.Text == "Uploaded")
             {
-                DialogResult dialogResult = CustomMessageBox.Show("Do you want to change?", "VOVO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult dialogResult = MessageBox.Show("Do you want to change?", "VOVO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
                     pdf = equipment.PdfUpload();
@@ -262,6 +262,11 @@ namespace VOVO
             }
 
             browse_button.Text = newText;
+        }
+
+        private void CompanyRegistration_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

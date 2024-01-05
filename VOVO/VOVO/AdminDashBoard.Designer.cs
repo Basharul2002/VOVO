@@ -33,12 +33,6 @@
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -47,6 +41,12 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashBoard));
             this.title = new System.Windows.Forms.Button();
             this.wish = new System.Windows.Forms.Button();
@@ -55,6 +55,10 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.customer_panel = new System.Windows.Forms.Panel();
             this.lineChartGenderDistribution = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.barChartGenderDistribution = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.pieChartGenderDistribution = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel3 = new System.Windows.Forms.Panel();
             this.employee_data_panel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
@@ -111,21 +115,12 @@
             this.label17 = new System.Windows.Forms.Label();
             this.others_employee = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.barChartGenderDistribution = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.pieChartGenderDistribution = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.driver_button = new VOVO.CustomButton();
-            this.supervisor_button = new VOVO.CustomButton();
-            this.conductor_button = new VOVO.CustomButton();
             this.supervisor_bar = new VOVO.CustomProgressBar();
             this.driver_bar = new VOVO.CustomProgressBar();
             this.conductor_bar = new VOVO.CustomProgressBar();
             this.admin_bar = new VOVO.CustomProgressBar();
             this.employee_bar = new VOVO.CustomProgressBar();
-            this.employee_data_button = new VOVO.CustomButton();
             this.gradientPanel8 = new VOVO.GradientPanel();
-            this.customer_information_button = new VOVO.CustomButton();
             this.label20 = new System.Windows.Forms.Label();
             this.total_customer = new System.Windows.Forms.Label();
             this.others_customer = new System.Windows.Forms.Label();
@@ -143,7 +138,6 @@
             this.male_growth = new System.Windows.Forms.Label();
             this.number_of_male = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.customer_data_button = new VOVO.CustomButton();
             this.gradientPanel3 = new VOVO.GradientPanel();
             this.passenger_growth_label = new System.Windows.Forms.Label();
             this.number_of_passenger_label = new System.Windows.Forms.Label();
@@ -159,11 +153,23 @@
             this.gradientPanel4 = new VOVO.GradientPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button_panel = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.customer_data_button = new System.Windows.Forms.Button();
+            this.employee_data_button = new System.Windows.Forms.Button();
+            this.customr_information_button = new System.Windows.Forms.Button();
+            this.supervisor_button = new System.Windows.Forms.Button();
+            this.conductor_button = new System.Windows.Forms.Button();
+            this.driver_button = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.customer_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lineChartGenderDistribution)).BeginInit();
+            this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.barChartGenderDistribution)).BeginInit();
+            this.tableLayoutPanel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pieChartGenderDistribution)).BeginInit();
             this.panel3.SuspendLayout();
             this.employee_data_panel.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
@@ -185,10 +191,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pieChartEmployeeGenderDistribution)).BeginInit();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.barChartGenderDistribution)).BeginInit();
-            this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pieChartGenderDistribution)).BeginInit();
             this.gradientPanel8.SuspendLayout();
             this.gradientPanel7.SuspendLayout();
             this.gradientPanel6.SuspendLayout();
@@ -197,6 +199,8 @@
             this.gradientPanel2.SuspendLayout();
             this.gradientPanel1.SuspendLayout();
             this.gradientPanel4.SuspendLayout();
+            this.button_panel.SuspendLayout();
+            this.tableLayoutPanel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // title
@@ -208,7 +212,7 @@
             this.title.Location = new System.Drawing.Point(0, 0);
             this.title.Margin = new System.Windows.Forms.Padding(0);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(471, 70);
+            this.title.Size = new System.Drawing.Size(459, 70);
             this.title.TabIndex = 0;
             this.title.Text = "Admin DashBoard";
             this.title.UseVisualStyleBackColor = false;
@@ -220,10 +224,10 @@
             this.wish.FlatAppearance.BorderColor = System.Drawing.Color.Coral;
             this.wish.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.wish.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wish.Location = new System.Drawing.Point(471, 0);
+            this.wish.Location = new System.Drawing.Point(459, 0);
             this.wish.Margin = new System.Windows.Forms.Padding(0);
             this.wish.Name = "wish";
-            this.wish.Size = new System.Drawing.Size(202, 70);
+            this.wish.Size = new System.Drawing.Size(197, 70);
             this.wish.TabIndex = 0;
             this.wish.Text = "wish";
             this.wish.UseVisualStyleBackColor = false;
@@ -248,7 +252,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(673, 100);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(656, 100);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -257,14 +261,13 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 0F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 0F));
-            this.tableLayoutPanel2.Controls.Add(this.customer_data_button, 1, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 170);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 970);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(673, 45);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(656, 45);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // tableLayoutPanel3
@@ -279,20 +282,22 @@
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(673, 57);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(656, 110);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // customer_panel
             // 
+            this.customer_panel.Controls.Add(this.button1);
             this.customer_panel.Controls.Add(this.lineChartGenderDistribution);
             this.customer_panel.Controls.Add(this.tableLayoutPanel4);
             this.customer_panel.Controls.Add(this.tableLayoutPanel3);
             this.customer_panel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.customer_panel.Location = new System.Drawing.Point(0, 215);
+            this.customer_panel.Location = new System.Drawing.Point(0, 247);
             this.customer_panel.Name = "customer_panel";
-            this.customer_panel.Size = new System.Drawing.Size(673, 723);
+            this.customer_panel.Size = new System.Drawing.Size(656, 723);
             this.customer_panel.TabIndex = 5;
             // 
             // lineChartGenderDistribution
@@ -303,7 +308,7 @@
             this.lineChartGenderDistribution.Dock = System.Windows.Forms.DockStyle.Top;
             legend1.Name = "Legend1";
             this.lineChartGenderDistribution.Legends.Add(legend1);
-            this.lineChartGenderDistribution.Location = new System.Drawing.Point(0, 444);
+            this.lineChartGenderDistribution.Location = new System.Drawing.Point(0, 497);
             this.lineChartGenderDistribution.Name = "lineChartGenderDistribution";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -320,17 +325,107 @@
             this.lineChartGenderDistribution.Series.Add(series1);
             this.lineChartGenderDistribution.Series.Add(series2);
             this.lineChartGenderDistribution.Series.Add(series3);
-            this.lineChartGenderDistribution.Size = new System.Drawing.Size(673, 281);
+            this.lineChartGenderDistribution.Size = new System.Drawing.Size(656, 281);
             this.lineChartGenderDistribution.TabIndex = 5;
             this.lineChartGenderDistribution.Text = "chart1";
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel4.Controls.Add(this.barChartGenderDistribution, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel10, 1, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 110);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 387F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 387F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 387F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(656, 387);
+            this.tableLayoutPanel4.TabIndex = 4;
+            // 
+            // barChartGenderDistribution
+            // 
+            this.barChartGenderDistribution.BackColor = System.Drawing.Color.Silver;
+            this.barChartGenderDistribution.BorderlineColor = System.Drawing.Color.Coral;
+            this.barChartGenderDistribution.BorderlineWidth = 10;
+            this.barChartGenderDistribution.BorderSkin.BorderColor = System.Drawing.Color.Empty;
+            this.barChartGenderDistribution.BorderSkin.BorderWidth = 10;
+            this.barChartGenderDistribution.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.Emboss;
+            chartArea2.Name = "ChartArea1";
+            this.barChartGenderDistribution.ChartAreas.Add(chartArea2);
+            this.barChartGenderDistribution.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend2.Name = "Legend1";
+            this.barChartGenderDistribution.Legends.Add(legend2);
+            this.barChartGenderDistribution.Location = new System.Drawing.Point(0, 0);
+            this.barChartGenderDistribution.Margin = new System.Windows.Forms.Padding(0);
+            this.barChartGenderDistribution.Name = "barChartGenderDistribution";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Male";
+            series4.ShadowColor = System.Drawing.Color.Blue;
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Female";
+            series5.ShadowColor = System.Drawing.Color.Pink;
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Others";
+            series6.ShadowColor = System.Drawing.Color.Crimson;
+            this.barChartGenderDistribution.Series.Add(series4);
+            this.barChartGenderDistribution.Series.Add(series5);
+            this.barChartGenderDistribution.Series.Add(series6);
+            this.barChartGenderDistribution.Size = new System.Drawing.Size(393, 387);
+            this.barChartGenderDistribution.TabIndex = 4;
+            this.barChartGenderDistribution.Text = "chart1";
+            // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.ColumnCount = 1;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel10.Controls.Add(this.pieChartGenderDistribution, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.gradientPanel8, 0, 1);
+            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(396, 3);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 2;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(257, 381);
+            this.tableLayoutPanel10.TabIndex = 5;
+            // 
+            // pieChartGenderDistribution
+            // 
+            this.pieChartGenderDistribution.BorderlineColor = System.Drawing.Color.Gainsboro;
+            this.pieChartGenderDistribution.BorderSkin.PageColor = System.Drawing.Color.Transparent;
+            this.pieChartGenderDistribution.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.Emboss;
+            chartArea3.Name = "ChartArea1";
+            this.pieChartGenderDistribution.ChartAreas.Add(chartArea3);
+            this.pieChartGenderDistribution.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend3.Name = "Legend1";
+            this.pieChartGenderDistribution.Legends.Add(legend3);
+            this.pieChartGenderDistribution.Location = new System.Drawing.Point(0, 0);
+            this.pieChartGenderDistribution.Margin = new System.Windows.Forms.Padding(0);
+            this.pieChartGenderDistribution.Name = "pieChartGenderDistribution";
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.pieChartGenderDistribution.Series.Add(series7);
+            this.pieChartGenderDistribution.Size = new System.Drawing.Size(257, 261);
+            this.pieChartGenderDistribution.TabIndex = 6;
+            this.pieChartGenderDistribution.Text = "chart2";
             // 
             // panel3
             // 
             this.panel3.AutoScroll = true;
             this.panel3.Controls.Add(this.employee_data_panel);
-            this.panel3.Controls.Add(this.employee_data_button);
-            this.panel3.Controls.Add(this.customer_panel);
             this.panel3.Controls.Add(this.tableLayoutPanel2);
+            this.panel3.Controls.Add(this.customer_panel);
+            this.panel3.Controls.Add(this.button_panel);
             this.panel3.Controls.Add(this.tableLayoutPanel1);
             this.panel3.Controls.Add(this.tableLayoutPanel5);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -345,9 +440,9 @@
             this.employee_data_panel.Controls.Add(this.panel6);
             this.employee_data_panel.Controls.Add(this.employe_data_panel1);
             this.employee_data_panel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.employee_data_panel.Location = new System.Drawing.Point(0, 971);
+            this.employee_data_panel.Location = new System.Drawing.Point(0, 1015);
             this.employee_data_panel.Name = "employee_data_panel";
-            this.employee_data_panel.Size = new System.Drawing.Size(673, 789);
+            this.employee_data_panel.Size = new System.Drawing.Size(656, 789);
             this.employee_data_panel.TabIndex = 7;
             this.employee_data_panel.Visible = false;
             // 
@@ -365,7 +460,7 @@
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(673, 224);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(656, 224);
             this.tableLayoutPanel8.TabIndex = 7;
             // 
             // panel4
@@ -382,7 +477,7 @@
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(224, 224);
+            this.panel4.Size = new System.Drawing.Size(218, 224);
             this.panel4.TabIndex = 2;
             // 
             // driver_female
@@ -390,7 +485,7 @@
             this.driver_female.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.driver_female.AutoSize = true;
             this.driver_female.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.driver_female.Location = new System.Drawing.Point(13, 132);
+            this.driver_female.Location = new System.Drawing.Point(10, 132);
             this.driver_female.Name = "driver_female";
             this.driver_female.Size = new System.Drawing.Size(70, 20);
             this.driver_female.TabIndex = 6;
@@ -401,7 +496,7 @@
             this.driver_male.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.driver_male.AutoSize = true;
             this.driver_male.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.driver_male.Location = new System.Drawing.Point(13, 109);
+            this.driver_male.Location = new System.Drawing.Point(10, 109);
             this.driver_male.Name = "driver_male";
             this.driver_male.Size = new System.Drawing.Size(51, 20);
             this.driver_male.TabIndex = 7;
@@ -412,7 +507,7 @@
             this.total_driver.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.total_driver.AutoSize = true;
             this.total_driver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.total_driver.Location = new System.Drawing.Point(12, 81);
+            this.total_driver.Location = new System.Drawing.Point(9, 81);
             this.total_driver.Name = "total_driver";
             this.total_driver.Size = new System.Drawing.Size(52, 20);
             this.total_driver.TabIndex = 8;
@@ -423,7 +518,7 @@
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(70, 39);
+            this.label12.Location = new System.Drawing.Point(67, 39);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(69, 25);
             this.label12.TabIndex = 5;
@@ -434,7 +529,7 @@
             this.driver_others.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.driver_others.AutoSize = true;
             this.driver_others.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.driver_others.Location = new System.Drawing.Point(12, 161);
+            this.driver_others.Location = new System.Drawing.Point(9, 161);
             this.driver_others.Name = "driver_others";
             this.driver_others.Size = new System.Drawing.Size(65, 20);
             this.driver_others.TabIndex = 9;
@@ -450,10 +545,10 @@
             this.panel5.Controls.Add(this.label19);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel5.Location = new System.Drawing.Point(448, 0);
+            this.panel5.Location = new System.Drawing.Point(436, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(225, 224);
+            this.panel5.Size = new System.Drawing.Size(220, 224);
             this.panel5.TabIndex = 3;
             // 
             // others_supervisor
@@ -461,7 +556,7 @@
             this.others_supervisor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.others_supervisor.AutoSize = true;
             this.others_supervisor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.others_supervisor.Location = new System.Drawing.Point(15, 147);
+            this.others_supervisor.Location = new System.Drawing.Point(13, 147);
             this.others_supervisor.Name = "others_supervisor";
             this.others_supervisor.Size = new System.Drawing.Size(65, 20);
             this.others_supervisor.TabIndex = 13;
@@ -472,7 +567,7 @@
             this.female_supervisor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.female_supervisor.AutoSize = true;
             this.female_supervisor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.female_supervisor.Location = new System.Drawing.Point(16, 118);
+            this.female_supervisor.Location = new System.Drawing.Point(14, 118);
             this.female_supervisor.Name = "female_supervisor";
             this.female_supervisor.Size = new System.Drawing.Size(70, 20);
             this.female_supervisor.TabIndex = 10;
@@ -483,7 +578,7 @@
             this.male_supervisor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.male_supervisor.AutoSize = true;
             this.male_supervisor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.male_supervisor.Location = new System.Drawing.Point(16, 94);
+            this.male_supervisor.Location = new System.Drawing.Point(14, 94);
             this.male_supervisor.Name = "male_supervisor";
             this.male_supervisor.Size = new System.Drawing.Size(51, 20);
             this.male_supervisor.TabIndex = 11;
@@ -494,7 +589,7 @@
             this.total_supervisor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.total_supervisor.AutoSize = true;
             this.total_supervisor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.total_supervisor.Location = new System.Drawing.Point(15, 66);
+            this.total_supervisor.Location = new System.Drawing.Point(13, 66);
             this.total_supervisor.Name = "total_supervisor";
             this.total_supervisor.Size = new System.Drawing.Size(52, 20);
             this.total_supervisor.TabIndex = 12;
@@ -505,7 +600,7 @@
             this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(71, 28);
+            this.label19.Location = new System.Drawing.Point(69, 28);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(116, 25);
             this.label19.TabIndex = 9;
@@ -522,10 +617,10 @@
             this.panel7.Controls.Add(this.total_conductor);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel7.Location = new System.Drawing.Point(224, 0);
+            this.panel7.Location = new System.Drawing.Point(218, 0);
             this.panel7.Margin = new System.Windows.Forms.Padding(0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(224, 224);
+            this.panel7.Size = new System.Drawing.Size(218, 224);
             this.panel7.TabIndex = 4;
             // 
             // others_conductor
@@ -533,7 +628,7 @@
             this.others_conductor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.others_conductor.AutoSize = true;
             this.others_conductor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.others_conductor.Location = new System.Drawing.Point(10, 162);
+            this.others_conductor.Location = new System.Drawing.Point(7, 162);
             this.others_conductor.Name = "others_conductor";
             this.others_conductor.Size = new System.Drawing.Size(65, 20);
             this.others_conductor.TabIndex = 13;
@@ -544,7 +639,7 @@
             this.male_conductor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.male_conductor.AutoSize = true;
             this.male_conductor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.male_conductor.Location = new System.Drawing.Point(10, 109);
+            this.male_conductor.Location = new System.Drawing.Point(7, 109);
             this.male_conductor.Name = "male_conductor";
             this.male_conductor.Size = new System.Drawing.Size(51, 20);
             this.male_conductor.TabIndex = 11;
@@ -555,7 +650,7 @@
             this.female_conductor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.female_conductor.AutoSize = true;
             this.female_conductor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.female_conductor.Location = new System.Drawing.Point(7, 133);
+            this.female_conductor.Location = new System.Drawing.Point(4, 133);
             this.female_conductor.Name = "female_conductor";
             this.female_conductor.Size = new System.Drawing.Size(70, 20);
             this.female_conductor.TabIndex = 10;
@@ -566,7 +661,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(67, 28);
+            this.label7.Location = new System.Drawing.Point(64, 28);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(112, 25);
             this.label7.TabIndex = 9;
@@ -577,7 +672,7 @@
             this.total_conductor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.total_conductor.AutoSize = true;
             this.total_conductor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.total_conductor.Location = new System.Drawing.Point(9, 81);
+            this.total_conductor.Location = new System.Drawing.Point(6, 81);
             this.total_conductor.Name = "total_conductor";
             this.total_conductor.Size = new System.Drawing.Size(52, 20);
             this.total_conductor.TabIndex = 12;
@@ -589,7 +684,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 291);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(673, 274);
+            this.panel6.Size = new System.Drawing.Size(656, 274);
             this.panel6.TabIndex = 9;
             // 
             // tableLayoutPanel9
@@ -611,7 +706,7 @@
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(673, 274);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(656, 274);
             this.tableLayoutPanel9.TabIndex = 0;
             // 
             // panel12
@@ -625,7 +720,7 @@
             this.panel12.Location = new System.Drawing.Point(0, 216);
             this.panel12.Margin = new System.Windows.Forms.Padding(0);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(673, 58);
+            this.panel12.Size = new System.Drawing.Size(656, 58);
             this.panel12.TabIndex = 4;
             // 
             // supervisor_persentage
@@ -661,7 +756,7 @@
             this.panel10.Location = new System.Drawing.Point(0, 108);
             this.panel10.Margin = new System.Windows.Forms.Padding(0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(673, 54);
+            this.panel10.Size = new System.Drawing.Size(656, 54);
             this.panel10.TabIndex = 2;
             // 
             // driver_persentage
@@ -696,7 +791,7 @@
             this.panel11.Location = new System.Drawing.Point(0, 162);
             this.panel11.Margin = new System.Windows.Forms.Padding(0);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(673, 54);
+            this.panel11.Size = new System.Drawing.Size(656, 54);
             this.panel11.TabIndex = 3;
             // 
             // conductor_persentage
@@ -731,7 +826,7 @@
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Margin = new System.Windows.Forms.Padding(0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(673, 54);
+            this.panel8.Size = new System.Drawing.Size(656, 54);
             this.panel8.TabIndex = 0;
             // 
             // admin_persentage
@@ -766,7 +861,7 @@
             this.panel9.Location = new System.Drawing.Point(0, 54);
             this.panel9.Margin = new System.Windows.Forms.Padding(0);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(673, 54);
+            this.panel9.Size = new System.Drawing.Size(656, 54);
             this.panel9.TabIndex = 1;
             // 
             // employee_persentage
@@ -803,7 +898,7 @@
             this.employe_data_panel1.RowCount = 1;
             this.employe_data_panel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.employe_data_panel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 291F));
-            this.employe_data_panel1.Size = new System.Drawing.Size(673, 291);
+            this.employe_data_panel1.Size = new System.Drawing.Size(656, 291);
             this.employe_data_panel1.TabIndex = 6;
             // 
             // tableLayoutPanel6
@@ -819,7 +914,7 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(336, 291);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(328, 291);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // pieChartAdminGenderDistribution
@@ -837,7 +932,7 @@
             series8.Legend = "Legend1";
             series8.Name = "Series1";
             this.pieChartAdminGenderDistribution.Series.Add(series8);
-            this.pieChartAdminGenderDistribution.Size = new System.Drawing.Size(230, 285);
+            this.pieChartAdminGenderDistribution.Size = new System.Drawing.Size(222, 285);
             this.pieChartAdminGenderDistribution.TabIndex = 0;
             this.pieChartAdminGenderDistribution.Text = "chart1";
             // 
@@ -849,7 +944,7 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.total_admin);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(236, 0);
+            this.panel1.Location = new System.Drawing.Point(228, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(100, 291);
@@ -913,12 +1008,12 @@
             this.tableLayoutPanel7.Controls.Add(this.pieChartEmployeeGenderDistribution, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(336, 0);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(328, 0);
             this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(337, 291);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(328, 291);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
             // pieChartEmployeeGenderDistribution
@@ -936,7 +1031,7 @@
             series9.Legend = "Legend1";
             series9.Name = "Series1";
             this.pieChartEmployeeGenderDistribution.Series.Add(series9);
-            this.pieChartEmployeeGenderDistribution.Size = new System.Drawing.Size(196, 285);
+            this.pieChartEmployeeGenderDistribution.Size = new System.Drawing.Size(187, 285);
             this.pieChartEmployeeGenderDistribution.TabIndex = 0;
             this.pieChartEmployeeGenderDistribution.Text = "chart2";
             // 
@@ -949,7 +1044,7 @@
             this.panel2.Controls.Add(this.others_employee);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(202, 0);
+            this.panel2.Location = new System.Drawing.Point(193, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(135, 291);
@@ -1017,158 +1112,8 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(673, 70);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(656, 70);
             this.tableLayoutPanel5.TabIndex = 1;
-            // 
-            // barChartGenderDistribution
-            // 
-            this.barChartGenderDistribution.BackColor = System.Drawing.Color.Silver;
-            this.barChartGenderDistribution.BorderlineColor = System.Drawing.Color.Coral;
-            this.barChartGenderDistribution.BorderlineWidth = 10;
-            this.barChartGenderDistribution.BorderSkin.BorderColor = System.Drawing.Color.Empty;
-            this.barChartGenderDistribution.BorderSkin.BorderWidth = 10;
-            this.barChartGenderDistribution.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.Emboss;
-            chartArea2.Name = "ChartArea1";
-            this.barChartGenderDistribution.ChartAreas.Add(chartArea2);
-            this.barChartGenderDistribution.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.barChartGenderDistribution.Legends.Add(legend2);
-            this.barChartGenderDistribution.Location = new System.Drawing.Point(0, 0);
-            this.barChartGenderDistribution.Margin = new System.Windows.Forms.Padding(0);
-            this.barChartGenderDistribution.Name = "barChartGenderDistribution";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Male";
-            series4.ShadowColor = System.Drawing.Color.Blue;
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Female";
-            series5.ShadowColor = System.Drawing.Color.Pink;
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Others";
-            series6.ShadowColor = System.Drawing.Color.Crimson;
-            this.barChartGenderDistribution.Series.Add(series4);
-            this.barChartGenderDistribution.Series.Add(series5);
-            this.barChartGenderDistribution.Series.Add(series6);
-            this.barChartGenderDistribution.Size = new System.Drawing.Size(403, 387);
-            this.barChartGenderDistribution.TabIndex = 4;
-            this.barChartGenderDistribution.Text = "chart1";
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel4.Controls.Add(this.barChartGenderDistribution, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel10, 1, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 57);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 387F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 387F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 387F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(673, 387);
-            this.tableLayoutPanel4.TabIndex = 4;
-            // 
-            // tableLayoutPanel10
-            // 
-            this.tableLayoutPanel10.ColumnCount = 1;
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.Controls.Add(this.pieChartGenderDistribution, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.gradientPanel8, 0, 1);
-            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(406, 3);
-            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
-            this.tableLayoutPanel10.RowCount = 2;
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(264, 381);
-            this.tableLayoutPanel10.TabIndex = 5;
-            // 
-            // pieChartGenderDistribution
-            // 
-            this.pieChartGenderDistribution.BorderlineColor = System.Drawing.Color.Gainsboro;
-            this.pieChartGenderDistribution.BorderSkin.PageColor = System.Drawing.Color.Transparent;
-            this.pieChartGenderDistribution.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.Emboss;
-            chartArea3.Name = "ChartArea1";
-            this.pieChartGenderDistribution.ChartAreas.Add(chartArea3);
-            this.pieChartGenderDistribution.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend3.Name = "Legend1";
-            this.pieChartGenderDistribution.Legends.Add(legend3);
-            this.pieChartGenderDistribution.Location = new System.Drawing.Point(0, 0);
-            this.pieChartGenderDistribution.Margin = new System.Windows.Forms.Padding(0);
-            this.pieChartGenderDistribution.Name = "pieChartGenderDistribution";
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.pieChartGenderDistribution.Series.Add(series7);
-            this.pieChartGenderDistribution.Size = new System.Drawing.Size(264, 261);
-            this.pieChartGenderDistribution.TabIndex = 6;
-            this.pieChartGenderDistribution.Text = "chart2";
-            // 
-            // driver_button
-            // 
-            this.driver_button.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.driver_button.BackColor = System.Drawing.Color.Transparent;
-            this.driver_button.BackgroundColor = System.Drawing.Color.Transparent;
-            this.driver_button.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.driver_button.BorderRadius = 15;
-            this.driver_button.BorderSize = 0;
-            this.driver_button.FlatAppearance.BorderSize = 8;
-            this.driver_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.driver_button.ForeColor = System.Drawing.Color.Coral;
-            this.driver_button.Image = ((System.Drawing.Image)(resources.GetObject("driver_button.Image")));
-            this.driver_button.Location = new System.Drawing.Point(145, 164);
-            this.driver_button.Name = "driver_button";
-            this.driver_button.Size = new System.Drawing.Size(63, 40);
-            this.driver_button.TabIndex = 10;
-            this.driver_button.TextColor = System.Drawing.Color.Coral;
-            this.driver_button.UseVisualStyleBackColor = false;
-            this.driver_button.Click += new System.EventHandler(this.driver_button_Click);
-            // 
-            // supervisor_button
-            // 
-            this.supervisor_button.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.supervisor_button.BackColor = System.Drawing.Color.Transparent;
-            this.supervisor_button.BackgroundColor = System.Drawing.Color.Transparent;
-            this.supervisor_button.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.supervisor_button.BorderRadius = 15;
-            this.supervisor_button.BorderSize = 0;
-            this.supervisor_button.FlatAppearance.BorderSize = 8;
-            this.supervisor_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.supervisor_button.ForeColor = System.Drawing.Color.Coral;
-            this.supervisor_button.Image = ((System.Drawing.Image)(resources.GetObject("supervisor_button.Image")));
-            this.supervisor_button.Location = new System.Drawing.Point(159, 165);
-            this.supervisor_button.Name = "supervisor_button";
-            this.supervisor_button.Size = new System.Drawing.Size(63, 40);
-            this.supervisor_button.TabIndex = 10;
-            this.supervisor_button.TextColor = System.Drawing.Color.Coral;
-            this.supervisor_button.UseVisualStyleBackColor = false;
-            this.supervisor_button.Click += new System.EventHandler(this.supervisor_button_Click);
-            // 
-            // conductor_button
-            // 
-            this.conductor_button.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.conductor_button.BackColor = System.Drawing.Color.Transparent;
-            this.conductor_button.BackgroundColor = System.Drawing.Color.Transparent;
-            this.conductor_button.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.conductor_button.BorderRadius = 15;
-            this.conductor_button.BorderSize = 0;
-            this.conductor_button.FlatAppearance.BorderSize = 8;
-            this.conductor_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.conductor_button.ForeColor = System.Drawing.Color.Coral;
-            this.conductor_button.Image = ((System.Drawing.Image)(resources.GetObject("conductor_button.Image")));
-            this.conductor_button.Location = new System.Drawing.Point(151, 165);
-            this.conductor_button.Name = "conductor_button";
-            this.conductor_button.Size = new System.Drawing.Size(63, 40);
-            this.conductor_button.TabIndex = 10;
-            this.conductor_button.TextColor = System.Drawing.Color.Coral;
-            this.conductor_button.UseVisualStyleBackColor = false;
-            this.conductor_button.Click += new System.EventHandler(this.conductor_button_Click);
             // 
             // supervisor_bar
             // 
@@ -1260,29 +1205,6 @@
             this.employee_bar.TabIndex = 0;
             this.employee_bar.Value = 20;
             // 
-            // employee_data_button
-            // 
-            this.employee_data_button.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.employee_data_button.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.employee_data_button.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.employee_data_button.BorderRadius = 0;
-            this.employee_data_button.BorderSize = 0;
-            this.employee_data_button.Dock = System.Windows.Forms.DockStyle.Top;
-            this.employee_data_button.FlatAppearance.BorderSize = 0;
-            this.employee_data_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.employee_data_button.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employee_data_button.ForeColor = System.Drawing.Color.White;
-            this.employee_data_button.Location = new System.Drawing.Point(0, 938);
-            this.employee_data_button.Margin = new System.Windows.Forms.Padding(0);
-            this.employee_data_button.Name = "employee_data_button";
-            this.employee_data_button.Size = new System.Drawing.Size(673, 33);
-            this.employee_data_button.TabIndex = 1;
-            this.employee_data_button.Text = "Employee Data";
-            this.employee_data_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.employee_data_button.TextColor = System.Drawing.Color.White;
-            this.employee_data_button.UseVisualStyleBackColor = false;
-            this.employee_data_button.Click += new System.EventHandler(this.employee_data_button_Click);
-            // 
             // gradientPanel8
             // 
             this.gradientPanel8.Angle = 0F;
@@ -1293,7 +1215,7 @@
         System.Drawing.Color.LightSalmon,
         System.Drawing.Color.DarkSalmon,
         System.Drawing.Color.Coral};
-            this.gradientPanel8.Controls.Add(this.customer_information_button);
+            this.gradientPanel8.Controls.Add(this.customr_information_button);
             this.gradientPanel8.Controls.Add(this.label20);
             this.gradientPanel8.Controls.Add(this.total_customer);
             this.gradientPanel8.Controls.Add(this.others_customer);
@@ -1305,28 +1227,8 @@
             this.gradientPanel8.Location = new System.Drawing.Point(0, 261);
             this.gradientPanel8.Margin = new System.Windows.Forms.Padding(0);
             this.gradientPanel8.Name = "gradientPanel8";
-            this.gradientPanel8.Size = new System.Drawing.Size(264, 120);
+            this.gradientPanel8.Size = new System.Drawing.Size(257, 120);
             this.gradientPanel8.TabIndex = 7;
-            // 
-            // customer_information_button
-            // 
-            this.customer_information_button.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.customer_information_button.BackColor = System.Drawing.Color.Transparent;
-            this.customer_information_button.BackgroundColor = System.Drawing.Color.Transparent;
-            this.customer_information_button.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customer_information_button.BorderRadius = 15;
-            this.customer_information_button.BorderSize = 0;
-            this.customer_information_button.FlatAppearance.BorderSize = 8;
-            this.customer_information_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customer_information_button.ForeColor = System.Drawing.Color.Coral;
-            this.customer_information_button.Image = ((System.Drawing.Image)(resources.GetObject("customer_information_button.Image")));
-            this.customer_information_button.Location = new System.Drawing.Point(198, 77);
-            this.customer_information_button.Name = "customer_information_button";
-            this.customer_information_button.Size = new System.Drawing.Size(63, 40);
-            this.customer_information_button.TabIndex = 11;
-            this.customer_information_button.TextColor = System.Drawing.Color.Coral;
-            this.customer_information_button.UseVisualStyleBackColor = false;
-            this.customer_information_button.Click += new System.EventHandler(this.customer_information_button_Click);
             // 
             // label20
             // 
@@ -1402,10 +1304,10 @@
             this.gradientPanel7.Controls.Add(this.label14);
             this.gradientPanel7.CornerRadius = 8;
             this.gradientPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gradientPanel7.Location = new System.Drawing.Point(448, 0);
+            this.gradientPanel7.Location = new System.Drawing.Point(436, 0);
             this.gradientPanel7.Margin = new System.Windows.Forms.Padding(0);
             this.gradientPanel7.Name = "gradientPanel7";
-            this.gradientPanel7.Size = new System.Drawing.Size(225, 57);
+            this.gradientPanel7.Size = new System.Drawing.Size(220, 90);
             this.gradientPanel7.TabIndex = 4;
             // 
             // others_growth
@@ -1415,7 +1317,7 @@
             this.others_growth.BackColor = System.Drawing.Color.Transparent;
             this.others_growth.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.others_growth.ForeColor = System.Drawing.Color.Yellow;
-            this.others_growth.Location = new System.Drawing.Point(82, 32);
+            this.others_growth.Location = new System.Drawing.Point(80, 49);
             this.others_growth.Name = "others_growth";
             this.others_growth.Size = new System.Drawing.Size(29, 18);
             this.others_growth.TabIndex = 0;
@@ -1428,7 +1330,7 @@
             this.number_of_others.BackColor = System.Drawing.Color.Transparent;
             this.number_of_others.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.number_of_others.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.number_of_others.Location = new System.Drawing.Point(109, 5);
+            this.number_of_others.Location = new System.Drawing.Point(107, 22);
             this.number_of_others.Name = "number_of_others";
             this.number_of_others.Size = new System.Drawing.Size(78, 27);
             this.number_of_others.TabIndex = 0;
@@ -1441,7 +1343,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label14.Location = new System.Drawing.Point(15, 5);
+            this.label14.Location = new System.Drawing.Point(13, 22);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(88, 27);
             this.label14.TabIndex = 0;
@@ -1466,10 +1368,10 @@
             this.gradientPanel6.Controls.Add(this.label11);
             this.gradientPanel6.CornerRadius = 8;
             this.gradientPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gradientPanel6.Location = new System.Drawing.Point(224, 0);
+            this.gradientPanel6.Location = new System.Drawing.Point(218, 0);
             this.gradientPanel6.Margin = new System.Windows.Forms.Padding(0);
             this.gradientPanel6.Name = "gradientPanel6";
-            this.gradientPanel6.Size = new System.Drawing.Size(224, 57);
+            this.gradientPanel6.Size = new System.Drawing.Size(218, 90);
             this.gradientPanel6.TabIndex = 3;
             // 
             // female_growth
@@ -1479,7 +1381,7 @@
             this.female_growth.BackColor = System.Drawing.Color.Transparent;
             this.female_growth.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.female_growth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.female_growth.Location = new System.Drawing.Point(82, 32);
+            this.female_growth.Location = new System.Drawing.Point(79, 49);
             this.female_growth.Name = "female_growth";
             this.female_growth.Size = new System.Drawing.Size(42, 18);
             this.female_growth.TabIndex = 0;
@@ -1492,7 +1394,7 @@
             this.number_of_female.BackColor = System.Drawing.Color.Transparent;
             this.number_of_female.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.number_of_female.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.number_of_female.Location = new System.Drawing.Point(109, 5);
+            this.number_of_female.Location = new System.Drawing.Point(106, 22);
             this.number_of_female.Name = "number_of_female";
             this.number_of_female.Size = new System.Drawing.Size(78, 27);
             this.number_of_female.TabIndex = 0;
@@ -1505,7 +1407,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label11.Location = new System.Drawing.Point(20, 5);
+            this.label11.Location = new System.Drawing.Point(17, 22);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(94, 27);
             this.label11.TabIndex = 0;
@@ -1533,7 +1435,7 @@
             this.gradientPanel5.Location = new System.Drawing.Point(0, 0);
             this.gradientPanel5.Margin = new System.Windows.Forms.Padding(0);
             this.gradientPanel5.Name = "gradientPanel5";
-            this.gradientPanel5.Size = new System.Drawing.Size(224, 57);
+            this.gradientPanel5.Size = new System.Drawing.Size(218, 90);
             this.gradientPanel5.TabIndex = 2;
             // 
             // male_growth
@@ -1543,7 +1445,7 @@
             this.male_growth.BackColor = System.Drawing.Color.Transparent;
             this.male_growth.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.male_growth.ForeColor = System.Drawing.Color.Lime;
-            this.male_growth.Location = new System.Drawing.Point(82, 32);
+            this.male_growth.Location = new System.Drawing.Point(79, 49);
             this.male_growth.Name = "male_growth";
             this.male_growth.Size = new System.Drawing.Size(43, 18);
             this.male_growth.TabIndex = 0;
@@ -1556,7 +1458,7 @@
             this.number_of_male.BackColor = System.Drawing.Color.Transparent;
             this.number_of_male.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.number_of_male.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.number_of_male.Location = new System.Drawing.Point(109, 5);
+            this.number_of_male.Location = new System.Drawing.Point(106, 22);
             this.number_of_male.Name = "number_of_male";
             this.number_of_male.Size = new System.Drawing.Size(78, 27);
             this.number_of_male.TabIndex = 0;
@@ -1569,34 +1471,11 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label8.Location = new System.Drawing.Point(36, 5);
+            this.label8.Location = new System.Drawing.Point(33, 22);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(66, 27);
             this.label8.TabIndex = 0;
             this.label8.Text = "Male";
-            // 
-            // customer_data_button
-            // 
-            this.customer_data_button.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.customer_data_button.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.customer_data_button.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customer_data_button.BorderRadius = 0;
-            this.customer_data_button.BorderSize = 0;
-            this.customer_data_button.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customer_data_button.FlatAppearance.BorderSize = 0;
-            this.customer_data_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customer_data_button.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customer_data_button.ForeColor = System.Drawing.Color.White;
-            this.customer_data_button.Location = new System.Drawing.Point(0, 12);
-            this.customer_data_button.Margin = new System.Windows.Forms.Padding(0);
-            this.customer_data_button.Name = "customer_data_button";
-            this.customer_data_button.Size = new System.Drawing.Size(673, 33);
-            this.customer_data_button.TabIndex = 0;
-            this.customer_data_button.Text = "Customer Data";
-            this.customer_data_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customer_data_button.TextColor = System.Drawing.Color.White;
-            this.customer_data_button.UseVisualStyleBackColor = false;
-            this.customer_data_button.Click += new System.EventHandler(this.customer_data_button_Click);
             // 
             // gradientPanel3
             // 
@@ -1620,10 +1499,10 @@
             this.gradientPanel3.Controls.Add(this.label3);
             this.gradientPanel3.CornerRadius = 30;
             this.gradientPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gradientPanel3.Location = new System.Drawing.Point(170, 0);
+            this.gradientPanel3.Location = new System.Drawing.Point(166, 0);
             this.gradientPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.gradientPanel3.Name = "gradientPanel3";
-            this.gradientPanel3.Size = new System.Drawing.Size(160, 100);
+            this.gradientPanel3.Size = new System.Drawing.Size(156, 100);
             this.gradientPanel3.TabIndex = 3;
             // 
             // passenger_growth_label
@@ -1633,7 +1512,7 @@
             this.passenger_growth_label.BackColor = System.Drawing.Color.Transparent;
             this.passenger_growth_label.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passenger_growth_label.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.passenger_growth_label.Location = new System.Drawing.Point(51, 70);
+            this.passenger_growth_label.Location = new System.Drawing.Point(49, 70);
             this.passenger_growth_label.Name = "passenger_growth_label";
             this.passenger_growth_label.Size = new System.Drawing.Size(43, 18);
             this.passenger_growth_label.TabIndex = 0;
@@ -1646,7 +1525,7 @@
             this.number_of_passenger_label.BackColor = System.Drawing.Color.Transparent;
             this.number_of_passenger_label.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.number_of_passenger_label.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.number_of_passenger_label.Location = new System.Drawing.Point(30, 40);
+            this.number_of_passenger_label.Location = new System.Drawing.Point(28, 40);
             this.number_of_passenger_label.Name = "number_of_passenger_label";
             this.number_of_passenger_label.Size = new System.Drawing.Size(91, 27);
             this.number_of_passenger_label.TabIndex = 0;
@@ -1659,7 +1538,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(13, 15);
+            this.label3.Location = new System.Drawing.Point(11, 15);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 27);
             this.label3.TabIndex = 0;
@@ -1687,7 +1566,7 @@
             this.gradientPanel2.Location = new System.Drawing.Point(0, 0);
             this.gradientPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.gradientPanel2.Name = "gradientPanel2";
-            this.gradientPanel2.Size = new System.Drawing.Size(160, 100);
+            this.gradientPanel2.Size = new System.Drawing.Size(156, 100);
             this.gradientPanel2.TabIndex = 1;
             // 
             // user_growth_label
@@ -1697,7 +1576,7 @@
             this.user_growth_label.BackColor = System.Drawing.Color.Transparent;
             this.user_growth_label.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.user_growth_label.ForeColor = System.Drawing.Color.Gainsboro;
-            this.user_growth_label.Location = new System.Drawing.Point(59, 70);
+            this.user_growth_label.Location = new System.Drawing.Point(57, 70);
             this.user_growth_label.Name = "user_growth_label";
             this.user_growth_label.Size = new System.Drawing.Size(43, 18);
             this.user_growth_label.TabIndex = 0;
@@ -1710,7 +1589,7 @@
             this.number_of_user_label.BackColor = System.Drawing.Color.Transparent;
             this.number_of_user_label.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.number_of_user_label.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.number_of_user_label.Location = new System.Drawing.Point(36, 40);
+            this.number_of_user_label.Location = new System.Drawing.Point(34, 40);
             this.number_of_user_label.Name = "number_of_user_label";
             this.number_of_user_label.Size = new System.Drawing.Size(91, 27);
             this.number_of_user_label.TabIndex = 0;
@@ -1723,7 +1602,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(49, 13);
+            this.label1.Location = new System.Drawing.Point(47, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 27);
             this.label1.TabIndex = 0;
@@ -1753,10 +1632,10 @@
             this.gradientPanel1.Controls.Add(this.label2);
             this.gradientPanel1.CornerRadius = 30;
             this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gradientPanel1.Location = new System.Drawing.Point(340, 0);
+            this.gradientPanel1.Location = new System.Drawing.Point(332, 0);
             this.gradientPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(160, 100);
+            this.gradientPanel1.Size = new System.Drawing.Size(156, 100);
             this.gradientPanel1.TabIndex = 4;
             // 
             // sold_ticket_growth_label
@@ -1766,7 +1645,7 @@
             this.sold_ticket_growth_label.BackColor = System.Drawing.Color.Transparent;
             this.sold_ticket_growth_label.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sold_ticket_growth_label.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.sold_ticket_growth_label.Location = new System.Drawing.Point(60, 70);
+            this.sold_ticket_growth_label.Location = new System.Drawing.Point(58, 70);
             this.sold_ticket_growth_label.Name = "sold_ticket_growth_label";
             this.sold_ticket_growth_label.Size = new System.Drawing.Size(43, 18);
             this.sold_ticket_growth_label.TabIndex = 0;
@@ -1779,7 +1658,7 @@
             this.number_of_sold_ticket_label.BackColor = System.Drawing.Color.Transparent;
             this.number_of_sold_ticket_label.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.number_of_sold_ticket_label.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.number_of_sold_ticket_label.Location = new System.Drawing.Point(30, 40);
+            this.number_of_sold_ticket_label.Location = new System.Drawing.Point(28, 40);
             this.number_of_sold_ticket_label.Name = "number_of_sold_ticket_label";
             this.number_of_sold_ticket_label.Size = new System.Drawing.Size(91, 27);
             this.number_of_sold_ticket_label.TabIndex = 0;
@@ -1792,7 +1671,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(13, 15);
+            this.label2.Location = new System.Drawing.Point(11, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(136, 27);
             this.label2.TabIndex = 0;
@@ -1817,10 +1696,10 @@
             this.gradientPanel4.Controls.Add(this.label5);
             this.gradientPanel4.CornerRadius = 30;
             this.gradientPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gradientPanel4.Location = new System.Drawing.Point(510, 0);
+            this.gradientPanel4.Location = new System.Drawing.Point(498, 0);
             this.gradientPanel4.Margin = new System.Windows.Forms.Padding(0);
             this.gradientPanel4.Name = "gradientPanel4";
-            this.gradientPanel4.Size = new System.Drawing.Size(163, 100);
+            this.gradientPanel4.Size = new System.Drawing.Size(158, 100);
             this.gradientPanel4.TabIndex = 5;
             // 
             // label4
@@ -1830,7 +1709,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(27, 24);
+            this.label4.Location = new System.Drawing.Point(25, 24);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 27);
             this.label4.TabIndex = 0;
@@ -1843,11 +1722,139 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(40, 51);
+            this.label5.Location = new System.Drawing.Point(38, 51);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 27);
             this.label5.TabIndex = 0;
             this.label5.Text = "106589";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(309, 683);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button_panel
+            // 
+            this.button_panel.Controls.Add(this.tableLayoutPanel11);
+            this.button_panel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button_panel.Location = new System.Drawing.Point(0, 170);
+            this.button_panel.Name = "button_panel";
+            this.button_panel.Size = new System.Drawing.Size(656, 77);
+            this.button_panel.TabIndex = 9;
+            // 
+            // tableLayoutPanel11
+            // 
+            this.tableLayoutPanel11.ColumnCount = 3;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 207F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 226F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel11.Controls.Add(this.customer_data_button, 0, 0);
+            this.tableLayoutPanel11.Controls.Add(this.employee_data_button, 1, 0);
+            this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 1;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(656, 77);
+            this.tableLayoutPanel11.TabIndex = 0;
+            // 
+            // customer_data_button
+            // 
+            this.customer_data_button.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.customer_data_button.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customer_data_button.FlatAppearance.BorderSize = 0;
+            this.customer_data_button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleVioletRed;
+            this.customer_data_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customer_data_button.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold);
+            this.customer_data_button.ForeColor = System.Drawing.Color.White;
+            this.customer_data_button.Location = new System.Drawing.Point(3, 3);
+            this.customer_data_button.Name = "customer_data_button";
+            this.customer_data_button.Size = new System.Drawing.Size(201, 71);
+            this.customer_data_button.TabIndex = 0;
+            this.customer_data_button.Text = "Customer Data";
+            this.customer_data_button.UseVisualStyleBackColor = false;
+            this.customer_data_button.Click += new System.EventHandler(this.customer_data_button_Click);
+            // 
+            // employee_data_button
+            // 
+            this.employee_data_button.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.employee_data_button.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.employee_data_button.FlatAppearance.BorderSize = 0;
+            this.employee_data_button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleVioletRed;
+            this.employee_data_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.employee_data_button.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold);
+            this.employee_data_button.ForeColor = System.Drawing.Color.White;
+            this.employee_data_button.Location = new System.Drawing.Point(210, 3);
+            this.employee_data_button.Name = "employee_data_button";
+            this.employee_data_button.Size = new System.Drawing.Size(220, 71);
+            this.employee_data_button.TabIndex = 2;
+            this.employee_data_button.Text = "Employee Data";
+            this.employee_data_button.UseVisualStyleBackColor = false;
+            this.employee_data_button.Click += new System.EventHandler(this.employee_data_button_Click);
+            // 
+            // customr_information_button
+            // 
+            this.customr_information_button.BackColor = System.Drawing.Color.Transparent;
+            this.customr_information_button.FlatAppearance.BorderColor = System.Drawing.Color.Coral;
+            this.customr_information_button.FlatAppearance.BorderSize = 0;
+            this.customr_information_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customr_information_button.ForeColor = System.Drawing.Color.Coral;
+            this.customr_information_button.Image = ((System.Drawing.Image)(resources.GetObject("customr_information_button.Image")));
+            this.customr_information_button.Location = new System.Drawing.Point(186, 83);
+            this.customr_information_button.Name = "customr_information_button";
+            this.customr_information_button.Size = new System.Drawing.Size(65, 30);
+            this.customr_information_button.TabIndex = 12;
+            this.customr_information_button.UseVisualStyleBackColor = false;
+            this.customr_information_button.Click += new System.EventHandler(this.customer_information_button_Click);
+            // 
+            // supervisor_button
+            // 
+            this.supervisor_button.BackColor = System.Drawing.Color.Transparent;
+            this.supervisor_button.FlatAppearance.BorderColor = System.Drawing.Color.Coral;
+            this.supervisor_button.FlatAppearance.BorderSize = 4;
+            this.supervisor_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.supervisor_button.ForeColor = System.Drawing.Color.Coral;
+            this.supervisor_button.Image = ((System.Drawing.Image)(resources.GetObject("supervisor_button.Image")));
+            this.supervisor_button.Location = new System.Drawing.Point(133, 170);
+            this.supervisor_button.Name = "supervisor_button";
+            this.supervisor_button.Size = new System.Drawing.Size(65, 30);
+            this.supervisor_button.TabIndex = 14;
+            this.supervisor_button.UseVisualStyleBackColor = false;
+            this.supervisor_button.Click += new System.EventHandler(this.supervisor_button_Click);
+            // 
+            // conductor_button
+            // 
+            this.conductor_button.BackColor = System.Drawing.Color.Transparent;
+            this.conductor_button.FlatAppearance.BorderColor = System.Drawing.Color.Coral;
+            this.conductor_button.FlatAppearance.BorderSize = 4;
+            this.conductor_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.conductor_button.ForeColor = System.Drawing.Color.Coral;
+            this.conductor_button.Image = ((System.Drawing.Image)(resources.GetObject("conductor_button.Image")));
+            this.conductor_button.Location = new System.Drawing.Point(133, 170);
+            this.conductor_button.Name = "conductor_button";
+            this.conductor_button.Size = new System.Drawing.Size(65, 30);
+            this.conductor_button.TabIndex = 14;
+            this.conductor_button.UseVisualStyleBackColor = false;
+            this.conductor_button.Click += new System.EventHandler(this.conductor_button_Click);
+            // 
+            // driver_button
+            // 
+            this.driver_button.BackColor = System.Drawing.Color.Transparent;
+            this.driver_button.FlatAppearance.BorderColor = System.Drawing.Color.Coral;
+            this.driver_button.FlatAppearance.BorderSize = 4;
+            this.driver_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.driver_button.ForeColor = System.Drawing.Color.Coral;
+            this.driver_button.Image = ((System.Drawing.Image)(resources.GetObject("driver_button.Image")));
+            this.driver_button.Location = new System.Drawing.Point(118, 169);
+            this.driver_button.Name = "driver_button";
+            this.driver_button.Size = new System.Drawing.Size(65, 30);
+            this.driver_button.TabIndex = 13;
+            this.driver_button.UseVisualStyleBackColor = false;
+            this.driver_button.Click += new System.EventHandler(this.driver_button_Click);
             // 
             // AdminDashBoard
             // 
@@ -1860,10 +1867,13 @@
             this.Size = new System.Drawing.Size(673, 1760);
             this.Load += new System.EventHandler(this.AdminDashBoard_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.customer_panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lineChartGenderDistribution)).EndInit();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.barChartGenderDistribution)).EndInit();
+            this.tableLayoutPanel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pieChartGenderDistribution)).EndInit();
             this.panel3.ResumeLayout(false);
             this.employee_data_panel.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
@@ -1895,10 +1905,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.barChartGenderDistribution)).EndInit();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pieChartGenderDistribution)).EndInit();
             this.gradientPanel8.ResumeLayout(false);
             this.gradientPanel8.PerformLayout();
             this.gradientPanel7.ResumeLayout(false);
@@ -1915,6 +1921,8 @@
             this.gradientPanel1.PerformLayout();
             this.gradientPanel4.ResumeLayout(false);
             this.gradientPanel4.PerformLayout();
+            this.button_panel.ResumeLayout(false);
+            this.tableLayoutPanel11.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1936,7 +1944,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private CustomButton customer_data_button;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private GradientPanel gradientPanel5;
         private System.Windows.Forms.Label male_growth;
@@ -1958,7 +1965,6 @@
         private System.Windows.Forms.Label number_of_passenger_label;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel employe_data_panel1;
-        private CustomButton employee_data_button;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Panel employee_data_panel;
         private System.Windows.Forms.DataVisualization.Charting.Chart pieChartAdminGenderDistribution;
@@ -1984,7 +1990,6 @@
         private System.Windows.Forms.Label total_supervisor;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Panel panel4;
-        private CustomButton driver_button;
         private System.Windows.Forms.Label driver_female;
         private System.Windows.Forms.Label driver_male;
         private System.Windows.Forms.Label total_driver;
@@ -2018,8 +2023,6 @@
         private System.Windows.Forms.Label conductor_persentage;
         private System.Windows.Forms.Label admin_persentage;
         private System.Windows.Forms.Label employee_persentage;
-        private CustomButton supervisor_button;
-        private CustomButton conductor_button;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.DataVisualization.Charting.Chart barChartGenderDistribution;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
@@ -2030,6 +2033,14 @@
         private System.Windows.Forms.Label female_customer;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label male_customer;
-        private CustomButton customer_information_button;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel button_panel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
+        private System.Windows.Forms.Button customer_data_button;
+        private System.Windows.Forms.Button employee_data_button;
+        private System.Windows.Forms.Button customr_information_button;
+        private System.Windows.Forms.Button driver_button;
+        private System.Windows.Forms.Button supervisor_button;
+        private System.Windows.Forms.Button conductor_button;
     }
 }

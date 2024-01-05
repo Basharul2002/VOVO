@@ -22,18 +22,18 @@ namespace VOVO
         public CustomerSearch()
         {
             InitializeComponent();
-            customDesign();
-            //FormControlsUtility.ConfigureFormResize(this);
+            CustomDesign();
+            FormControlsUtility.ConfigureFormResize(this);
         }
 
-        
+
 
         public CustomerSearch(string option) : this()
         {
             Option = option;
         }
 
-        private void customDesign()
+        private void CustomDesign()
         {
             name_button.Enabled = false;
             phone_number_button.Enabled = true;
@@ -45,18 +45,30 @@ namespace VOVO
 
             //MessageBox.Show(columnName);
             int matchCount = 0;
-            string searchString = search_tb.Texts;
+            string searchString = search_tb.Text;
             DataBase dataBase = new DataBase();
             try
             {
-                string query = "SELECT * FROM [Customer Information] WHERE [" + columnName + "] LIKE '%' + @SearchString + '%'";
+                string query;
+                if (columnName == "Phone Number")
+                {
+                    string countryCodePrefix = searchString.Substring(0, 1);
+                    string phoneNumberSuffix = searchString.Substring(1, searchString.Length - 1);
+
+                    query = $@"SELECT * 
+                            FROM [Customer Information] 
+                            WHERE [Country Code] LIKE '%{countryCodePrefix}%' 
+                            AND [Phone Number] LIKE '%{phoneNumberSuffix}%'";
+                }
+
+                else
+                    query = $"SELECT * FROM [Customer Information] WHERE [{columnName}] LIKE '%{searchString}%'";
 
                 using (SqlConnection connection = new SqlConnection(dataBase.connectionString))
                 {
                     connection.Open();
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@SearchString", searchString);
 
                         // Execute the query and process the results
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -77,44 +89,44 @@ namespace VOVO
             }
             catch (Exception ex)
             {
-                CustomMessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
                 return -1;
             }
         }
 
         private void custom_textbox(string shareOption)
         {
-            if(shareOption== "Name")
+            if (shareOption == "Name")
             {
                 name_button.Enabled = false;
                 phone_number_button.Enabled = true;
                 email_button.Enabled = true;
-                search_tb.PlaceholderText = "Enter Customer Name";
-                
+                search_tb.WaterMark = "Enter Customer Name";
+
             }
 
-            else if(shareOption=="Phone Number")
+            else if (shareOption == "Phone Number")
             {
                 name_button.Enabled = true;
                 phone_number_button.Enabled = false;
                 email_button.Enabled = true;
-                search_tb.PlaceholderText = "Enter Customer Phone Number";
-                
+                search_tb.WaterMark = "Enter Customer Phone Number";
+
             }
 
-            else if( shareOption== "Email")
+            else if (shareOption == "Email")
             {
                 name_button.Enabled = true;
                 phone_number_button.Enabled = true;
                 email_button.Enabled = false;
-                search_tb.PlaceholderText = "Enter Customer Email Address";
-                
+                search_tb.WaterMark = "Enter Customer Email Address";
+
             }
         }
 
         private void name_button_Click(object sender, EventArgs e)
         {
-           custom_textbox("Name");
+            custom_textbox("Name");
             shareOption = "Name";
         }
 
@@ -135,24 +147,24 @@ namespace VOVO
 
         private void search_button_Click(object sender, EventArgs e)
         {
-            string search = search_tb.Texts;
+            string search = search_tb.Text;
 
-            if(string.IsNullOrEmpty(search) )
+            if (string.IsNullOrEmpty(search))
             {
-                CustomMessageBox.Show("Enter Customer name");
+                MessageBox.Show("Enter Customer name");
             }
 
 
             else if (!string.IsNullOrEmpty(search))
             {
-                if(shareOption == "Name")
+                if (shareOption == "Name")
                 {
                     int totalMatchCustomer = SearchResult("Name");
                     if (totalMatchCustomer > 0)
                     {
                         if (!AdminForm.Instance.panelContainer.Controls.ContainsKey("SearchingResult"))
                         {
-                            // CustomMessageBox.Show("Total Match: " + totalMatchCustomer);
+                            // MessageBox.Show("Total Match: " + totalMatchCustomer);
                             AdminForm.Instance.panelContainer.Controls.Clear();
                             SearchingResult searchingResult = new SearchingResult(search, totalMatchCustomer, "Name", "Customer", Option);
                             searchingResult.Dock = DockStyle.Fill;
@@ -163,12 +175,12 @@ namespace VOVO
 
                     else if (totalMatchCustomer == 0)
                     {
-                        CustomMessageBox.Show(search + " is not found");
+                        MessageBox.Show(search + " is not found");
                     }
 
                     else if (totalMatchCustomer == -1)
                     {
-                        CustomMessageBox.Show("ERROR 404", "Error");
+                        MessageBox.Show("ERROR 404", "Error");
 
                     }
                 }
@@ -192,12 +204,12 @@ namespace VOVO
 
                     else if (totalMatchCustomer == 0)
                     {
-                        CustomMessageBox.Show(search + " is not found");
+                        MessageBox.Show(search + " is not found");
                     }
 
                     else if (totalMatchCustomer == -1)
                     {
-                        CustomMessageBox.Show("ERROR 404", "Error");
+                        MessageBox.Show("ERROR 404", "Error");
 
                     }
                 }
@@ -220,12 +232,12 @@ namespace VOVO
 
                     else if (totalMatchCustomer == 0)
                     {
-                        CustomMessageBox.Show(search + " is not found");
+                        MessageBox.Show(search + " is not found");
                     }
 
                     else if (totalMatchCustomer == -1)
                     {
-                        CustomMessageBox.Show("ERROR 404", "Error");
+                        MessageBox.Show("ERROR 404", "Error");
 
                     }
                 }
@@ -234,6 +246,7 @@ namespace VOVO
 
         private void CustomerSearch_SizeChanged(object sender, EventArgs e)
         {
+            FormControlsUtility.ConfigureFormResize(this);
         }
     }
 }

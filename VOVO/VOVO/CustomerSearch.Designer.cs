@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.search_tb = new CustomControls.CustomControls.CustomTextBox();
             this.search_button = new System.Windows.Forms.Button();
             this.name_button = new System.Windows.Forms.Button();
             this.phone_number_button = new System.Windows.Forms.Button();
             this.email_button = new System.Windows.Forms.Button();
+            this.search_tb = new MetroFramework.Controls.MetroTextBox();
             this.SuspendLayout();
             // 
             // panel1
@@ -43,31 +43,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(431, 66);
             this.panel1.TabIndex = 0;
-            // 
-            // search_tb
-            // 
-            this.search_tb.BackColor = System.Drawing.SystemColors.Window;
-            this.search_tb.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.search_tb.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.search_tb.BorderRadius = 0;
-            this.search_tb.BorderSize = 2;
-            this.search_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_tb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.search_tb.Location = new System.Drawing.Point(13, 127);
-            this.search_tb.Margin = new System.Windows.Forms.Padding(4);
-            this.search_tb.MaxLength = 32767;
-            this.search_tb.Multiline = false;
-            this.search_tb.Name = "search_tb";
-            this.search_tb.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.search_tb.PasswordChar = false;
-            this.search_tb.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.search_tb.PlaceholderText = "Enter Customer Name";
-            this.search_tb.ReadOnly = false;
-            this.search_tb.SelectionStart = 0;
-            this.search_tb.Size = new System.Drawing.Size(404, 31);
-            this.search_tb.TabIndex = 9;
-            this.search_tb.Texts = "";
-            this.search_tb.UnderlinedStyle = false;
             // 
             // search_button
             // 
@@ -121,6 +96,41 @@
             this.email_button.UseVisualStyleBackColor = true;
             this.email_button.Click += new System.EventHandler(this.email_button_Click);
             // 
+            // search_tb
+            // 
+            // 
+            // 
+            // 
+            this.search_tb.CustomButton.Image = null;
+            this.search_tb.CustomButton.Location = new System.Drawing.Point(367, 1);
+            this.search_tb.CustomButton.Name = "";
+            this.search_tb.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.search_tb.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.search_tb.CustomButton.TabIndex = 1;
+            this.search_tb.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.search_tb.CustomButton.UseSelectable = true;
+            this.search_tb.CustomButton.Visible = false;
+            this.search_tb.Lines = new string[0];
+            this.search_tb.Location = new System.Drawing.Point(12, 141);
+            this.search_tb.MaxLength = 32767;
+            this.search_tb.Name = "search_tb";
+            this.search_tb.PasswordChar = '\0';
+            this.search_tb.PromptText = "Enter Customer Name";
+            this.search_tb.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.search_tb.SelectedText = "";
+            this.search_tb.SelectionLength = 0;
+            this.search_tb.SelectionStart = 0;
+            this.search_tb.ShortcutsEnabled = true;
+            this.search_tb.Size = new System.Drawing.Size(395, 29);
+            this.search_tb.TabIndex = 10;
+            this.search_tb.UseCustomBackColor = true;
+            this.search_tb.UseCustomForeColor = true;
+            this.search_tb.UseSelectable = true;
+            this.search_tb.UseStyleColors = true;
+            this.search_tb.WaterMark = "Enter Customer Name";
+            this.search_tb.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.search_tb.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
             // CustomerSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,10 +153,10 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private CustomControls.CustomControls.CustomTextBox search_tb;
         private System.Windows.Forms.Button search_button;
         private System.Windows.Forms.Button name_button;
         private System.Windows.Forms.Button phone_number_button;
         private System.Windows.Forms.Button email_button;
+        private MetroFramework.Controls.MetroTextBox search_tb;
     }
 }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZXing;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-
+using static VOVO.ENUM;
 
 namespace VOVO
 {
@@ -156,7 +156,7 @@ namespace VOVO
             }
             catch (Exception ex)
             {
-                CustomMessageBox.Show("Class is ChooseCompany function name is PopulateBranchNameComboBox and exception is: " + ex.Message, "Error");
+                MessageBox.Show("Class is ChooseCompany function name is PopulateBranchNameComboBox and exception is: " + ex.Message, "Error");
             }
         }
 
@@ -168,7 +168,7 @@ namespace VOVO
                 Branch selectedBranch = (Branch)comboBox.SelectedItem;
                 branchID = selectedBranch.ID;
                 // Use the selected company ID as needed
-                //CustomMessageBox.Show("Selected Company ID: " + companyID);
+                //MessageBox.Show("Selected Company ID: " + companyID);
             }
         }
 
@@ -207,7 +207,7 @@ namespace VOVO
             }
             catch (Exception ex)
             {
-                CustomMessageBox.Show("Class is ChooseCompany function name is PopulateCompanyComboBox and exception is: " + ex.Message, "Error");
+                MessageBox.Show("Class is ChooseCompany function name is PopulateCompanyComboBox and exception is: " + ex.Message, "Error");
             }
         }
 
@@ -233,6 +233,7 @@ namespace VOVO
                                 Exam2InformationRegistration(command);
                                 DegreeInformationRegistration(command);
                             }
+
                             else if (Exam == "Diploma")
                             {
                                 DiplomaInformationRegistration(command);
@@ -261,18 +262,10 @@ namespace VOVO
                         ConfirmRegistrationForm confirmRegistrationForm = new ConfirmRegistrationForm(this.type, this.id, this.name, CompanyName, equipment.generateCustomPassword(10, true, true, true, true));
                         confirmRegistrationForm.Dock = DockStyle.Fill;
                         AdminForm.Instance.panelContainer.Controls.Add(confirmRegistrationForm);
-                        CustomMessageBox.Show(this.name + " Registration Successful");
+                        MessageBox.Show(this.name + " Registration Successful");
                     }
                 }
             }
-        }
-
-        enum GenderEnum : int
-        {
-            PreferNotToSay,
-            Male,
-            Female,
-            Others
         }
 
         private void PersonalInformationRegister(SqlCommand command)
@@ -286,7 +279,7 @@ namespace VOVO
             {
                 Equipment equipment = new Equipment();
                 string query = $@"INSERT INTO 
-                                    [{this.type} Information] 
+                                    [User Information] 
                                     (
                                         ID, 
                                         Picture, 
@@ -302,6 +295,7 @@ namespace VOVO
                                         [Experience], 
                                         [Date], 
                                         [Time], 
+                                        [User Type],
                                         [Added By]
                                     )
                                     VALUES
@@ -320,6 +314,7 @@ namespace VOVO
                                         @Experience, 
                                         @Date, 
                                         @Time,
+                                        @UserType,
                                         @AddedBy
                                     )";
 
@@ -339,6 +334,7 @@ namespace VOVO
                 command.Parameters.AddWithValue("@Experience", this.experience);
                 command.Parameters.AddWithValue("@Date", equipment.DataBaseFormatDate(equipment.TodayDate()));
                 command.Parameters.AddWithValue("@Time", equipment.Time());
+                command.Parameters.AddWithValue("@UserType", type);
                 command.Parameters.AddWithValue("@AddedBy", this.adminID);
 
                 // Execute the query to insert the data into the database
@@ -347,7 +343,7 @@ namespace VOVO
 
             catch(Exception ex)
             {
-                CustomMessageBox.Show("Class name is ChooseCompany and function name is PersonalInformationRegister and  excprtion is: " + ex.Message);
+                MessageBox.Show("Class name is ChooseCompany and function name is PersonalInformationRegister and  excprtion is: " + ex.Message);
             }
 
         }
@@ -357,20 +353,23 @@ namespace VOVO
             try
             {
                 string query = $@"INSERT INTO 
-                                    [{this.type} Login Information] 
+                                    [User Login Information] 
                                     (
-                                        [{this.type} ID], 
+                                        [User ID], 
                                         [Company ID], 
                                         [Password]";
 
+                /*
                 if (this.type == "Employee")
                     query += ", [Brunch ID]";
+                */
              
 
                 query += ") VALUES (@ID, @CompanyID, @Password";
 
-                if (this.type == "Employee")
+                /*if (this.type == "Employee")
                     query += ", @BranchID";
+                */
 
                 query += ")";
 
@@ -380,27 +379,28 @@ namespace VOVO
                 command.Parameters.AddWithValue("@CompanyID", companyID);
                 command.Parameters.AddWithValue("@Password", password);
 
-                if (this.type == "Employee")
+             /*   if (this.type == "Employee")
                     command.Parameters.AddWithValue("@BranchID", branchID);
+             */
 
 
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                CustomMessageBox.Show($"Class Name is ChooseName function name is EmployeeLoginInformation and exception is: {ex.Message}");
+                MessageBox.Show($"Class Name is ChooseName function name is EmployeeLoginInformation and exception is: {ex.Message}");
             }
         }
 
         private void Exam1InformationRegistration(SqlCommand command)
         {
-          //  CustomMessageBox.Show("Exam: " + this.exam1Name);
+          //  MessageBox.Show("Exam: " + this.exam1Name);
             try
             {
                 string queryExam1 = $@"INSERT INTO 
-                                        [{this.type} Exam-1 Information] 
+                                        [Exam-1 Information] 
                                         (
-                                            [{this.type} ID],
+                                            [User ID],
                                             [Exam Name], 
                                             [Board Name], 
                                             [Registration Number], 
@@ -432,7 +432,7 @@ namespace VOVO
 
             catch (Exception ex)
             {
-                CustomMessageBox.Show("Class name is ChooseCompany and function name is Exam1InformationRegistration and  excprtion is: " + ex.Message);
+                MessageBox.Show("Class name is ChooseCompany and function name is Exam1InformationRegistration and  excprtion is: " + ex.Message);
             }
 
         }
@@ -442,9 +442,9 @@ namespace VOVO
             try
             {
                 string queryExam2 = $@"INSERT INTO 
-                                        [{this.type} Exam-2 Information]
+                                        [Exam-2 Information]
                                         (
-                                            [{this.type} ID], 
+                                            [User ID], 
                                             [Exam Name], 
                                             [Board Name], 
                                             [Registration Number], 
@@ -477,7 +477,7 @@ namespace VOVO
 
             catch (Exception ex)
             {
-                CustomMessageBox.Show("Class name is ChooseCompany and function name is Exam2InformationRegistration and  excprtion is: " + ex.Message);
+                MessageBox.Show("Class name is ChooseCompany and function name is Exam2InformationRegistration and  excprtion is: " + ex.Message);
             }
         }
 
@@ -486,9 +486,9 @@ namespace VOVO
             try
             {
                 string queryDegree = $@"INSERT INTO 
-                                            [{this.type} Degree Information] 
+                                            [Degree Information] 
                                             (
-                                                [{this.type} ID], 
+                                                [User ID], 
                                                 [Degree Name], 
                                                 [Institution Name], 
                                                 [Subject], 
@@ -521,7 +521,7 @@ namespace VOVO
 
             catch (Exception ex)
             {
-                CustomMessageBox.Show("Class name is ChooseCompany and function name is DegreeInformationRegistration and  excprtion is: " + ex.Message);
+                MessageBox.Show("Class name is ChooseCompany and function name is DegreeInformationRegistration and  excprtion is: " + ex.Message);
             }
         }
 
@@ -530,9 +530,9 @@ namespace VOVO
             try
             {
                 string queryDiploma = $@"INSERT INTO 
-                                            [{this.type} Diploma Information] 
+                                            [Diploma Information] 
                                             (
-                                                [{this.type} ID], 
+                                                [User ID], 
                                                 [Degree Name], 
                                                 [Institution Name], 
                                                 [Subject], 
@@ -565,7 +565,7 @@ namespace VOVO
 
             catch (Exception ex)
             {
-                CustomMessageBox.Show("Class name is ChooseCompany and function name is DiplomaInformationRegistration and  excprtion is: " + ex.Message);
+                MessageBox.Show("Class name is ChooseCompany and function name is DiplomaInformationRegistration and  excprtion is: " + ex.Message);
             }
         }
 
@@ -599,7 +599,7 @@ namespace VOVO
 
             catch (Exception ex)
             {
-                CustomMessageBox.Show("Class name is ChooseCompany function name is DriverDrivingLicenseInformation and exception is " + ex.Message);
+                MessageBox.Show("Class name is ChooseCompany function name is DriverDrivingLicenseInformation and exception is " + ex.Message);
             }
         }
 
@@ -633,7 +633,7 @@ namespace VOVO
 
             catch (Exception ex)
             {
-                CustomMessageBox.Show("Class name is ChooseCompany function name is DriverDrivingHistoryInformation and exception is " + ex.Message);
+                MessageBox.Show("Class name is ChooseCompany function name is DriverDrivingHistoryInformation and exception is " + ex.Message);
             }
         }
 
@@ -645,7 +645,7 @@ namespace VOVO
                 CompanyInfo selectedCompany = (CompanyInfo)comboBox.SelectedItem;
                 companyID = selectedCompany.ID;
                 // Use the selected company ID as needed
-                //CustomMessageBox.Show("Selected Company ID: " + companyID);
+                //MessageBox.Show("Selected Company ID: " + companyID);
             }
         }
 
@@ -659,21 +659,21 @@ namespace VOVO
 
             if (string.IsNullOrEmpty(companyName) )
             {
-                CustomMessageBox.Show("Choose company name", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Choose company name", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
-            else if(!string.IsNullOrEmpty(companyName))
+            Registration();
+            if (!AdminForm.Instance.panelContainer.Controls.ContainsKey("ConfirmRegistrationForm"))
             {
-                Registration();
-                if (!AdminForm.Instance.panelContainer.Controls.ContainsKey("ConfirmRegistrationForm"))
-                {
-                    AdminForm.Instance.panelContainer.Controls.Clear();
-                    ConfirmRegistrationForm confirmRegistrationForm = new ConfirmRegistrationForm(this.type, this.id, this.name, companyName, password);
-                    confirmRegistrationForm.Dock = DockStyle.Fill;
-                    AdminForm.Instance.panelContainer.Controls.Add(confirmRegistrationForm);
-                    CustomMessageBox.Show(this.name+" Registration Successful");
-                }
+                AdminForm.Instance.panelContainer.Controls.Clear();
+                ConfirmRegistrationForm confirmRegistrationForm = new ConfirmRegistrationForm(this.type, this.id, this.name, companyName, password);
+                confirmRegistrationForm.Dock = DockStyle.Fill;
+                AdminForm.Instance.panelContainer.Controls.Add(confirmRegistrationForm);
+                MessageBox.Show(this.name + " Registration Successful");
             }
+
+
         }
     }
 }

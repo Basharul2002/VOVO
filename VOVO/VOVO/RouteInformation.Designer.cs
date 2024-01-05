@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.boarding_points_panel = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,11 +47,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.arrival_point_label = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.select_button = new VOVO.CustomButton();
             this.to_label = new System.Windows.Forms.Label();
             this.route_id_label = new System.Windows.Forms.Label();
             this.from_label = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.select_button = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.boarding_points_panel.SuspendLayout();
@@ -104,6 +104,16 @@
             this.boarding_points_panel.Name = "boarding_points_panel";
             this.boarding_points_panel.Size = new System.Drawing.Size(252, 124);
             this.boarding_points_panel.TabIndex = 2;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(74, 53);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(86, 18);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Arrival Point";
             // 
             // label5
             // 
@@ -266,27 +276,6 @@
             this.panel4.Size = new System.Drawing.Size(507, 85);
             this.panel4.TabIndex = 0;
             // 
-            // select_button
-            // 
-            this.select_button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.select_button.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.select_button.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.select_button.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.select_button.BorderRadius = 10;
-            this.select_button.BorderSize = 0;
-            this.select_button.FlatAppearance.BorderSize = 0;
-            this.select_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.select_button.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.select_button.ForeColor = System.Drawing.Color.White;
-            this.select_button.Location = new System.Drawing.Point(390, 4);
-            this.select_button.Name = "select_button";
-            this.select_button.Size = new System.Drawing.Size(75, 29);
-            this.select_button.TabIndex = 1;
-            this.select_button.Text = "Select";
-            this.select_button.TextColor = System.Drawing.Color.White;
-            this.select_button.UseVisualStyleBackColor = false;
-            this.select_button.Click += new System.EventHandler(this.select_button_Click);
-            // 
             // to_label
             // 
             this.to_label.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -320,15 +309,20 @@
             this.from_label.TabIndex = 0;
             this.from_label.Text = "From: Dhaka";
             // 
-            // label6
+            // select_button
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(74, 53);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 18);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Arrival Point";
+            this.select_button.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.select_button.FlatAppearance.BorderSize = 0;
+            this.select_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.select_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.select_button.ForeColor = System.Drawing.Color.White;
+            this.select_button.Location = new System.Drawing.Point(391, 10);
+            this.select_button.Name = "select_button";
+            this.select_button.Size = new System.Drawing.Size(74, 29);
+            this.select_button.TabIndex = 2;
+            this.select_button.Text = "Select";
+            this.select_button.UseVisualStyleBackColor = false;
+            this.select_button.Click += new System.EventHandler(this.select_button_Click);
             // 
             // RouteInformation
             // 
@@ -354,7 +348,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
-        private CustomButton select_button;
         private System.Windows.Forms.Label to_label;
         private System.Windows.Forms.Label route_id_label;
         private System.Windows.Forms.Label from_label;
@@ -375,5 +368,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button select_button;
     }
 }

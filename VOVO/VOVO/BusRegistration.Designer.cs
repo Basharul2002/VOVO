@@ -40,15 +40,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cancel_button = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.bus_owner_name_combo_box = new VOVO.CustomComboBox();
-            this.engine_type_combo_box = new VOVO.CustomComboBox();
-            this.bus_type_tb = new VOVO.CustomComboBox();
-            this.total_seat_tb = new CustomControls.CustomControls.CustomTextBox();
-            this.bus_company_name_tb = new CustomControls.CustomControls.CustomTextBox();
-            this.bus_engine_number_tb = new CustomControls.CustomControls.CustomTextBox();
-            this.bus_cechis_number_tb = new CustomControls.CustomControls.CustomTextBox();
-            this.bus_number_tb = new CustomControls.CustomControls.CustomTextBox();
-            this.bus_name_tb = new CustomControls.CustomControls.CustomTextBox();
+            this.bus_number_tb = new MetroFramework.Controls.MetroTextBox();
+            this.bus_name_tb = new MetroFramework.Controls.MetroTextBox();
+            this.bus_cechis_number_tb = new MetroFramework.Controls.MetroTextBox();
+            this.bus_engine_number_tb = new MetroFramework.Controls.MetroTextBox();
+            this.bus_type_tb = new System.Windows.Forms.ComboBox();
+            this.engine_type_combo_box = new System.Windows.Forms.ComboBox();
+            this.bus_company_name_tb = new MetroFramework.Controls.MetroTextBox();
+            this.total_seat_tb = new MetroFramework.Controls.MetroTextBox();
+            this.bus_owner_name_combo_box = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -205,43 +205,160 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "Total Seat";
             // 
-            // bus_owner_name_combo_box
+            // bus_number_tb
             // 
-            this.bus_owner_name_combo_box.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bus_owner_name_combo_box.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bus_owner_name_combo_box.BorderColor = System.Drawing.Color.OrangeRed;
-            this.bus_owner_name_combo_box.BorderSize = 1;
-            this.bus_owner_name_combo_box.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bus_owner_name_combo_box.CustomCursor = System.Windows.Forms.Cursors.IBeam;
-            this.bus_owner_name_combo_box.CustomCursorColor = System.Drawing.Color.Black;
-            this.bus_owner_name_combo_box.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.bus_owner_name_combo_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bus_owner_name_combo_box.ForeColor = System.Drawing.Color.DimGray;
-            this.bus_owner_name_combo_box.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.bus_owner_name_combo_box.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.bus_owner_name_combo_box.ListTextColor = System.Drawing.Color.DimGray;
-            this.bus_owner_name_combo_box.Location = new System.Drawing.Point(125, 380);
-            this.bus_owner_name_combo_box.MinimumSize = new System.Drawing.Size(100, 15);
-            this.bus_owner_name_combo_box.Name = "bus_owner_name_combo_box";
-            this.bus_owner_name_combo_box.Padding = new System.Windows.Forms.Padding(1);
-            this.bus_owner_name_combo_box.Size = new System.Drawing.Size(172, 29);
-            this.bus_owner_name_combo_box.TabIndex = 5;
-            this.bus_owner_name_combo_box.Texts = "";
-            this.bus_owner_name_combo_box.OnSelectedIndexChanged += new System.EventHandler(this.bus_owner_name_combo_box_OnSelectedIndexChanged);
+            this.bus_number_tb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            // 
+            // 
+            // 
+            this.bus_number_tb.CustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bus_number_tb.CustomButton.Image = null;
+            this.bus_number_tb.CustomButton.Location = new System.Drawing.Point(212, 1);
+            this.bus_number_tb.CustomButton.Name = "";
+            this.bus_number_tb.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.bus_number_tb.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.bus_number_tb.CustomButton.TabIndex = 1;
+            this.bus_number_tb.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.bus_number_tb.CustomButton.UseSelectable = true;
+            this.bus_number_tb.CustomButton.Visible = false;
+            this.bus_number_tb.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.bus_number_tb.Lines = new string[0];
+            this.bus_number_tb.Location = new System.Drawing.Point(150, 65);
+            this.bus_number_tb.Margin = new System.Windows.Forms.Padding(0);
+            this.bus_number_tb.MaxLength = 32767;
+            this.bus_number_tb.Name = "bus_number_tb";
+            this.bus_number_tb.PasswordChar = '\0';
+            this.bus_number_tb.PromptText = "123";
+            this.bus_number_tb.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.bus_number_tb.SelectedText = "";
+            this.bus_number_tb.SelectionLength = 0;
+            this.bus_number_tb.SelectionStart = 0;
+            this.bus_number_tb.ShortcutsEnabled = true;
+            this.bus_number_tb.Size = new System.Drawing.Size(240, 29);
+            this.bus_number_tb.TabIndex = 6;
+            this.bus_number_tb.UseSelectable = true;
+            this.bus_number_tb.WaterMark = "123";
+            this.bus_number_tb.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.bus_number_tb.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // bus_name_tb
+            // 
+            this.bus_name_tb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            // 
+            // 
+            // 
+            this.bus_name_tb.CustomButton.Image = null;
+            this.bus_name_tb.CustomButton.Location = new System.Drawing.Point(213, 1);
+            this.bus_name_tb.CustomButton.Name = "";
+            this.bus_name_tb.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.bus_name_tb.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.bus_name_tb.CustomButton.TabIndex = 1;
+            this.bus_name_tb.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.bus_name_tb.CustomButton.UseSelectable = true;
+            this.bus_name_tb.CustomButton.Visible = false;
+            this.bus_name_tb.Lines = new string[0];
+            this.bus_name_tb.Location = new System.Drawing.Point(150, 108);
+            this.bus_name_tb.MaxLength = 32767;
+            this.bus_name_tb.Name = "bus_name_tb";
+            this.bus_name_tb.PasswordChar = '\0';
+            this.bus_name_tb.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.bus_name_tb.SelectedText = "";
+            this.bus_name_tb.SelectionLength = 0;
+            this.bus_name_tb.SelectionStart = 0;
+            this.bus_name_tb.ShortcutsEnabled = true;
+            this.bus_name_tb.Size = new System.Drawing.Size(241, 29);
+            this.bus_name_tb.TabIndex = 7;
+            this.bus_name_tb.UseSelectable = true;
+            this.bus_name_tb.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.bus_name_tb.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // bus_cechis_number_tb
+            // 
+            this.bus_cechis_number_tb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            // 
+            // 
+            // 
+            this.bus_cechis_number_tb.CustomButton.Image = null;
+            this.bus_cechis_number_tb.CustomButton.Location = new System.Drawing.Point(213, 1);
+            this.bus_cechis_number_tb.CustomButton.Name = "";
+            this.bus_cechis_number_tb.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.bus_cechis_number_tb.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.bus_cechis_number_tb.CustomButton.TabIndex = 1;
+            this.bus_cechis_number_tb.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.bus_cechis_number_tb.CustomButton.UseSelectable = true;
+            this.bus_cechis_number_tb.CustomButton.Visible = false;
+            this.bus_cechis_number_tb.Lines = new string[0];
+            this.bus_cechis_number_tb.Location = new System.Drawing.Point(150, 143);
+            this.bus_cechis_number_tb.MaxLength = 32767;
+            this.bus_cechis_number_tb.Name = "bus_cechis_number_tb";
+            this.bus_cechis_number_tb.PasswordChar = '\0';
+            this.bus_cechis_number_tb.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.bus_cechis_number_tb.SelectedText = "";
+            this.bus_cechis_number_tb.SelectionLength = 0;
+            this.bus_cechis_number_tb.SelectionStart = 0;
+            this.bus_cechis_number_tb.ShortcutsEnabled = true;
+            this.bus_cechis_number_tb.Size = new System.Drawing.Size(241, 29);
+            this.bus_cechis_number_tb.TabIndex = 7;
+            this.bus_cechis_number_tb.UseSelectable = true;
+            this.bus_cechis_number_tb.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.bus_cechis_number_tb.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // bus_engine_number_tb
+            // 
+            this.bus_engine_number_tb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            // 
+            // 
+            // 
+            this.bus_engine_number_tb.CustomButton.Image = null;
+            this.bus_engine_number_tb.CustomButton.Location = new System.Drawing.Point(213, 1);
+            this.bus_engine_number_tb.CustomButton.Name = "";
+            this.bus_engine_number_tb.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.bus_engine_number_tb.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.bus_engine_number_tb.CustomButton.TabIndex = 1;
+            this.bus_engine_number_tb.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.bus_engine_number_tb.CustomButton.UseSelectable = true;
+            this.bus_engine_number_tb.CustomButton.Visible = false;
+            this.bus_engine_number_tb.Lines = new string[0];
+            this.bus_engine_number_tb.Location = new System.Drawing.Point(151, 198);
+            this.bus_engine_number_tb.MaxLength = 32767;
+            this.bus_engine_number_tb.Name = "bus_engine_number_tb";
+            this.bus_engine_number_tb.PasswordChar = '\0';
+            this.bus_engine_number_tb.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.bus_engine_number_tb.SelectedText = "";
+            this.bus_engine_number_tb.SelectionLength = 0;
+            this.bus_engine_number_tb.SelectionStart = 0;
+            this.bus_engine_number_tb.ShortcutsEnabled = true;
+            this.bus_engine_number_tb.Size = new System.Drawing.Size(241, 29);
+            this.bus_engine_number_tb.TabIndex = 7;
+            this.bus_engine_number_tb.UseSelectable = true;
+            this.bus_engine_number_tb.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.bus_engine_number_tb.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // bus_type_tb
+            // 
+            this.bus_type_tb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bus_type_tb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.bus_type_tb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.bus_type_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bus_type_tb.FormattingEnabled = true;
+            this.bus_type_tb.Items.AddRange(new object[] {
+            "Economic Non AC",
+            "Economic AC",
+            "Double Decker",
+            "Sleeper Coach"});
+            this.bus_type_tb.Location = new System.Drawing.Point(151, 245);
+            this.bus_type_tb.Name = "bus_type_tb";
+            this.bus_type_tb.Size = new System.Drawing.Size(240, 32);
+            this.bus_type_tb.TabIndex = 8;
+            this.bus_type_tb.SelectedIndexChanged += new System.EventHandler(this.bus_type_tb_OnSelectedIndexChanged);
             // 
             // engine_type_combo_box
             // 
             this.engine_type_combo_box.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.engine_type_combo_box.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.engine_type_combo_box.BorderColor = System.Drawing.Color.OrangeRed;
-            this.engine_type_combo_box.BorderSize = 1;
-            this.engine_type_combo_box.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.engine_type_combo_box.CustomCursor = System.Windows.Forms.Cursors.IBeam;
-            this.engine_type_combo_box.CustomCursorColor = System.Drawing.Color.Black;
-            this.engine_type_combo_box.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.engine_type_combo_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.engine_type_combo_box.ForeColor = System.Drawing.Color.DimGray;
-            this.engine_type_combo_box.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.engine_type_combo_box.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.engine_type_combo_box.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.engine_type_combo_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.engine_type_combo_box.FormattingEnabled = true;
             this.engine_type_combo_box.Items.AddRange(new object[] {
             "Diesel Engines",
             "CNG Engine",
@@ -269,215 +386,107 @@
             "Flywheel Hybrid Systems",
             "Maglev",
             "Regenerative Braking System"});
-            this.engine_type_combo_box.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.engine_type_combo_box.ListTextColor = System.Drawing.Color.DimGray;
             this.engine_type_combo_box.Location = new System.Drawing.Point(150, 290);
-            this.engine_type_combo_box.MinimumSize = new System.Drawing.Size(100, 15);
             this.engine_type_combo_box.Name = "engine_type_combo_box";
-            this.engine_type_combo_box.Padding = new System.Windows.Forms.Padding(1);
-            this.engine_type_combo_box.Size = new System.Drawing.Size(240, 30);
-            this.engine_type_combo_box.TabIndex = 5;
-            this.engine_type_combo_box.Texts = "";
-            // 
-            // bus_type_tb
-            // 
-            this.bus_type_tb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bus_type_tb.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bus_type_tb.BorderColor = System.Drawing.Color.OrangeRed;
-            this.bus_type_tb.BorderSize = 1;
-            this.bus_type_tb.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bus_type_tb.CustomCursor = System.Windows.Forms.Cursors.IBeam;
-            this.bus_type_tb.CustomCursorColor = System.Drawing.Color.Black;
-            this.bus_type_tb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.bus_type_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bus_type_tb.ForeColor = System.Drawing.Color.DimGray;
-            this.bus_type_tb.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.bus_type_tb.Items.AddRange(new object[] {
-            "Economic Non AC",
-            "Economic AC",
-            "Double Decker",
-            "Sleeper Coach"});
-            this.bus_type_tb.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.bus_type_tb.ListTextColor = System.Drawing.Color.DimGray;
-            this.bus_type_tb.Location = new System.Drawing.Point(151, 245);
-            this.bus_type_tb.MinimumSize = new System.Drawing.Size(100, 15);
-            this.bus_type_tb.Name = "bus_type_tb";
-            this.bus_type_tb.Padding = new System.Windows.Forms.Padding(1);
-            this.bus_type_tb.Size = new System.Drawing.Size(240, 30);
-            this.bus_type_tb.TabIndex = 5;
-            this.bus_type_tb.Texts = "";
-            this.bus_type_tb.OnSelectedIndexChanged += new System.EventHandler(this.bus_type_tb_OnSelectedIndexChanged);
-            // 
-            // total_seat_tb
-            // 
-            this.total_seat_tb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.total_seat_tb.BackColor = System.Drawing.Color.RosyBrown;
-            this.total_seat_tb.BorderColor = System.Drawing.Color.Tomato;
-            this.total_seat_tb.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.total_seat_tb.BorderRadius = 0;
-            this.total_seat_tb.BorderSize = 2;
-            this.total_seat_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.total_seat_tb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.total_seat_tb.Location = new System.Drawing.Point(396, 380);
-            this.total_seat_tb.Margin = new System.Windows.Forms.Padding(4);
-            this.total_seat_tb.MaxLength = 32767;
-            this.total_seat_tb.Multiline = false;
-            this.total_seat_tb.Name = "total_seat_tb";
-            this.total_seat_tb.Padding = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.total_seat_tb.PasswordChar = false;
-            this.total_seat_tb.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.total_seat_tb.PlaceholderText = "143";
-            this.total_seat_tb.ReadOnly = true;
-            this.total_seat_tb.SelectionStart = 0;
-            this.total_seat_tb.Size = new System.Drawing.Size(45, 24);
-            this.total_seat_tb.TabIndex = 3;
-            this.total_seat_tb.Texts = "";
-            this.total_seat_tb.UnderlinedStyle = true;
+            this.engine_type_combo_box.Size = new System.Drawing.Size(240, 32);
+            this.engine_type_combo_box.TabIndex = 8;
+            this.engine_type_combo_box.SelectedIndexChanged += new System.EventHandler(this.bus_type_tb_OnSelectedIndexChanged);
             // 
             // bus_company_name_tb
             // 
             this.bus_company_name_tb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bus_company_name_tb.BackColor = System.Drawing.Color.RosyBrown;
-            this.bus_company_name_tb.BorderColor = System.Drawing.Color.OrangeRed;
-            this.bus_company_name_tb.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.bus_company_name_tb.BorderRadius = 0;
-            this.bus_company_name_tb.BorderSize = 2;
-            this.bus_company_name_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bus_company_name_tb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            // 
+            // 
+            // 
+            this.bus_company_name_tb.CustomButton.Image = null;
+            this.bus_company_name_tb.CustomButton.Location = new System.Drawing.Point(212, 1);
+            this.bus_company_name_tb.CustomButton.Name = "";
+            this.bus_company_name_tb.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.bus_company_name_tb.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.bus_company_name_tb.CustomButton.TabIndex = 1;
+            this.bus_company_name_tb.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.bus_company_name_tb.CustomButton.UseSelectable = true;
+            this.bus_company_name_tb.CustomButton.Visible = false;
+            this.bus_company_name_tb.Lines = new string[0];
             this.bus_company_name_tb.Location = new System.Drawing.Point(151, 327);
-            this.bus_company_name_tb.Margin = new System.Windows.Forms.Padding(4);
             this.bus_company_name_tb.MaxLength = 32767;
-            this.bus_company_name_tb.Multiline = false;
             this.bus_company_name_tb.Name = "bus_company_name_tb";
-            this.bus_company_name_tb.Padding = new System.Windows.Forms.Padding(8, 6, 8, 6);
-            this.bus_company_name_tb.PasswordChar = false;
-            this.bus_company_name_tb.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.bus_company_name_tb.PlaceholderText = "";
-            this.bus_company_name_tb.ReadOnly = false;
+            this.bus_company_name_tb.PasswordChar = '\0';
+            this.bus_company_name_tb.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.bus_company_name_tb.SelectedText = "";
+            this.bus_company_name_tb.SelectionLength = 0;
             this.bus_company_name_tb.SelectionStart = 0;
+            this.bus_company_name_tb.ShortcutsEnabled = true;
             this.bus_company_name_tb.Size = new System.Drawing.Size(240, 29);
-            this.bus_company_name_tb.TabIndex = 3;
-            this.bus_company_name_tb.Texts = "";
-            this.bus_company_name_tb.UnderlinedStyle = true;
+            this.bus_company_name_tb.TabIndex = 7;
+            this.bus_company_name_tb.UseSelectable = true;
+            this.bus_company_name_tb.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.bus_company_name_tb.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // bus_engine_number_tb
+            // total_seat_tb
             // 
-            this.bus_engine_number_tb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bus_engine_number_tb.BackColor = System.Drawing.Color.RosyBrown;
-            this.bus_engine_number_tb.BorderColor = System.Drawing.Color.Tomato;
-            this.bus_engine_number_tb.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.bus_engine_number_tb.BorderRadius = 0;
-            this.bus_engine_number_tb.BorderSize = 2;
-            this.bus_engine_number_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bus_engine_number_tb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bus_engine_number_tb.Location = new System.Drawing.Point(150, 198);
-            this.bus_engine_number_tb.Margin = new System.Windows.Forms.Padding(4);
-            this.bus_engine_number_tb.MaxLength = 17;
-            this.bus_engine_number_tb.Multiline = false;
-            this.bus_engine_number_tb.Name = "bus_engine_number_tb";
-            this.bus_engine_number_tb.Padding = new System.Windows.Forms.Padding(8, 6, 8, 6);
-            this.bus_engine_number_tb.PasswordChar = false;
-            this.bus_engine_number_tb.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.bus_engine_number_tb.PlaceholderText = "ABC123XYZ45678922";
-            this.bus_engine_number_tb.ReadOnly = false;
-            this.bus_engine_number_tb.SelectionStart = 0;
-            this.bus_engine_number_tb.Size = new System.Drawing.Size(241, 29);
-            this.bus_engine_number_tb.TabIndex = 3;
-            this.bus_engine_number_tb.Texts = "";
-            this.bus_engine_number_tb.UnderlinedStyle = true;
+            this.total_seat_tb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             // 
-            // bus_cechis_number_tb
             // 
-            this.bus_cechis_number_tb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bus_cechis_number_tb.BackColor = System.Drawing.Color.RosyBrown;
-            this.bus_cechis_number_tb.BorderColor = System.Drawing.Color.Tomato;
-            this.bus_cechis_number_tb.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.bus_cechis_number_tb.BorderRadius = 0;
-            this.bus_cechis_number_tb.BorderSize = 2;
-            this.bus_cechis_number_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bus_cechis_number_tb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bus_cechis_number_tb.Location = new System.Drawing.Point(151, 145);
-            this.bus_cechis_number_tb.Margin = new System.Windows.Forms.Padding(4);
-            this.bus_cechis_number_tb.MaxLength = 6;
-            this.bus_cechis_number_tb.Multiline = false;
-            this.bus_cechis_number_tb.Name = "bus_cechis_number_tb";
-            this.bus_cechis_number_tb.Padding = new System.Windows.Forms.Padding(8, 6, 8, 6);
-            this.bus_cechis_number_tb.PasswordChar = false;
-            this.bus_cechis_number_tb.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.bus_cechis_number_tb.PlaceholderText = "";
-            this.bus_cechis_number_tb.ReadOnly = false;
-            this.bus_cechis_number_tb.SelectionStart = 0;
-            this.bus_cechis_number_tb.Size = new System.Drawing.Size(241, 29);
-            this.bus_cechis_number_tb.TabIndex = 3;
-            this.bus_cechis_number_tb.Texts = "";
-            this.bus_cechis_number_tb.UnderlinedStyle = true;
             // 
-            // bus_number_tb
+            this.total_seat_tb.CustomButton.Image = null;
+            this.total_seat_tb.CustomButton.Location = new System.Drawing.Point(25, 2);
+            this.total_seat_tb.CustomButton.Name = "";
+            this.total_seat_tb.CustomButton.Size = new System.Drawing.Size(17, 17);
+            this.total_seat_tb.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.total_seat_tb.CustomButton.TabIndex = 1;
+            this.total_seat_tb.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.total_seat_tb.CustomButton.UseSelectable = true;
+            this.total_seat_tb.CustomButton.Visible = false;
+            this.total_seat_tb.Enabled = false;
+            this.total_seat_tb.Lines = new string[0];
+            this.total_seat_tb.Location = new System.Drawing.Point(396, 386);
+            this.total_seat_tb.MaxLength = 32767;
+            this.total_seat_tb.Name = "total_seat_tb";
+            this.total_seat_tb.PasswordChar = '\0';
+            this.total_seat_tb.ReadOnly = true;
+            this.total_seat_tb.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.total_seat_tb.SelectedText = "";
+            this.total_seat_tb.SelectionLength = 0;
+            this.total_seat_tb.SelectionStart = 0;
+            this.total_seat_tb.ShortcutsEnabled = true;
+            this.total_seat_tb.Size = new System.Drawing.Size(45, 22);
+            this.total_seat_tb.TabIndex = 7;
+            this.total_seat_tb.UseSelectable = true;
+            this.total_seat_tb.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.total_seat_tb.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            this.bus_number_tb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bus_number_tb.BackColor = System.Drawing.Color.RosyBrown;
-            this.bus_number_tb.BorderColor = System.Drawing.Color.Tomato;
-            this.bus_number_tb.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.bus_number_tb.BorderRadius = 12;
-            this.bus_number_tb.BorderSize = 2;
-            this.bus_number_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bus_number_tb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bus_number_tb.Location = new System.Drawing.Point(150, 65);
-            this.bus_number_tb.Margin = new System.Windows.Forms.Padding(4);
-            this.bus_number_tb.MaxLength = 20;
-            this.bus_number_tb.Multiline = false;
-            this.bus_number_tb.Name = "bus_number_tb";
-            this.bus_number_tb.Padding = new System.Windows.Forms.Padding(8, 6, 8, 6);
-            this.bus_number_tb.PasswordChar = false;
-            this.bus_number_tb.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.bus_number_tb.PlaceholderText = "DHa-23001-G";
-            this.bus_number_tb.ReadOnly = false;
-            this.bus_number_tb.SelectionStart = 0;
-            this.bus_number_tb.Size = new System.Drawing.Size(240, 29);
-            this.bus_number_tb.TabIndex = 2;
-            this.bus_number_tb.Texts = "";
-            this.bus_number_tb.UnderlinedStyle = true;
+            // bus_owner_name_combo_box
             // 
-            // bus_name_tb
-            // 
-            this.bus_name_tb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bus_name_tb.BackColor = System.Drawing.Color.RosyBrown;
-            this.bus_name_tb.BorderColor = System.Drawing.Color.Tomato;
-            this.bus_name_tb.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.bus_name_tb.BorderRadius = 0;
-            this.bus_name_tb.BorderSize = 2;
-            this.bus_name_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bus_name_tb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bus_name_tb.Location = new System.Drawing.Point(150, 108);
-            this.bus_name_tb.Margin = new System.Windows.Forms.Padding(4);
-            this.bus_name_tb.MaxLength = 32767;
-            this.bus_name_tb.Multiline = false;
-            this.bus_name_tb.Name = "bus_name_tb";
-            this.bus_name_tb.Padding = new System.Windows.Forms.Padding(8, 6, 8, 6);
-            this.bus_name_tb.PasswordChar = false;
-            this.bus_name_tb.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.bus_name_tb.PlaceholderText = "";
-            this.bus_name_tb.ReadOnly = false;
-            this.bus_name_tb.SelectionStart = 0;
-            this.bus_name_tb.Size = new System.Drawing.Size(241, 29);
-            this.bus_name_tb.TabIndex = 2;
-            this.bus_name_tb.Texts = "";
-            this.bus_name_tb.UnderlinedStyle = true;
+            this.bus_owner_name_combo_box.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bus_owner_name_combo_box.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.bus_owner_name_combo_box.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.bus_owner_name_combo_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bus_owner_name_combo_box.FormattingEnabled = true;
+            this.bus_owner_name_combo_box.Items.AddRange(new object[] {
+            "Economic Non AC",
+            "Economic AC",
+            "Double Decker",
+            "Sleeper Coach"});
+            this.bus_owner_name_combo_box.Location = new System.Drawing.Point(129, 379);
+            this.bus_owner_name_combo_box.Name = "bus_owner_name_combo_box";
+            this.bus_owner_name_combo_box.Size = new System.Drawing.Size(172, 32);
+            this.bus_owner_name_combo_box.TabIndex = 8;
             // 
             // BusRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
-            this.Controls.Add(this.bus_owner_name_combo_box);
             this.Controls.Add(this.engine_type_combo_box);
+            this.Controls.Add(this.bus_owner_name_combo_box);
             this.Controls.Add(this.bus_type_tb);
             this.Controls.Add(this.total_seat_tb);
             this.Controls.Add(this.bus_company_name_tb);
             this.Controls.Add(this.bus_engine_number_tb);
             this.Controls.Add(this.bus_cechis_number_tb);
-            this.Controls.Add(this.bus_number_tb);
             this.Controls.Add(this.bus_name_tb);
+            this.Controls.Add(this.bus_number_tb);
             this.Controls.Add(this.cancel_button);
             this.Controls.Add(this.submit_button);
             this.Controls.Add(this.label11);
@@ -493,6 +502,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BusRegistration";
             this.Size = new System.Drawing.Size(481, 482);
+            this.Load += new System.EventHandler(this.BusRegistration_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -509,17 +519,17 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button submit_button;
-        private CustomControls.CustomControls.CustomTextBox bus_name_tb;
-        private CustomControls.CustomControls.CustomTextBox bus_cechis_number_tb;
-        private CustomControls.CustomControls.CustomTextBox bus_engine_number_tb;
-        private CustomControls.CustomControls.CustomTextBox bus_company_name_tb;
         private System.Windows.Forms.Label label2;
-        private CustomControls.CustomControls.CustomTextBox bus_number_tb;
         private System.Windows.Forms.Button cancel_button;
         private System.Windows.Forms.Label label11;
-        private CustomComboBox bus_type_tb;
-        private CustomComboBox bus_owner_name_combo_box;
-        private CustomControls.CustomControls.CustomTextBox total_seat_tb;
-        private CustomComboBox engine_type_combo_box;
+        private MetroFramework.Controls.MetroTextBox bus_number_tb;
+        private MetroFramework.Controls.MetroTextBox bus_name_tb;
+        private MetroFramework.Controls.MetroTextBox bus_cechis_number_tb;
+        private MetroFramework.Controls.MetroTextBox bus_engine_number_tb;
+        private System.Windows.Forms.ComboBox bus_type_tb;
+        private System.Windows.Forms.ComboBox engine_type_combo_box;
+        private MetroFramework.Controls.MetroTextBox bus_company_name_tb;
+        private MetroFramework.Controls.MetroTextBox total_seat_tb;
+        private System.Windows.Forms.ComboBox bus_owner_name_combo_box;
     }
 }

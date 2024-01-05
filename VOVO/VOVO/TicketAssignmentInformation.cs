@@ -95,7 +95,7 @@ namespace VOVO
             }
             catch (Exception ex)
             {
-                CustomMessageBox.Show("Class Name is TicketAssignmentInformation and fuction Name is CreateBusTicket: " + ex.Message);
+                MessageBox.Show("Class Name is TicketAssignmentInformation and fuction Name is CreateBusTicket: " + ex.Message);
             }
         }
 
@@ -114,6 +114,7 @@ namespace VOVO
                     }
                 }
             }
+
             else if (busType == "Business Class")
             {
                 for (char ch = 'A'; ch <= 'L'; ch++)
@@ -124,6 +125,7 @@ namespace VOVO
                     }
                 }
             }
+
             else if (busType == "Double Decker")
             {
                 for (char ch = 'A'; ch <= 'O'; ch++)
@@ -177,9 +179,9 @@ namespace VOVO
                 }
             }
 
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                CustomMessageBox.Show("Class Name is TicketAssignmentInformation and fuction Name is TicketAssignmentInformationInDataBase: " + ex.Message);
+                MessageBox.Show("Class Name is TicketAssignmentInformation and fuction Name is TicketAssignmentInformationInDataBase: " + ex.Message);
             }
         }
         private void register_button_Click(object sender, EventArgs e)
@@ -189,9 +191,9 @@ namespace VOVO
             string conductorID = conductor_combo_box.Text;
             string supervisorID = superviosr_combo_box.Text;
 
-            if(string.IsNullOrEmpty(driverID) || string.IsNullOrEmpty(conductorID) || string.IsNullOrEmpty(supervisorID))
+            if (string.IsNullOrEmpty(driverID) || string.IsNullOrEmpty(conductorID) || string.IsNullOrEmpty(supervisorID))
             {
-                CustomMessageBox.Show("Choose Driver, Conductor and Supervisor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Choose Driver, Conductor and Supervisor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             else
@@ -206,7 +208,8 @@ namespace VOVO
                     connection.Close();
                 }
             }
-            
+
         }
     }
 }
+

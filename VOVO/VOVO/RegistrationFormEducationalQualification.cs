@@ -16,23 +16,10 @@ namespace VOVO
     public partial class RegistrationFormEducationalQualification : UserControl
     {
         // RegistrationPersonalInfo Form
-        private string AdminID { set; get; }
-        private string Type { set; get; }
-        private Image Picture { get; set; }
-        private string Id { get; set; }
-        private string Name { get; set; }
-        private string Email { get; set; }
-        private string ContactNumber { get; set; }
-        private string Address { get; set; }
-        private string Gender { get; set; }
-        private string Dob { get; set; }
-        private string Nationality { get; set; }
-        private string NidNumber { get; set; }
-        private string Experience { get; set; }
+        private string AdminID, Type, Id, Name, Email, countryCode, phoneNumber, Address, Gender, Dob, Nationality, NidNumber, Experience;
+        private Image Picture;
 
-
-
-        public RegistrationFormEducationalQualification(string adminID, string type, Image picture, string id, string name, string email, string contactNumber, string address, string gender, string dob, string nationality, string nidNumber, string experience)
+        public RegistrationFormEducationalQualification(string adminID, string type, Image picture, string id, string name, string email, string countryCode, string phoneNumber, string address, string gender, string dob, string nationality, string nidNumber, string experience)
         {
             InitializeComponent();
 
@@ -43,7 +30,8 @@ namespace VOVO
             Id = id;
             Name = name;
             Email = email;
-            ContactNumber = contactNumber;
+            this.countryCode = countryCode;
+            this.phoneNumber = phoneNumber;
             Address = address;
             Gender = gender;
             Dob = dob;
@@ -113,32 +101,32 @@ namespace VOVO
             }
         }
 
-  
+
         private void nextButtonEvent()
         {
             // SSC/Dakhil/Equivalent
-            string exam1Name = exam1_name_tb.Texts;
-            string exam1Board = exam1_board_name_tb.Texts;
-            string exam1Result = exam1_result_tb.Texts;
-            string exam1RegistrationNumber = exam1_reg_number_tb.Texts;
-            string exam1RollNumber = exam1_roll_number_tb.Texts;
+            string exam1Name = exam1_name_tb.Text;
+            string exam1Board = exam1_board_name_tb.Text;
+            string exam1Result = exam1_result_tb.Text;
+            string exam1RegistrationNumber = exam1_reg_number_tb.Text;
+            string exam1RollNumber = exam1_roll_number_tb.Text;
             //
             // HSC/Alim/Equivalent
             //
-            string exam2Name = exam2_name_tb.Texts;
-            string exam2Board = exam2_board_name_tb.Texts;
-            string exam2Result = exam2_result_tb.Texts;
-            string exam2RegistrationNumber = exam2_reg_number_tb.Texts;
-            string exam2RollNumber = exam2_roll_number_tb.Texts;
+            string exam2Name = exam2_name_tb.Text;
+            string exam2Board = exam2_board_name_tb.Text;
+            string exam2Result = exam2_result_tb.Text;
+            string exam2RegistrationNumber = exam2_reg_number_tb.Text;
+            string exam2RollNumber = exam2_roll_number_tb.Text;
             //
             // Honors/Diploma
             //
-            string exam3InstitutionName = exam3_institution_name_tb.Texts;
-            string exam3RollNumber = exam3_institution_roll_number_tb.Texts;
-            string exam3DegreeName = exam3_degree_name_tb.Texts;
-            string exam3Subject = exam3_subject_tb.Texts;
-            string exam3Result = exam3_result_tb.Texts;
-            
+            string exam3InstitutionName = exam3_institution_name_tb.Text;
+            string exam3RollNumber = exam3_institution_roll_number_tb.Text;
+            string exam3DegreeName = exam3_degree_name_tb.Text;
+            string exam3Subject = exam3_subject_tb.Text;
+            string exam3Result = exam3_result_tb.Text;
+
 
             if (Type == "Admin" || Type == "Employee")
             {
@@ -157,8 +145,8 @@ namespace VOVO
                         if (!AdminForm.Instance.panelContainer.Controls.ContainsKey("RegistrationInformation") && (Type == "Admin" || Type == "Employee"))
                         {
                             AdminForm.Instance.panelContainer.Controls.Clear();
-                            RegistrationInformation registrationInformation = new RegistrationInformation(adminID: AdminID, type: Type, picture: Picture, id: Id, name: Name, email: Email, contactNumber: ContactNumber, address: Address, gender: Gender, 
-                                 Dob, Nationality, NidNumber, Experience, exam1Name, exam1Board, exam1RegistrationNumber, exam1RollNumber, exam1Result, 
+                            RegistrationInformation registrationInformation = new RegistrationInformation(adminID: AdminID, type: Type, picture: Picture, id: Id, name: Name, email: Email, countryCode: countryCode, phoneNumber: phoneNumber, address: Address, gender: Gender,
+                                 Dob, Nationality, NidNumber, Experience, exam1Name, exam1Board, exam1RegistrationNumber, exam1RollNumber, exam1Result,
                                  exam3InstitutionName: exam3InstitutionName, exam3RollNumber: exam3RollNumber, exam3DegreeName: exam3DegreeName, exam3SubjectName: exam3Subject, exam3Result: exam3Result); ;
                             registrationInformation.Dock = DockStyle.Fill;
                             AdminForm.Instance.panelContainer.Controls.Add(registrationInformation);
@@ -186,8 +174,8 @@ namespace VOVO
                         if (!AdminForm.Instance.panelContainer.Controls.ContainsKey("RegistrationInformation") && (Type == "Admin" || Type == "Employee"))
                         {
                             AdminForm.Instance.panelContainer.Controls.Clear();
-                            RegistrationInformation registrationInformation = new RegistrationInformation(AdminID, Type, Picture, Id, Name, Email, ContactNumber, Address, Gender, 
-                                Dob, Nationality, NidNumber, Experience, exam1Name, exam1Board, exam1RegistrationNumber, exam1RollNumber, exam1Result, exam2Name, exam2Board, 
+                            RegistrationInformation registrationInformation = new RegistrationInformation(AdminID, Type, Picture, Id, Name, Email, countryCode, phoneNumber, Address, Gender,
+                                Dob, Nationality, NidNumber, Experience, exam1Name, exam1Board, exam1RegistrationNumber, exam1RollNumber, exam1Result, exam2Name, exam2Board,
                                 exam2RegistrationNumber, exam2RollNumber, exam2Result, exam3InstitutionName, exam3RollNumber, exam3DegreeName, exam3Subject, exam3Result);
 
                             registrationInformation.Dock = DockStyle.Fill;
@@ -198,11 +186,11 @@ namespace VOVO
 
 
             }
-            
+
 
             else if (Type == "Driver")
             {
-                if (string.IsNullOrEmpty(exam1Name) || string.IsNullOrEmpty(exam1Board) || string.IsNullOrEmpty(exam1RegistrationNumber) || string.IsNullOrEmpty(exam1RollNumber) || string.IsNullOrEmpty(exam1Result) )
+                if (string.IsNullOrEmpty(exam1Name) || string.IsNullOrEmpty(exam1Board) || string.IsNullOrEmpty(exam1RegistrationNumber) || string.IsNullOrEmpty(exam1RollNumber) || string.IsNullOrEmpty(exam1Result))
                 {
                     MessageBox.Show("Please fill in all required fields");
 
@@ -213,16 +201,16 @@ namespace VOVO
                     if (!AdminForm.Instance.panelContainer.Controls.ContainsKey("DriverRegistration") && Type == "Driver")
                     {
                         AdminForm.Instance.panelContainer.Controls.Clear();
-                        DriverRegistration driverRegistration = new DriverRegistration(AdminID, Type, Picture, Id, Name, Email, ContactNumber, Address, Gender, Dob, Nationality, NidNumber, Experience, exam1Name, exam1Board, exam1RegistrationNumber, exam1RollNumber, exam1Result);
+                        DriverRegistration driverRegistration = new DriverRegistration(AdminID, Type, Picture, Id, Name, Email, countryCode, phoneNumber, Address, Gender, Dob, Nationality, NidNumber, Experience, exam1Name, exam1Board, exam1RegistrationNumber, exam1RollNumber, exam1Result);
                         driverRegistration.Dock = DockStyle.Fill;
                         AdminForm.Instance.panelContainer.Controls.Add(driverRegistration);
                     }
                 }
             }
 
-            else if(Type == "Supervisor")
+            else if (Type == "Supervisor")
             {
-                if (string.IsNullOrEmpty(exam1Name) || string.IsNullOrEmpty(exam1Board) || string.IsNullOrEmpty(exam1Result) || string.IsNullOrEmpty(exam1RegistrationNumber) || string.IsNullOrEmpty(exam1RollNumber) || string.IsNullOrEmpty(exam2Name) || string.IsNullOrEmpty(exam2Board) || string.IsNullOrEmpty(exam2Result) || string.IsNullOrEmpty(exam2RegistrationNumber) || string.IsNullOrEmpty(exam2RollNumber) )
+                if (string.IsNullOrEmpty(exam1Name) || string.IsNullOrEmpty(exam1Board) || string.IsNullOrEmpty(exam1Result) || string.IsNullOrEmpty(exam1RegistrationNumber) || string.IsNullOrEmpty(exam1RollNumber) || string.IsNullOrEmpty(exam2Name) || string.IsNullOrEmpty(exam2Board) || string.IsNullOrEmpty(exam2Result) || string.IsNullOrEmpty(exam2RegistrationNumber) || string.IsNullOrEmpty(exam2RollNumber))
                 {
                     MessageBox.Show("Please fill in all required fields");
 
@@ -233,7 +221,7 @@ namespace VOVO
                     if (!AdminForm.Instance.panelContainer.Controls.ContainsKey("RegistrationInformation") && Type == "Supervisor")
                     {
                         AdminForm.Instance.panelContainer.Controls.Clear();
-                        RegistrationInformation registrationInformation = new RegistrationInformation(AdminID, Type, Picture, Id, Name, Email, ContactNumber, Address, Gender, Dob, Nationality, NidNumber, Experience, exam1Name, exam1Board, exam1RegistrationNumber, exam1RollNumber, exam1Result, exam2Name, exam2Board, exam2RegistrationNumber, exam2RollNumber, exam2Result, "Supervisor", "Supervisor");
+                        RegistrationInformation registrationInformation = new RegistrationInformation(AdminID, Type, Picture, Id, Name, Email, countryCode, phoneNumber, Address, Gender, Dob, Nationality, NidNumber, Experience, exam1Name, exam1Board, exam1RegistrationNumber, exam1RollNumber, exam1Result, exam2Name, exam2Board, exam2RegistrationNumber, exam2RollNumber, exam2Result, "Supervisor", "Supervisor");
                         registrationInformation.Dock = DockStyle.Fill;
                         AdminForm.Instance.panelContainer.Controls.Add(registrationInformation);
                     }

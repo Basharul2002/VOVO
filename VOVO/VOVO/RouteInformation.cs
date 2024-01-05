@@ -43,7 +43,7 @@ namespace VOVO
             to_label.Text = "To: " + this.to;
             select_button.Tag = new RouteInfo_Tag { RouteID = routeID, From = from, To = to };
             int y = 35;
-            
+
             boarding_points_panel.Controls.Clear();
 
 
@@ -73,7 +73,7 @@ namespace VOVO
             arivalPointsTitleLabel.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Underline);
             arivalPointsTitleLabel.Location = new Point(5, 3);
             arrival_points_panel.Controls.Add(arivalPointsTitleLabel);
-           
+
             y = 35;
             foreach (string data in arrivalPoints)
             {
@@ -103,8 +103,8 @@ namespace VOVO
             string to = tag.To;
             string route = from + " - " + to + "(" + routeID + ")";
 
-          //  CreateTicket createTicket = new CreateTicket(employeeID, route);
-            //createTicket.Show();
+            CreateTicket createTicket = new CreateTicket(employeeID, route);
+            createTicket.Show();
 
         }
 

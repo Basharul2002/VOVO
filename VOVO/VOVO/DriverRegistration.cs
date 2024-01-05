@@ -15,24 +15,11 @@ namespace VOVO
 {
     public partial class DriverRegistration : UserControl
     {
-        private string AdminID { set; get; }
-        private string Type { set; get; }
-        private Image UserPicture { set; get; }
-        private string Id { set; get; }
-        private string UserName { set; get; }
-        private string UserEmail { set;  get; }
-        private string UserPhoneNumber { set; get; }
-        private string UserAddress { set; get; }
-        private string Gender { set; get; }
-        private string UserDob { set; get; }
-        private string UserNationality { set; get; }
-        private string UserNidNumber { set; get; }
-        private string UserExperience { set; get; }
-        private string Exam1Name { set; get; }
-        private string Exam1Board { set; get; }
-        private string Exam1RegistrationNumber { set; get; }
-        private string Exam1RollNumber { set; get; }
-        private string Exam1Result { set; get; }
+        private string AdminID, Type, Id, UserName, UserEmail, UserPhoneNumber, UserAddress, Gender, UserDob, UserNationality, UserNidNumber, UserExperience, UserCountryCode;
+
+        private string Exam1Name, Exam1Board, Exam1RegistrationNumber, Exam1RollNumber, Exam1Result;
+
+        private Image UserPicture;
 
 
         public DriverRegistration()
@@ -41,7 +28,7 @@ namespace VOVO
         }
 
 
-        public DriverRegistration(string adminID, string type, Image userPicture, string id, string userName, string userEmail, string userPhoneNumber, string userAddress, string gender, string userDob, string userNationality, string userNidNumber, string userExperience, string exam1Name, string exam1Board, string exam1RegistrationNumber, string exam1RollNumber, string exam1Result)
+        public DriverRegistration(string adminID, string type, Image userPicture, string id, string userName, string userEmail, string userCoutryCode, string userPhoneNumber, string userAddress, string gender, string userDob, string userNationality, string userNidNumber, string userExperience, string exam1Name, string exam1Board, string exam1RegistrationNumber, string exam1RollNumber, string exam1Result)
         {
             InitializeComponent();
             AdminID = adminID;
@@ -50,6 +37,7 @@ namespace VOVO
             Id = id;
             UserName = userName;
             UserEmail = userEmail;
+            UserCountryCode = userCoutryCode;
             UserPhoneNumber = userPhoneNumber;
             UserAddress = userAddress;
             Gender = gender;
@@ -69,13 +57,13 @@ namespace VOVO
 
         private void nextButtonEvent()
         {
-            string licenceNumber = licence_number_tb.Texts;
-            string licenceType = licence_type_tb.Texts;
-            string lincenceExpDate = licence_expiration_date_tb.Texts;
+            string licenceNumber = licence_number_tb.Text;
+            string licenceType = licence_type_tb.Text;
+            string lincenceExpDate = licence_expiration_date_tb.Text;
 
-            string vechicleType = driving_history_vehicle_type.Texts;
-            string registrationNumber = driving_history_registration_number.Texts;
-            string compilance_record = driving_history_compilance_record_tb.Texts;
+            string vechicleType = driving_history_vehicle_type.Text;
+            string registrationNumber = driving_history_registration_number.Text;
+            string compilance_record = driving_history_compilance_record_tb.Text;
 
             if (string.IsNullOrEmpty(licenceNumber) || string.IsNullOrEmpty(licenceType) || string.IsNullOrEmpty(lincenceExpDate) || string.IsNullOrEmpty(vechicleType) || string.IsNullOrEmpty(registrationNumber) || string.IsNullOrEmpty(compilance_record))
             {
@@ -88,7 +76,7 @@ namespace VOVO
                 {
                     MessageBox.Show("Successful");
                     AdminForm.Instance.panelContainer.Controls.Clear();
-                    RegistrationInformation registrationInformation = new RegistrationInformation(AdminID, Type, UserPicture, Id, UserName, UserEmail, UserPhoneNumber, UserAddress, Gender, UserDob, UserNationality, UserNidNumber, UserExperience, Exam1Name, Exam1Board, Exam1RegistrationNumber, Exam1RollNumber, Exam1Result, licenceNumber: licenceNumber, licenceType: licenceType, licenceExpDate: lincenceExpDate, vechileType: vechicleType, registrationNumber: registrationNumber, compilanceRecord: compilance_record);
+                    RegistrationInformation registrationInformation = new RegistrationInformation(AdminID, Type, UserPicture, Id, UserName, UserEmail, UserCountryCode, UserPhoneNumber, UserAddress, Gender, UserDob, UserNationality, UserNidNumber, UserExperience, Exam1Name, Exam1Board, Exam1RegistrationNumber, Exam1RollNumber, Exam1Result, licenceNumber: licenceNumber, licenceType: licenceType, licenceExpDate: lincenceExpDate, vechileType: vechicleType, registrationNumber: registrationNumber, compilanceRecord: compilance_record);
                     registrationInformation.Dock = DockStyle.Fill;
                     AdminForm.Instance.panelContainer.Controls.Add(registrationInformation);
                 }

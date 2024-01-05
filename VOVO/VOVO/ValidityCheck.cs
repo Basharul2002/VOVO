@@ -10,7 +10,7 @@ namespace VOVO
 {
     internal class ValidityCheck
     {
-        public string phoneNumber { set; get; }
+        public string phoneNumber{set; get;}
 
         public bool IsPhoneNumberValid(string phn_num)
         {
@@ -23,6 +23,7 @@ namespace VOVO
                 // If phone number is valied then return true otherwise false
                 return Regex.IsMatch(phn_num, phnNumPattern);
             }
+
             return false;
         }
 
@@ -52,6 +53,18 @@ namespace VOVO
 
             // Date format
             string dateFormat = "dd/MM/yyyy";
+
+            // Parse the date string using the specified format
+            DateTime parsedDate;
+            return DateTime.TryParseExact(dob, dateFormat, null, System.Globalization.DateTimeStyles.None, out parsedDate);
+
+        }
+
+        public bool IsDataBaseDOBValid(string dob)
+        {
+
+            // Date format
+            string dateFormat = "yyyy-MM-dd";
 
             // Parse the date string using the specified format
             DateTime parsedDate;

@@ -37,9 +37,8 @@ namespace VOVO
         }
 
 
-        public SearchingResult(string search, int totalMatch, string searchOption, string searchingItem, string option)
+        public SearchingResult(string search, int totalMatch, string searchOption, string searchingItem, string option) : this()
         {
-            InitializeComponent();
             Search = search; // search data
             TotalMatch = totalMatch; // Total match info
             SearchOption = searchOption; // name, email, phone number
@@ -83,7 +82,7 @@ namespace VOVO
                 }
                 catch (Exception ex)
                 {
-                    CustomMessageBox.Show("Class name is SearchingResult function name is searchiteam [Bus] exception is: " + ex.Message, "Error");
+                    MessageBox.Show("Class name is SearchingResult function name is searchiteam [Bus] exception is: " + ex.Message, "Error");
                     return;
                 }
             }
@@ -94,7 +93,20 @@ namespace VOVO
                     using (SqlConnection connection = new SqlConnection(dataBase.connectionString))
                     {
                         connection.Open();
-                        string query = "SELECT ID, [Name], [Email], [Phone Number] FROM [Customer Information] WHERE [" + SearchOption + "] LIKE '%' + @Search + '%'";
+                        string query;
+                        if (SearchOption == "Phone Number")
+                        {
+                            string countryCodePrefix = Search.Substring(0, 1);
+                            string phoneNumberSuffix = Search.Substring(1, Search.Length - 1);
+
+                            query = $@"SELECT * 
+                            FROM [Customer Information] 
+                            WHERE [Country Code] LIKE '%{countryCodePrefix}%' 
+                            AND [Phone Number] LIKE '%{phoneNumberSuffix}%'";
+                        }
+                        
+                        else
+                            query = "SELECT * FROM [Customer Information] WHERE [" + SearchOption + "] LIKE '%' + @Search + '%'";
 
                         Panel[] listItem = new Panel[TotalMatch];
                         using (SqlCommand command = new SqlCommand(query, connection))
@@ -124,7 +136,7 @@ namespace VOVO
                 }
                 catch (Exception ex)
                 {
-                    CustomMessageBox.Show("Class name is SearchingResult function name is searchiteam [Customer] exception is: " + ex.Message, "Error");
+                    MessageBox.Show("Class name is SearchingResult function name is searchiteam [Customer] exception is: " + ex.Message, "Error");
                     return;
                 }
             }
@@ -138,7 +150,7 @@ namespace VOVO
 
                 catch (Exception ex) 
                 {
-                    CustomMessageBox.Show("Class name is SearchingResult function name is searchiteam [Employee] exception is: " + ex.Message, "Error");
+                    MessageBox.Show("Class name is SearchingResult function name is searchiteam [Employee] exception is: " + ex.Message, "Error");
                     return;
                 }
 
@@ -147,7 +159,19 @@ namespace VOVO
 
         void panelClick(object sender, EventArgs e)
         {
-            
+            Panel panel = (Panel)sender;
+            CustomerData data = (CustomerData)panel.Tag;
+
+            // Use the name, phoneNumber, and email as needed
+            // MessageBox.Show("Name: " + name + " Phone Number: " + phoneNumber);
+            if (!AdminForm.Instance.panelContainer.Controls.ContainsKey("CustomerProfile"))
+            {
+                AdminForm.Instance.panelContainer.Controls.Clear();
+                CustomerProfile customerProfile = new CustomerProfile(data.Name, data.CountryCode, data.PhoneNumber, data.Email, Search, TotalMatch, SearchOption, Option);
+                customerProfile.Dock = DockStyle.Fill;
+                AdminForm.Instance.panelContainer.Controls.Add(customerProfile);
+                this.Hide();
+            }
             
         }
 
