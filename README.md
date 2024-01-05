@@ -27,7 +27,6 @@ ____
 
 ### **Employee Module**
 - **Route Management:** Employees can create and update bus routes.
-
 - **Ticket Management:** Employees can create and update tickets.
 - **Advertisement:** Employees can add and remove advertisements.
 
