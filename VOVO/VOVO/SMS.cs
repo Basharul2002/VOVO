@@ -15,12 +15,14 @@ namespace VOVO
     {
         private bool DeliverTicketPasswordBySMS(string CustomerPhoneNumber, string password)
         {
-            string accountSid = "AC518246eb60da4e4cac54a0d9059b412b";
-            string authToken = "c78b6b2fab06478d77b357f8eb1ca5d4";
+            MessageBox.Show("Replace accountSid, authToken, fromNumber respectfully Twilio accountSid, Twilio authToken, Twilio number");
+            return;
+            string accountSid = "";
+            string authToken = "";
 
             TwilioClient.Init(accountSid, authToken);
 
-            string fromNumber = "+15739834816"; // My number (Twilio number)
+            string fromNumber = ""; // My number (Twilio number)
             string toNumber = CustomerPhoneNumber; // Customer Phone Number
             string message = "Dear Passenger,\n" +
                              "\n" +
