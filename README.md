@@ -38,8 +38,8 @@ ____
 2. Build and run the project.
 
 ## **Branch** 
-[Version 1.0.0](https://github.com/Basharul2002/VOVO/tree/v1.0.0)
-[Version 1.0.0.0.1](https://github.com/Basharul2002/VOVO/tree/v1.0.0.0.1)
+- [Version 1.0.0](https://github.com/Basharul2002/VOVO/tree/v1.0.0)
+- [Version 1.0.0.0.1](https://github.com/Basharul2002/VOVO/tree/v1.0.0.0.1)
 
 ## **License**
 ____
