@@ -15,12 +15,14 @@ namespace VOVO
     {
         private bool DeliverTicketPasswordBySMS(string CustomerPhoneNumber, string password)
         {
-            string accountSid = "AC518246eb60da4e4cac54a0d9059b412b";
-            string authToken = "c78b6b2fab06478d77b357f8eb1ca5d4";
+            MessageBox.Show("accountSid, authToken, fromNumber repectfully replace  by your Twilio accountSid, authToken and number, also remove return keyword class name is SMS and function name is DeliverTicketPasswordBySMS");
+            return ;
+            string accountSid = "";
+            string authToken = "";
 
             TwilioClient.Init(accountSid, authToken);
 
-            string fromNumber = "+15739834816"; // My number (Twilio number)
+            string fromNumber = "+"; // My number (Twilio number)
             string toNumber = CustomerPhoneNumber; // Customer Phone Number
             string message = "Dear Passenger,\n" +
                              "\n" +
@@ -45,12 +47,14 @@ namespace VOVO
         {
             try
             {
-                string accountSid = "AC518246eb60da4e4cac54a0d9059b412b";
-                string authToken = "be01e969dd2752722e3d71dad7914632";
-
+               MessageBox.Show("accountSid, authToken, fromNumber repectfully replace  by your Twilio accountSid, authToken and number, also remove return keyword class name is SMS and function name is DeliverTicketPasswordBySMS");
+                return ;
+                string accountSid = "";
+                string authToken = "";
+    
                 TwilioClient.Init(accountSid, authToken);
-
-                string fromNumber = "+15739834816"; // My number (Twilio number)
+    
+                string fromNumber = "+"; // My number (Twilio number)
                 string toNumber = CustomerPhoneNumber; // Customer Phone Number like this format +8801813890622
                 string message = "Dear " + name + ", \n" +
                                  "\n" +
