@@ -6,33 +6,28 @@ This project is a [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_langua
 ____
 ### **Customer Module**
 - **Registration:** Users can register by providing the necessary details.
-
 - **Verification:** Email and phone number verification for added security.
 
 
 
 ### **Admin Module**
 - **Bus Management:** Admins can register buses for the transportation system.
-
 - **Employee Management:** Registration of employees, including drivers, conductors, and supervisors.
-
 - **Information Monitoring:** Admins can view details of registered buses and employees.
 
 
 ### **Ticketing System**
 - **Password Protection:** Tickets are `password-protected` for enhanced security.
-
 - **Delivery:** `Tickets` are sent via `email`, and `passwords` are sent via `SMS`.
 
 
 ### **Employee Module**
 - **Route Management:** Employees can create and update bus routes.
-
 - **Ticket Management:** Employees can create and update tickets.
 - **Advertisement:** Employees can add and remove advertisements.
 
 
-## **Features**
+## **Installation**
 ____
 1. Clone the repository to your local machine.
 2. Build and run the project.
