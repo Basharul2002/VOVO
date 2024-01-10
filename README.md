@@ -26,7 +26,7 @@ ____
 - **Advertisement:** Employees can add and remove advertisements.
 
 
-## **Features**
+## **Installation**
 ____
 1. Clone the repository to your local machine.
 2. Build and run the project.
